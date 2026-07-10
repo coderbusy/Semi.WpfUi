@@ -1,0 +1,170 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Color Resources -->
+    <Color x:Key="SemiWhiteColor">White</Color>
+    <Color x:Key="SemiBlackColor">Black</Color>
+    <Color x:Key="SemiRed0Color">#FEF2ED</Color>
+    <Color x:Key="SemiRed1Color">#FEDDD2</Color>
+    <Color x:Key="SemiRed2Color">#FDB7A5</Color>
+    <Color x:Key="SemiRed3Color">#FB9078</Color>
+    <Color x:Key="SemiRed4Color">#FA664C</Color>
+    <Color x:Key="SemiRed5Color">#F93920</Color>
+    <Color x:Key="SemiRed6Color">#D52515</Color>
+    <Color x:Key="SemiRed7Color">#B2140C</Color>
+    <Color x:Key="SemiRed8Color">#8E0805</Color>
+    <Color x:Key="SemiRed9Color">#6A0103</Color>
+    <Color x:Key="SemiPink0Color">#FDECEF</Color>
+    <Color x:Key="SemiPink1Color">#FBCFD8</Color>
+    <Color x:Key="SemiPink2Color">#F6A0B5</Color>
+    <Color x:Key="SemiPink3Color">#F27396</Color>
+    <Color x:Key="SemiPink4Color">#ED487B</Color>
+    <Color x:Key="SemiPink5Color">#E91E63</Color>
+    <Color x:Key="SemiPink6Color">#C51356</Color>
+    <Color x:Key="SemiPink7Color">#A20B48</Color>
+    <Color x:Key="SemiPink8Color">#7E053A</Color>
+    <Color x:Key="SemiPink9Color">#5A012B</Color>
+    <Color x:Key="SemiPurple0Color">#F7E9F7</Color>
+    <Color x:Key="SemiPurple1Color">#EFCAF0</Color>
+    <Color x:Key="SemiPurple2Color">#DD9BE0</Color>
+    <Color x:Key="SemiPurple3Color">#C96FD1</Color>
+    <Color x:Key="SemiPurple4Color">#B449C2</Color>
+    <Color x:Key="SemiPurple5Color">#9E28B3</Color>
+    <Color x:Key="SemiPurple6Color">#871E9E</Color>
+    <Color x:Key="SemiPurple7Color">#71168A</Color>
+    <Color x:Key="SemiPurple8Color">#5C0F75</Color>
+    <Color x:Key="SemiPurple9Color">#490A61</Color>
+    <Color x:Key="SemiBlue0Color">#EAF5FF</Color>
+    <Color x:Key="SemiBlue1Color">#CBE7FE</Color>
+    <Color x:Key="SemiBlue2Color">#98CDFD</Color>
+    <Color x:Key="SemiBlue3Color">#65B2FC</Color>
+    <Color x:Key="SemiBlue4Color">#3295FB</Color>
+    <Color x:Key="SemiBlue5Color">#0064FA</Color>
+    <Color x:Key="SemiBlue6Color">#0062D6</Color>
+    <Color x:Key="SemiBlue7Color">#004FB3</Color>
+    <Color x:Key="SemiBlue8Color">#003D8F</Color>
+    <Color x:Key="SemiBlue9Color">#002C6B</Color>
+    <Color x:Key="SemiGreen0Color">#ECF7EC</Color>
+    <Color x:Key="SemiGreen1Color">#D0F0D1</Color>
+    <Color x:Key="SemiGreen2Color">#A4E0A7</Color>
+    <Color x:Key="SemiGreen3Color">#7DD182</Color>
+    <Color x:Key="SemiGreen4Color">#5AC262</Color>
+    <Color x:Key="SemiGreen5Color">#3BB346</Color>
+    <Color x:Key="SemiGreen6Color">#30953B</Color>
+    <Color x:Key="SemiGreen7Color">#25772F</Color>
+    <Color x:Key="SemiGreen8Color">#1B5924</Color>
+    <Color x:Key="SemiGreen9Color">#113C18</Color>
+    <Color x:Key="SemiYellow0Color">#FFFDEA</Color>
+    <Color x:Key="SemiYellow1Color">#FEFBCB</Color>
+    <Color x:Key="SemiYellow2Color">#FDF398</Color>
+    <Color x:Key="SemiYellow3Color">#FCE865</Color>
+    <Color x:Key="SemiYellow4Color">#FBDA32</Color>
+    <Color x:Key="SemiYellow5Color">#FAC800</Color>
+    <Color x:Key="SemiYellow6Color">#D0AA00</Color>
+    <Color x:Key="SemiYellow7Color">#A78B00</Color>
+    <Color x:Key="SemiYellow8Color">#7D6A00</Color>
+    <Color x:Key="SemiYellow9Color">#534800</Color>
+    <Color x:Key="SemiOrange0Color">#FFF8EA</Color>
+    <Color x:Key="SemiOrange1Color">#FEEECC</Color>
+    <Color x:Key="SemiOrange2Color">#FED998</Color>
+    <Color x:Key="SemiOrange3Color">#FDC165</Color>
+    <Color x:Key="SemiOrange4Color">#FDA633</Color>
+    <Color x:Key="SemiOrange5Color">#FC8800</Color>
+    <Color x:Key="SemiOrange6Color">#D26700</Color>
+    <Color x:Key="SemiOrange7Color">#A84A00</Color>
+    <Color x:Key="SemiOrange8Color">#7E3100</Color>
+    <Color x:Key="SemiOrange9Color">#541D00</Color>
+    <Color x:Key="SemiGrey0Color">#F9F9F9</Color>
+    <Color x:Key="SemiGrey1Color">#E6E8EA</Color>
+    <Color x:Key="SemiGrey2Color">#C6CACD</Color>
+    <Color x:Key="SemiGrey3Color">#A7ABB0</Color>
+    <Color x:Key="SemiGrey4Color">#888D92</Color>
+    <Color x:Key="SemiGrey5Color">#6B7075</Color>
+    <Color x:Key="SemiGrey6Color">#555B61</Color>
+    <Color x:Key="SemiGrey7Color">#41464C</Color>
+    <Color x:Key="SemiGrey8Color">#2E3238</Color>
+    <Color x:Key="SemiGrey9Color">#1C1F23</Color>
+
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="SemiWhite" Color="{StaticResource SemiWhiteColor}" />
+    <SolidColorBrush x:Key="SemiBlack" Color="{StaticResource SemiBlackColor}" />
+    <SolidColorBrush x:Key="SemiRed0" Color="{StaticResource SemiRed0Color}" />
+    <SolidColorBrush x:Key="SemiRed1" Color="{StaticResource SemiRed1Color}" />
+    <SolidColorBrush x:Key="SemiRed2" Color="{StaticResource SemiRed2Color}" />
+    <SolidColorBrush x:Key="SemiRed3" Color="{StaticResource SemiRed3Color}" />
+    <SolidColorBrush x:Key="SemiRed4" Color="{StaticResource SemiRed4Color}" />
+    <SolidColorBrush x:Key="SemiRed5" Color="{StaticResource SemiRed5Color}" />
+    <SolidColorBrush x:Key="SemiRed6" Color="{StaticResource SemiRed6Color}" />
+    <SolidColorBrush x:Key="SemiRed7" Color="{StaticResource SemiRed7Color}" />
+    <SolidColorBrush x:Key="SemiRed8" Color="{StaticResource SemiRed8Color}" />
+    <SolidColorBrush x:Key="SemiRed9" Color="{StaticResource SemiRed9Color}" />
+    <SolidColorBrush x:Key="SemiPink0" Color="{StaticResource SemiPink0Color}" />
+    <SolidColorBrush x:Key="SemiPink1" Color="{StaticResource SemiPink1Color}" />
+    <SolidColorBrush x:Key="SemiPink2" Color="{StaticResource SemiPink2Color}" />
+    <SolidColorBrush x:Key="SemiPink3" Color="{StaticResource SemiPink3Color}" />
+    <SolidColorBrush x:Key="SemiPink4" Color="{StaticResource SemiPink4Color}" />
+    <SolidColorBrush x:Key="SemiPink5" Color="{StaticResource SemiPink5Color}" />
+    <SolidColorBrush x:Key="SemiPink6" Color="{StaticResource SemiPink6Color}" />
+    <SolidColorBrush x:Key="SemiPink7" Color="{StaticResource SemiPink7Color}" />
+    <SolidColorBrush x:Key="SemiPink8" Color="{StaticResource SemiPink8Color}" />
+    <SolidColorBrush x:Key="SemiPink9" Color="{StaticResource SemiPink9Color}" />
+    <SolidColorBrush x:Key="SemiPurple0" Color="{StaticResource SemiPurple0Color}" />
+    <SolidColorBrush x:Key="SemiPurple1" Color="{StaticResource SemiPurple1Color}" />
+    <SolidColorBrush x:Key="SemiPurple2" Color="{StaticResource SemiPurple2Color}" />
+    <SolidColorBrush x:Key="SemiPurple3" Color="{StaticResource SemiPurple3Color}" />
+    <SolidColorBrush x:Key="SemiPurple4" Color="{StaticResource SemiPurple4Color}" />
+    <SolidColorBrush x:Key="SemiPurple5" Color="{StaticResource SemiPurple5Color}" />
+    <SolidColorBrush x:Key="SemiPurple6" Color="{StaticResource SemiPurple6Color}" />
+    <SolidColorBrush x:Key="SemiPurple7" Color="{StaticResource SemiPurple7Color}" />
+    <SolidColorBrush x:Key="SemiPurple8" Color="{StaticResource SemiPurple8Color}" />
+    <SolidColorBrush x:Key="SemiPurple9" Color="{StaticResource SemiPurple9Color}" />
+    <SolidColorBrush x:Key="SemiBlue0" Color="{StaticResource SemiBlue0Color}" />
+    <SolidColorBrush x:Key="SemiBlue1" Color="{StaticResource SemiBlue1Color}" />
+    <SolidColorBrush x:Key="SemiBlue2" Color="{StaticResource SemiBlue2Color}" />
+    <SolidColorBrush x:Key="SemiBlue3" Color="{StaticResource SemiBlue3Color}" />
+    <SolidColorBrush x:Key="SemiBlue4" Color="{StaticResource SemiBlue4Color}" />
+    <SolidColorBrush x:Key="SemiBlue5" Color="{StaticResource SemiBlue5Color}" />
+    <SolidColorBrush x:Key="SemiBlue6" Color="{StaticResource SemiBlue6Color}" />
+    <SolidColorBrush x:Key="SemiBlue7" Color="{StaticResource SemiBlue7Color}" />
+    <SolidColorBrush x:Key="SemiBlue8" Color="{StaticResource SemiBlue8Color}" />
+    <SolidColorBrush x:Key="SemiBlue9" Color="{StaticResource SemiBlue9Color}" />
+    <SolidColorBrush x:Key="SemiGreen0" Color="{StaticResource SemiGreen0Color}" />
+    <SolidColorBrush x:Key="SemiGreen1" Color="{StaticResource SemiGreen1Color}" />
+    <SolidColorBrush x:Key="SemiGreen2" Color="{StaticResource SemiGreen2Color}" />
+    <SolidColorBrush x:Key="SemiGreen3" Color="{StaticResource SemiGreen3Color}" />
+    <SolidColorBrush x:Key="SemiGreen4" Color="{StaticResource SemiGreen4Color}" />
+    <SolidColorBrush x:Key="SemiGreen5" Color="{StaticResource SemiGreen5Color}" />
+    <SolidColorBrush x:Key="SemiGreen6" Color="{StaticResource SemiGreen6Color}" />
+    <SolidColorBrush x:Key="SemiGreen7" Color="{StaticResource SemiGreen7Color}" />
+    <SolidColorBrush x:Key="SemiGreen8" Color="{StaticResource SemiGreen8Color}" />
+    <SolidColorBrush x:Key="SemiGreen9" Color="{StaticResource SemiGreen9Color}" />
+    <SolidColorBrush x:Key="SemiYellow0" Color="{StaticResource SemiYellow0Color}" />
+    <SolidColorBrush x:Key="SemiYellow1" Color="{StaticResource SemiYellow1Color}" />
+    <SolidColorBrush x:Key="SemiYellow2" Color="{StaticResource SemiYellow2Color}" />
+    <SolidColorBrush x:Key="SemiYellow3" Color="{StaticResource SemiYellow3Color}" />
+    <SolidColorBrush x:Key="SemiYellow4" Color="{StaticResource SemiYellow4Color}" />
+    <SolidColorBrush x:Key="SemiYellow5" Color="{StaticResource SemiYellow5Color}" />
+    <SolidColorBrush x:Key="SemiYellow6" Color="{StaticResource SemiYellow6Color}" />
+    <SolidColorBrush x:Key="SemiYellow7" Color="{StaticResource SemiYellow7Color}" />
+    <SolidColorBrush x:Key="SemiYellow8" Color="{StaticResource SemiYellow8Color}" />
+    <SolidColorBrush x:Key="SemiYellow9" Color="{StaticResource SemiYellow9Color}" />
+    <SolidColorBrush x:Key="SemiOrange0" Color="{StaticResource SemiOrange0Color}" />
+    <SolidColorBrush x:Key="SemiOrange1" Color="{StaticResource SemiOrange1Color}" />
+    <SolidColorBrush x:Key="SemiOrange2" Color="{StaticResource SemiOrange2Color}" />
+    <SolidColorBrush x:Key="SemiOrange3" Color="{StaticResource SemiOrange3Color}" />
+    <SolidColorBrush x:Key="SemiOrange4" Color="{StaticResource SemiOrange4Color}" />
+    <SolidColorBrush x:Key="SemiOrange5" Color="{StaticResource SemiOrange5Color}" />
+    <SolidColorBrush x:Key="SemiOrange6" Color="{StaticResource SemiOrange6Color}" />
+    <SolidColorBrush x:Key="SemiOrange7" Color="{StaticResource SemiOrange7Color}" />
+    <SolidColorBrush x:Key="SemiOrange8" Color="{StaticResource SemiOrange8Color}" />
+    <SolidColorBrush x:Key="SemiOrange9" Color="{StaticResource SemiOrange9Color}" />
+    <SolidColorBrush x:Key="SemiGrey0" Color="{StaticResource SemiGrey0Color}" />
+    <SolidColorBrush x:Key="SemiGrey1" Color="{StaticResource SemiGrey1Color}" />
+    <SolidColorBrush x:Key="SemiGrey2" Color="{StaticResource SemiGrey2Color}" />
+    <SolidColorBrush x:Key="SemiGrey3" Color="{StaticResource SemiGrey3Color}" />
+    <SolidColorBrush x:Key="SemiGrey4" Color="{StaticResource SemiGrey4Color}" />
+    <SolidColorBrush x:Key="SemiGrey5" Color="{StaticResource SemiGrey5Color}" />
+    <SolidColorBrush x:Key="SemiGrey6" Color="{StaticResource SemiGrey6Color}" />
+    <SolidColorBrush x:Key="SemiGrey7" Color="{StaticResource SemiGrey7Color}" />
+    <SolidColorBrush x:Key="SemiGrey8" Color="{StaticResource SemiGrey8Color}" />
+    <SolidColorBrush x:Key="SemiGrey9" Color="{StaticResource SemiGrey9Color}" />
+</ResourceDictionary>
