@@ -83,18 +83,9 @@
                         Text="Button" />
                     <WrapPanel>
                         <Button Margin="0,0,8,8" Content="Default" />
-                        <Button
-                            Margin="0,0,8,8"
-                            Content="Primary"
-                            Style="{StaticResource SemiButtonPrimary}" />
-                        <Button
-                            Margin="0,0,8,8"
-                            Content="Danger"
-                            Style="{StaticResource SemiButtonDanger}" />
-                        <Button
-                            Margin="0,0,8,8"
-                            Content="Light"
-                            Style="{StaticResource SemiButtonLight}" />
+                        <Button Margin="0,0,8,8" Content="Primary" />
+                        <Button Margin="0,0,8,8" Content="Danger" />
+                        <Button Margin="0,0,8,8" Content="Light" />
                         <Button
                             Margin="0,0,8,8"
                             Content="Disabled"
@@ -102,8 +93,7 @@
                         <Button
                             Margin="0,0,8,8"
                             Content="Disabled Primary"
-                            IsEnabled="False"
-                            Style="{StaticResource SemiButtonPrimary}" />
+                            IsEnabled="False" />
                     </WrapPanel>
                 </StackPanel>
 
