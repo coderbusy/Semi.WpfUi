@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi.Controls">
+    <Style x:Key="{x:Type local:ThemeVariantScope}" TargetType="local:ThemeVariantScope">
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource DefaultForeground}" />
+        <Setter Property="TextElement.FontSize" Value="{DynamicResource DefaultFontSize}" />
+        <Setter Property="TextElement.FontWeight" Value="{DynamicResource DefaultFontWeight}" />
+        <Setter Property="TextElement.FontFamily" Value="{DynamicResource DefaultFontFamily}" />
+    </Style>
+</ResourceDictionary>
