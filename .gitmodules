@@ -1,0 +1,6 @@
+[submodule "irihitech/Semi.Avalonia"]
+	path = irihitech/Semi.Avalonia
+	url = https://github.com/irihitech/Semi.Avalonia.git
+[submodule "irihitech/Ursa.Avalonia"]
+	path = irihitech/Ursa.Avalonia
+	url = https://github.com/irihitech/Ursa.Avalonia.git
