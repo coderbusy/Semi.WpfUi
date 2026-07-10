@@ -1,0 +1,9 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <local:ResourceAlias x:Key="RadiusCardCornerRadius" ResourceKey="SemiBorderRadiusMedium" />
+    <local:ResourceAlias x:Key="ThicknessCardPadding" ResourceKey="SemiThicknessBaseLoose" />
+    <local:ResourceAlias x:Key="ThicknessCardMargin" ResourceKey="SemiThicknessExtraTight" />
+    <local:ResourceAlias x:Key="ThicknessCardBorderThickness" ResourceKey="SemiBorderThicknessControl" />
+</ResourceDictionary>

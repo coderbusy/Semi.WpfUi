@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="CardBorder" TargetType="Border">
+        <Setter Property="Padding" Value="{DynamicResource ThicknessCardPadding}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BorderCardBorderBrush}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource RadiusCardCornerRadius}" />
+        <Setter Property="Background" Value="{DynamicResource BorderCardBackground}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ThicknessCardBorderThickness}" />
+        <Setter Property="Margin" Value="{DynamicResource ThicknessCardMargin}" />
+        <!--<Style Selector="^.Shadow">
+            <Setter Property="BoxShadow" Value="{DynamicResource BorderCardBoxShadow}" />
+        </Style>
+        <Style Selector="^.Hover:pointerover">
+            <Setter Property="BoxShadow" Value="{DynamicResource BorderCardBoxShadow}" />
+        </Style>-->
+    </Style>
+</ResourceDictionary>
