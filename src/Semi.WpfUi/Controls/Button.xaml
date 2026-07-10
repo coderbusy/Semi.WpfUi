@@ -9,7 +9,8 @@
             Background="{TemplateBinding Background}"
             BorderBrush="{TemplateBinding BorderBrush}"
             BorderThickness="{TemplateBinding BorderThickness}"
-            CornerRadius="{StaticResource ButtonCornerRadius}">
+            CornerRadius="{StaticResource ButtonCornerRadius}"
+            SnapsToDevicePixels="True">
             <ContentPresenter
                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
