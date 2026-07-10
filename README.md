@@ -11,3 +11,5 @@ Aims to provide WPF developers with the same development experience as the Avalo
 - [HandyControl](https://github.com/HandyOrg/HandyControl) — WPF control library reference
 
 See [src/Semi.WpfUi/README.md](src/Semi.WpfUi/README.md) for full usage documentation.
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for the Semi.Avalonia-to-WPF migration workflow and development conventions.
