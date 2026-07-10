@@ -50,7 +50,7 @@
     </Style>
 
     <Style x:Key="SemiTabControl" TargetType="TabControl">
-        <Setter Property="Background" Value="{DynamicResource SemiColorBg0}" />
+        <Setter Property="Background" Value="{DynamicResource SemiColorBackground0}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SemiColorBorder}" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="FontSize" Value="{DynamicResource SemiFontSizeRegular}" />

@@ -1,11 +1,13 @@
-<Window x:Class="Semi.WpfUi.Demo.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:semi="clr-namespace:Semi.WpfUi;assembly=Semi.WpfUi"
-        Title="Semi.WpfUi Demo"
-        Width="900" Height="680"
-        Background="{DynamicResource SemiColorBg0}"
-        WindowStartupLocation="CenterScreen">
+<Window
+    x:Class="Semi.WpfUi.Demo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:semi="clr-namespace:Semi.WpfUi;assembly=Semi.WpfUi"
+    Title="Semi.WpfUi Demo"
+    Width="900"
+    Height="680"
+    Background="{DynamicResource SemiColorBackground0}"
+    WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -13,176 +15,285 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <!-- Title bar -->
-        <Border Grid.Row="0" Padding="24,16"
-                Background="{DynamicResource SemiColorBg0}"
-                BorderBrush="{DynamicResource SemiColorBorder}"
-                BorderThickness="0,0,0,1">
+        <!--  Title bar  -->
+        <Border
+            Grid.Row="0"
+            Padding="24,16"
+            Background="{DynamicResource SemiColorBackground0}"
+            BorderBrush="{DynamicResource SemiColorBorder}"
+            BorderThickness="0,0,0,1">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <TextBlock Text="Semi.WpfUi"
-                               FontSize="{DynamicResource SemiFontSizeHeader5}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}" />
-                    <TextBlock Text=" — WPF Semi Design Theme"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               Foreground="{DynamicResource SemiColorText2}"
-                               VerticalAlignment="Center"
-                               Margin="8,0,0,0" />
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock
+                        FontSize="{DynamicResource SemiFontSizeHeader5}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="Semi.WpfUi" />
+                    <TextBlock
+                        Margin="8,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        Foreground="{DynamicResource SemiColorText2}"
+                        Text=" — WPF Semi Design Theme" />
                 </StackPanel>
-                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
-                    <TextBlock Text="Theme:" VerticalAlignment="Center"
-                               Foreground="{DynamicResource SemiColorText2}"
-                               FontSize="{DynamicResource SemiFontSizeRegular}" />
-                    <Button x:Name="LightThemeButton" Content="Light"
-                            Margin="8,0,0,0"
-                            Click="OnLightThemeClick" />
-                    <Button x:Name="DarkThemeButton" Content="Dark"
-                            Margin="8,0,0,0"
-                            Click="OnDarkThemeClick" />
+                <StackPanel
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="{DynamicResource SemiFontSizeRegular}"
+                        Foreground="{DynamicResource SemiColorText2}"
+                        Text="Theme:" />
+                    <Button
+                        x:Name="LightThemeButton"
+                        Margin="8,0,0,0"
+                        Click="OnLightThemeClick"
+                        Content="Light" />
+                    <Button
+                        x:Name="DarkThemeButton"
+                        Margin="8,0,0,0"
+                        Click="OnDarkThemeClick"
+                        Content="Dark" />
                 </StackPanel>
             </Grid>
         </Border>
 
-        <!-- Main content -->
+        <!--  Main content  -->
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="24">
 
-                <!-- Buttons -->
+                <!--  Buttons  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="Button"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="Button" />
                     <WrapPanel>
-                        <Button Content="Default" Margin="0,0,8,8" />
-                        <Button Style="{StaticResource SemiButtonPrimary}" Content="Primary" Margin="0,0,8,8" />
-                        <Button Style="{StaticResource SemiButtonDanger}" Content="Danger" Margin="0,0,8,8" />
-                        <Button Style="{StaticResource SemiButtonLight}" Content="Light" Margin="0,0,8,8" />
-                        <Button Content="Disabled" IsEnabled="False" Margin="0,0,8,8" />
-                        <Button Style="{StaticResource SemiButtonPrimary}" Content="Disabled Primary" IsEnabled="False" Margin="0,0,8,8" />
+                        <Button Margin="0,0,8,8" Content="Default" />
+                        <Button
+                            Margin="0,0,8,8"
+                            Content="Primary"
+                            Style="{StaticResource SemiButtonPrimary}" />
+                        <Button
+                            Margin="0,0,8,8"
+                            Content="Danger"
+                            Style="{StaticResource SemiButtonDanger}" />
+                        <Button
+                            Margin="0,0,8,8"
+                            Content="Light"
+                            Style="{StaticResource SemiButtonLight}" />
+                        <Button
+                            Margin="0,0,8,8"
+                            Content="Disabled"
+                            IsEnabled="False" />
+                        <Button
+                            Margin="0,0,8,8"
+                            Content="Disabled Primary"
+                            IsEnabled="False"
+                            Style="{StaticResource SemiButtonPrimary}" />
                     </WrapPanel>
                 </StackPanel>
 
-                <!-- TextBox -->
+                <!--  TextBox  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="TextBox"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="TextBox" />
                     <WrapPanel>
-                        <TextBox Width="200" Text="Default text" Margin="0,0,8,8" />
-                        <TextBox Width="200" Text="Read only" IsReadOnly="True" Margin="0,0,8,8" />
-                        <TextBox Width="200" Text="Disabled" IsEnabled="False" Margin="0,0,8,8" />
+                        <TextBox
+                            Width="200"
+                            Margin="0,0,8,8"
+                            Text="Default text" />
+                        <TextBox
+                            Width="200"
+                            Margin="0,0,8,8"
+                            IsReadOnly="True"
+                            Text="Read only" />
+                        <TextBox
+                            Width="200"
+                            Margin="0,0,8,8"
+                            IsEnabled="False"
+                            Text="Disabled" />
                     </WrapPanel>
                 </StackPanel>
 
-                <!-- CheckBox -->
+                <!--  CheckBox  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="CheckBox"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="CheckBox" />
                     <WrapPanel>
-                        <CheckBox Content="Unchecked" Margin="0,0,16,8" />
-                        <CheckBox Content="Checked" IsChecked="True" Margin="0,0,16,8" />
-                        <CheckBox Content="Indeterminate" IsChecked="{x:Null}" IsThreeState="True" Margin="0,0,16,8" />
-                        <CheckBox Content="Disabled" IsEnabled="False" Margin="0,0,16,8" />
-                        <CheckBox Content="Disabled Checked" IsChecked="True" IsEnabled="False" Margin="0,0,16,8" />
+                        <CheckBox Margin="0,0,16,8" Content="Unchecked" />
+                        <CheckBox
+                            Margin="0,0,16,8"
+                            Content="Checked"
+                            IsChecked="True" />
+                        <CheckBox
+                            Margin="0,0,16,8"
+                            Content="Indeterminate"
+                            IsChecked="{x:Null}"
+                            IsThreeState="True" />
+                        <CheckBox
+                            Margin="0,0,16,8"
+                            Content="Disabled"
+                            IsEnabled="False" />
+                        <CheckBox
+                            Margin="0,0,16,8"
+                            Content="Disabled Checked"
+                            IsChecked="True"
+                            IsEnabled="False" />
                     </WrapPanel>
                 </StackPanel>
 
-                <!-- RadioButton -->
+                <!--  RadioButton  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="RadioButton"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="RadioButton" />
                     <WrapPanel>
-                        <RadioButton Content="Option A" GroupName="demo" IsChecked="True" Margin="0,0,16,8" />
-                        <RadioButton Content="Option B" GroupName="demo" Margin="0,0,16,8" />
-                        <RadioButton Content="Option C" GroupName="demo" Margin="0,0,16,8" />
-                        <RadioButton Content="Disabled" GroupName="demo2" IsEnabled="False" Margin="0,0,16,8" />
+                        <RadioButton
+                            Margin="0,0,16,8"
+                            Content="Option A"
+                            GroupName="demo"
+                            IsChecked="True" />
+                        <RadioButton
+                            Margin="0,0,16,8"
+                            Content="Option B"
+                            GroupName="demo" />
+                        <RadioButton
+                            Margin="0,0,16,8"
+                            Content="Option C"
+                            GroupName="demo" />
+                        <RadioButton
+                            Margin="0,0,16,8"
+                            Content="Disabled"
+                            GroupName="demo2"
+                            IsEnabled="False" />
                     </WrapPanel>
                 </StackPanel>
 
-                <!-- ComboBox -->
+                <!--  ComboBox  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="ComboBox"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="ComboBox" />
                     <WrapPanel>
-                        <ComboBox Width="160" SelectedIndex="0" Margin="0,0,8,8">
+                        <ComboBox
+                            Width="160"
+                            Margin="0,0,8,8"
+                            SelectedIndex="0">
                             <ComboBoxItem Content="Option 1" />
                             <ComboBoxItem Content="Option 2" />
                             <ComboBoxItem Content="Option 3" />
                         </ComboBox>
-                        <ComboBox Width="160" IsEnabled="False" SelectedIndex="0" Margin="0,0,8,8">
+                        <ComboBox
+                            Width="160"
+                            Margin="0,0,8,8"
+                            IsEnabled="False"
+                            SelectedIndex="0">
                             <ComboBoxItem Content="Disabled" />
                         </ComboBox>
                     </WrapPanel>
                 </StackPanel>
 
-                <!-- ToggleButton -->
+                <!--  ToggleButton  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="ToggleButton"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="ToggleButton" />
                     <WrapPanel>
-                        <ToggleButton Content="Toggle Off" Margin="0,0,8,8" />
-                        <ToggleButton Content="Toggle On" IsChecked="True" Margin="0,0,8,8" />
-                        <ToggleButton Content="Disabled" IsEnabled="False" Margin="0,0,8,8" />
+                        <ToggleButton Margin="0,0,8,8" Content="Toggle Off" />
+                        <ToggleButton
+                            Margin="0,0,8,8"
+                            Content="Toggle On"
+                            IsChecked="True" />
+                        <ToggleButton
+                            Margin="0,0,8,8"
+                            Content="Disabled"
+                            IsEnabled="False" />
                     </WrapPanel>
                 </StackPanel>
 
-                <!-- ProgressBar -->
+                <!--  ProgressBar  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="ProgressBar"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="ProgressBar" />
                     <StackPanel MaxWidth="400" HorizontalAlignment="Left">
-                        <ProgressBar Value="30" Maximum="100" Margin="0,0,0,8" />
-                        <ProgressBar Value="60" Maximum="100" Margin="0,0,0,8" />
-                        <ProgressBar Value="90" Maximum="100" />
+                        <ProgressBar
+                            Margin="0,0,0,8"
+                            Maximum="100"
+                            Value="30" />
+                        <ProgressBar
+                            Margin="0,0,0,8"
+                            Maximum="100"
+                            Value="60" />
+                        <ProgressBar Maximum="100" Value="90" />
                     </StackPanel>
                 </StackPanel>
 
-                <!-- Slider -->
+                <!--  Slider  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="Slider"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="Slider" />
                     <StackPanel MaxWidth="400" HorizontalAlignment="Left">
-                        <Slider Value="40" Maximum="100" Margin="0,0,0,8" />
-                        <Slider Value="70" Maximum="100" Margin="0,0,0,8" />
-                        <Slider Value="20" Maximum="100" IsEnabled="False" />
+                        <Slider
+                            Margin="0,0,0,8"
+                            Maximum="100"
+                            Value="40" />
+                        <Slider
+                            Margin="0,0,0,8"
+                            Maximum="100"
+                            Value="70" />
+                        <Slider
+                            IsEnabled="False"
+                            Maximum="100"
+                            Value="20" />
                     </StackPanel>
                 </StackPanel>
 
-                <!-- ListBox -->
+                <!--  ListBox  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="ListBox"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
-                    <ListBox Width="200" Height="120" HorizontalAlignment="Left" SelectedIndex="1">
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="ListBox" />
+                    <ListBox
+                        Width="200"
+                        Height="120"
+                        HorizontalAlignment="Left"
+                        SelectedIndex="1">
                         <ListBoxItem Content="Item One" />
                         <ListBoxItem Content="Item Two" />
                         <ListBoxItem Content="Item Three" />
@@ -190,91 +301,142 @@
                     </ListBox>
                 </StackPanel>
 
-                <!-- TabControl -->
+                <!--  TabControl  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="TabControl"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="TabControl" />
                     <TabControl MaxWidth="500" HorizontalAlignment="Left">
                         <TabItem Header="Overview">
-                            <TextBlock Text="This is the overview tab content."
-                                       Foreground="{DynamicResource SemiColorText1}"
-                                       Padding="0,8" />
+                            <TextBlock
+                                Padding="0,8"
+                                Foreground="{DynamicResource SemiColorText1}"
+                                Text="This is the overview tab content." />
                         </TabItem>
                         <TabItem Header="Details">
-                            <TextBlock Text="This is the details tab content."
-                                       Foreground="{DynamicResource SemiColorText1}"
-                                       Padding="0,8" />
+                            <TextBlock
+                                Padding="0,8"
+                                Foreground="{DynamicResource SemiColorText1}"
+                                Text="This is the details tab content." />
                         </TabItem>
                         <TabItem Header="Settings">
-                            <TextBlock Text="This is the settings tab content."
-                                       Foreground="{DynamicResource SemiColorText1}"
-                                       Padding="0,8" />
+                            <TextBlock
+                                Padding="0,8"
+                                Foreground="{DynamicResource SemiColorText1}"
+                                Text="This is the settings tab content." />
                         </TabItem>
                     </TabControl>
                 </StackPanel>
 
-                <!-- Typography -->
+                <!--  Typography  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="Typography"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,8" />
-                    <TextBlock Text="Header 1 — 32px"
-                               FontSize="{DynamicResource SemiFontSizeHeader1}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,4" />
-                    <TextBlock Text="Header 3 — 24px"
-                               FontSize="{DynamicResource SemiFontSizeHeader3}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,4" />
-                    <TextBlock Text="Regular — 14px"
-                               FontSize="{DynamicResource SemiFontSizeRegular}"
-                               Foreground="{DynamicResource SemiColorText1}"
-                               Margin="0,0,0,4" />
-                    <TextBlock Text="Small — 12px"
-                               FontSize="{DynamicResource SemiFontSizeSmall}"
-                               Foreground="{DynamicResource SemiColorText2}" />
+                    <TextBlock
+                        Margin="0,0,0,8"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="Typography" />
+                    <TextBlock
+                        Margin="0,0,0,4"
+                        FontSize="{DynamicResource SemiFontSizeHeader1}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="Header 1 — 32px" />
+                    <TextBlock
+                        Margin="0,0,0,4"
+                        FontSize="{DynamicResource SemiFontSizeHeader3}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="Header 3 — 24px" />
+                    <TextBlock
+                        Margin="0,0,0,4"
+                        FontSize="{DynamicResource SemiFontSizeRegular}"
+                        Foreground="{DynamicResource SemiColorText1}"
+                        Text="Regular — 14px" />
+                    <TextBlock
+                        FontSize="{DynamicResource SemiFontSizeSmall}"
+                        Foreground="{DynamicResource SemiColorText2}"
+                        Text="Small — 12px" />
                 </StackPanel>
 
-                <!-- Colors -->
+                <!--  Colors  -->
                 <StackPanel Margin="0,0,0,32">
-                    <TextBlock Text="Color Palette"
-                               FontSize="{DynamicResource SemiFontSizeHeader6}"
-                               FontWeight="{DynamicResource SemiFontWeightBold}"
-                               Foreground="{DynamicResource SemiColorText0}"
-                               Margin="0,0,0,12" />
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        FontSize="{DynamicResource SemiFontSizeHeader6}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="Color Palette" />
                     <WrapPanel>
-                        <Border Width="80" Height="40" Background="{DynamicResource SemiColorPrimary}"
-                                CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
-                                Margin="0,0,8,8">
-                            <TextBlock Text="Primary" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="11" />
+                        <Border
+                            Width="80"
+                            Height="40"
+                            Margin="0,0,8,8"
+                            Background="{DynamicResource SemiColorPrimary}"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="11"
+                                Foreground="White"
+                                Text="Primary" />
                         </Border>
-                        <Border Width="80" Height="40" Background="{DynamicResource SemiColorSuccess}"
-                                CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
-                                Margin="0,0,8,8">
-                            <TextBlock Text="Success" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="11" />
+                        <Border
+                            Width="80"
+                            Height="40"
+                            Margin="0,0,8,8"
+                            Background="{DynamicResource SemiColorSuccess}"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="11"
+                                Foreground="White"
+                                Text="Success" />
                         </Border>
-                        <Border Width="80" Height="40" Background="{DynamicResource SemiColorWarning}"
-                                CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
-                                Margin="0,0,8,8">
-                            <TextBlock Text="Warning" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="11" />
+                        <Border
+                            Width="80"
+                            Height="40"
+                            Margin="0,0,8,8"
+                            Background="{DynamicResource SemiColorWarning}"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="11"
+                                Foreground="White"
+                                Text="Warning" />
                         </Border>
-                        <Border Width="80" Height="40" Background="{DynamicResource SemiColorDanger}"
-                                CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
-                                Margin="0,0,8,8">
-                            <TextBlock Text="Danger" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="11" />
+                        <Border
+                            Width="80"
+                            Height="40"
+                            Margin="0,0,8,8"
+                            Background="{DynamicResource SemiColorDanger}"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="11"
+                                Foreground="White"
+                                Text="Danger" />
                         </Border>
-                        <Border Width="80" Height="40" Background="{DynamicResource SemiColorBg3}"
-                                BorderBrush="{DynamicResource SemiColorBorder}" BorderThickness="1"
-                                CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
-                                Margin="0,0,8,8">
-                            <TextBlock Text="Bg3" Foreground="{DynamicResource SemiColorText0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="11" />
+                        <Border
+                            Width="80"
+                            Height="40"
+                            Margin="0,0,8,8"
+                            Background="{DynamicResource SemiColorBackground3}"
+                            BorderBrush="{DynamicResource SemiColorBorder}"
+                            BorderThickness="1"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="11"
+                                Foreground="{DynamicResource SemiColorText0}"
+                                Text="Bg3" />
                         </Border>
                     </WrapPanel>
                 </StackPanel>

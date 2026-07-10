@@ -16,7 +16,7 @@
     <!-- Default Button -->
     <Style x:Key="SemiButton" TargetType="Button">
         <Setter Property="FocusVisualStyle" Value="{StaticResource SemiButtonFocusVisual}" />
-        <Setter Property="Background" Value="{DynamicResource SemiColorBg0}" />
+        <Setter Property="Background" Value="{DynamicResource SemiColorBackground0}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SemiColorBorder}" />
         <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}" />
         <Setter Property="BorderThickness" Value="1" />

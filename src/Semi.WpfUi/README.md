@@ -78,7 +78,7 @@ In addition to the implicit `Button` style, you can explicitly reference:
 
 | Key                    | Usage              |
 |------------------------|--------------------|
-| `SemiColorBg0`         | Background         |
+| `SemiColorBackground0`         | Background         |
 | `SemiColorText0`       | Primary text       |
 | `SemiColorPrimary`     | Brand / action     |
 | `SemiColorSuccess`     | Positive feedback  |

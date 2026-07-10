@@ -4,7 +4,7 @@
     <!-- ComboBox Toggle Button -->
     <ControlTemplate x:Key="SemiComboBoxToggleButton" TargetType="ToggleButton">
         <Border x:Name="templateRoot"
-                Background="{DynamicResource SemiColorBg0}"
+                Background="{DynamicResource SemiColorBackground0}"
                 BorderBrush="{DynamicResource SemiColorBorder}"
                 BorderThickness="1"
                 CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
@@ -41,7 +41,7 @@
     </ControlTemplate>
 
     <Style x:Key="SemiComboBox" TargetType="ComboBox">
-        <Setter Property="Background" Value="{DynamicResource SemiColorBg0}" />
+        <Setter Property="Background" Value="{DynamicResource SemiColorBackground0}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SemiColorBorder}" />
         <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}" />
         <Setter Property="BorderThickness" Value="1" />
@@ -67,7 +67,7 @@
                                Placement="Bottom"
                                PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
                             <Border x:Name="dropDownBorder"
-                                    Background="{DynamicResource SemiColorBg0}"
+                                    Background="{DynamicResource SemiColorBackground0}"
                                     BorderBrush="{DynamicResource SemiColorBorder}"
                                     BorderThickness="1"
                                     CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
