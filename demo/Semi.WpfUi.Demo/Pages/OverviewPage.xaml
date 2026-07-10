@@ -1,0 +1,23 @@
+<UserControl x:Class="Semi.WpfUi.Demo.Pages.OverviewPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="40,32" MaxWidth="860">
+            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader1}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Semi WPF UI" />
+            <TextBlock Margin="0,12,0,28" FontSize="{DynamicResource SemiFontSizeHeader6}" Foreground="{DynamicResource SemiColorText1}" TextWrapping="Wrap" Text="A WPF implementation of Semi Design. Explore the theme tokens and the currently supported native controls from the navigation pane." />
+            <UniformGrid Columns="3">
+                <Border Margin="0,0,16,0" Padding="20" Background="{DynamicResource SemiColorBackground1}" BorderBrush="{DynamicResource SemiColorBorder}" BorderThickness="1" CornerRadius="{DynamicResource SemiBorderRadiusMedium}">
+                    <StackPanel><TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Theme tokens" /><TextBlock Margin="0,8,0,0" Foreground="{DynamicResource SemiColorText2}" TextWrapping="Wrap" Text="Semantic colors, typography and spacing resources." /></StackPanel>
+                </Border>
+                <Border Margin="0,0,16,0" Padding="20" Background="{DynamicResource SemiColorBackground1}" BorderBrush="{DynamicResource SemiColorBorder}" BorderThickness="1" CornerRadius="{DynamicResource SemiBorderRadiusMedium}">
+                    <StackPanel><TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Native controls" /><TextBlock Margin="0,8,0,0" Foreground="{DynamicResource SemiColorText2}" TextWrapping="Wrap" Text="Theme the WPF controls already used in your applications." /></StackPanel>
+                </Border>
+                <Border Padding="20" Background="{DynamicResource SemiColorBackground1}" BorderBrush="{DynamicResource SemiColorBorder}" BorderThickness="1" CornerRadius="{DynamicResource SemiBorderRadiusMedium}">
+                    <StackPanel><TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Light &amp; dark" /><TextBlock Margin="0,8,0,0" Foreground="{DynamicResource SemiColorText2}" TextWrapping="Wrap" Text="Switch themes at any time using the controls in the sidebar." /></StackPanel>
+                </Border>
+            </UniformGrid>
+            <TextBlock Margin="0,40,0,12" FontSize="{DynamicResource SemiFontSizeHeader5}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Quick start" />
+            <Border Padding="16" Background="{DynamicResource SemiColorFill0}" CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                <TextBlock FontFamily="Consolas" Foreground="{DynamicResource SemiColorText1}" Text="&lt;semi:SemiTheme Theme=&quot;Light&quot; /&gt;" />
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

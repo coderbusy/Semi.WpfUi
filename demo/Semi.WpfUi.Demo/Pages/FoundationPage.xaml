@@ -1,0 +1,23 @@
+<UserControl x:Class="Semi.WpfUi.Demo.Pages.FoundationPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="40,32" MaxWidth="860">
+            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader3}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Typography &amp; Colors" />
+            <TextBlock Margin="0,8,0,28" Foreground="{DynamicResource SemiColorText1}" Text="The fundamental resources used by the theme." />
+            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Typography" />
+            <StackPanel Margin="0,16,0,32">
+                <TextBlock FontSize="{DynamicResource SemiFontSizeHeader1}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Header 1 — 32px" />
+                <TextBlock Margin="0,8,0,0" FontSize="{DynamicResource SemiFontSizeHeader3}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Header 3 — 24px" />
+                <TextBlock Margin="0,12,0,0" FontSize="{DynamicResource SemiFontSizeRegular}" Foreground="{DynamicResource SemiColorText1}" Text="Regular text — 14px" />
+                <TextBlock Margin="0,8,0,0" FontSize="{DynamicResource SemiFontSizeSmall}" Foreground="{DynamicResource SemiColorText2}" Text="Secondary text — 12px" />
+            </StackPanel>
+            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Semantic colors" />
+            <WrapPanel Margin="0,16,0,0">
+                <Border Width="130" Height="72" Margin="0,0,12,12" Background="{DynamicResource SemiColorPrimary}" CornerRadius="{DynamicResource SemiBorderRadiusSmall}"><TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Text="Primary" /></Border>
+                <Border Width="130" Height="72" Margin="0,0,12,12" Background="{DynamicResource SemiColorSuccess}" CornerRadius="{DynamicResource SemiBorderRadiusSmall}"><TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Text="Success" /></Border>
+                <Border Width="130" Height="72" Margin="0,0,12,12" Background="{DynamicResource SemiColorWarning}" CornerRadius="{DynamicResource SemiBorderRadiusSmall}"><TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Text="Warning" /></Border>
+                <Border Width="130" Height="72" Margin="0,0,12,12" Background="{DynamicResource SemiColorDanger}" CornerRadius="{DynamicResource SemiBorderRadiusSmall}"><TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Text="Danger" /></Border>
+                <Border Width="130" Height="72" Margin="0,0,12,12" Background="{DynamicResource SemiColorFill0}" BorderBrush="{DynamicResource SemiColorBorder}" BorderThickness="1" CornerRadius="{DynamicResource SemiBorderRadiusSmall}"><TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource SemiColorText0}" Text="Fill" /></Border>
+            </WrapPanel>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

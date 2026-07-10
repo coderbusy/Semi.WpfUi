@@ -1,0 +1,14 @@
+<UserControl x:Class="Semi.WpfUi.Demo.Pages.InputPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="40,32" MaxWidth="860">
+            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader3}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Inputs &amp; Feedback" />
+            <TextBlock Margin="0,8,0,28" Foreground="{DynamicResource SemiColorText1}" Text="Input controls, progress indicators, and content selection." />
+            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="TextBox &amp; ComboBox" />
+            <WrapPanel Margin="0,16,0,32"><TextBox Width="220" Margin="0,0,12,8" Text="Default text" /><TextBox Width="220" Margin="0,0,12,8" IsReadOnly="True" Text="Read only" /><ComboBox Width="180" SelectedIndex="0"><ComboBoxItem Content="Option 1" /><ComboBoxItem Content="Option 2" /><ComboBoxItem Content="Option 3" /></ComboBox></WrapPanel>
+            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Progress &amp; Slider" />
+            <StackPanel Width="420" Margin="0,16,0,32"><ProgressBar Height="10" Maximum="100" Value="35" /><ProgressBar Height="10" Margin="0,12,0,0" Maximum="100" Value="70" /><Slider Margin="0,20,0,0" Maximum="100" Value="60" /></StackPanel>
+            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="List &amp; Tabs" />
+            <Grid Margin="0,16,0,0"><Grid.ColumnDefinitions><ColumnDefinition Width="200" /><ColumnDefinition Width="24" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions><ListBox Height="130" SelectedIndex="1"><ListBoxItem Content="Item One" /><ListBoxItem Content="Item Two" /><ListBoxItem Content="Item Three" /></ListBox><TabControl Grid.Column="2"><TabItem Header="Overview"><TextBlock Padding="16" Foreground="{DynamicResource SemiColorText1}" Text="The overview content." /></TabItem><TabItem Header="Details"><TextBlock Padding="16" Foreground="{DynamicResource SemiColorText1}" Text="Additional details." /></TabItem></TabControl></Grid>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
