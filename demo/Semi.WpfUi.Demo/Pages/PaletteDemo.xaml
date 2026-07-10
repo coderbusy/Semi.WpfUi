@@ -1,18 +1,193 @@
-<UserControl x:Class="Semi.WpfUi.Demo.Pages.PaletteDemo" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<UserControl
+    x:Class="Semi.WpfUi.Demo.Pages.PaletteDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid Margin="24">
-        <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="260" /></Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="260" />
+        </Grid.ColumnDefinitions>
         <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <TextBlock FontSize="{DynamicResource SemiFontSizeHeader3}" FontWeight="{DynamicResource SemiFontWeightBold}" Text="Palette" />
-                <TextBlock Margin="0,8,0,20" Foreground="{DynamicResource SemiColorText1}" Text="Basic colors and semantic color tokens from the Light and Dark palette dictionaries." />
-                <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Text="Basic Colors" />
-                <TabControl Margin="0,12,0,24"><TabItem Header="Light"><ListBox BorderThickness="0" Background="Transparent" ItemsSource="{Binding LightColors}" SelectionChanged="OnColorSelected"><ListBox.ItemsPanel><ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate></ListBox.ItemsPanel><ListBox.ItemTemplate><DataTemplate><Border Width="112" Height="72" Margin="4" Background="{Binding Brush}" CornerRadius="{DynamicResource SemiBorderRadiusSmall}"><StackPanel Margin="8"><TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{Binding TextBrush}" Text="{Binding Name}" /><TextBlock Margin="0,4,0,0" FontSize="{DynamicResource SemiFontSizeSmall}" Foreground="{Binding TextBrush}" Text="{Binding Hex}" /></StackPanel></Border></DataTemplate></ListBox.ItemTemplate></ListBox></TabItem><TabItem Header="Dark"><ListBox BorderThickness="0" Background="Transparent" ItemsSource="{Binding DarkColors}" SelectionChanged="OnColorSelected"><ListBox.ItemsPanel><ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate></ListBox.ItemsPanel><ListBox.ItemTemplate><DataTemplate><Border Width="112" Height="72" Margin="4" Background="{Binding Brush}" CornerRadius="{DynamicResource SemiBorderRadiusSmall}"><StackPanel Margin="8"><TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{Binding TextBrush}" Text="{Binding Name}" /><TextBlock Margin="0,4,0,0" FontSize="{DynamicResource SemiFontSizeSmall}" Foreground="{Binding TextBrush}" Text="{Binding Hex}" /></StackPanel></Border></DataTemplate></ListBox.ItemTemplate></ListBox></TabItem></TabControl>
-                <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Text="Functional Colors" />
-                <ItemsControl Margin="0,12,0,0" ItemsSource="{Binding FunctionalColors}"><ItemsControl.ItemTemplate><DataTemplate><StackPanel Margin="0,0,0,20"><TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Text="{Binding Name}" /><ListBox Margin="0,8,0,0" BorderThickness="0" Background="Transparent" ItemsSource="{Binding Colors}" SelectionChanged="OnColorSelected"><ListBox.ItemsPanel><ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate></ListBox.ItemsPanel><ListBox.ItemTemplate><DataTemplate><Border Width="154" Height="60" Margin="0,0,8,8" Background="{Binding Brush}" CornerRadius="{DynamicResource SemiBorderRadiusSmall}"><StackPanel Margin="8"><TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{Binding TextBrush}" Text="{Binding Name}" /><TextBlock FontSize="{DynamicResource SemiFontSizeSmall}" Foreground="{Binding TextBrush}" Text="{Binding ResourceKey}" /></StackPanel></Border></DataTemplate></ListBox.ItemTemplate></ListBox></StackPanel></DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
+                <TextBlock
+                    FontSize="{DynamicResource SemiFontSizeHeader3}"
+                    FontWeight="{DynamicResource SemiFontWeightBold}"
+                    Text="Palette" />
+                <TextBlock
+                    Margin="0,8,0,20"
+                    Foreground="{DynamicResource SemiColorText1}"
+                    Text="Basic colors and semantic color tokens from the Light and Dark palette dictionaries." />
+                <TextBlock
+                    FontSize="{DynamicResource SemiFontSizeHeader6}"
+                    FontWeight="{DynamicResource SemiFontWeightBold}"
+                    Text="Basic Colors" />
+                <TabControl Margin="0,12,0,24">
+                    <TabItem Header="Light">
+                        <ListBox
+                            Background="Transparent"
+                            BorderThickness="0"
+                            ItemsSource="{Binding LightColors}"
+                            SelectionChanged="OnColorSelected">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Width="{Binding RelativeSource={RelativeSource AncestorType=ScrollViewer}, Path=ActualWidth}" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border
+                                        Width="112"
+                                        Height="72"
+                                        Margin="4"
+                                        Background="{Binding Brush}"
+                                        CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                                        <StackPanel Margin="8">
+                                            <TextBlock
+                                                FontWeight="{DynamicResource SemiFontWeightBold}"
+                                                Foreground="{Binding TextBrush}"
+                                                Text="{Binding Name}" />
+                                            <TextBlock
+                                                Margin="0,4,0,0"
+                                                FontSize="{DynamicResource SemiFontSizeSmall}"
+                                                Foreground="{Binding TextBrush}"
+                                                Text="{Binding Hex}" />
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </TabItem>
+                    <TabItem Header="Dark">
+                        <ListBox
+                            Background="Transparent"
+                            BorderThickness="0"
+                            ItemsSource="{Binding DarkColors}"
+                            SelectionChanged="OnColorSelected">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Width="{Binding RelativeSource={RelativeSource AncestorType=ScrollViewer}, Path=ActualWidth}" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border
+                                        Width="112"
+                                        Height="72"
+                                        Margin="4"
+                                        Background="{Binding Brush}"
+                                        CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                                        <StackPanel Margin="8">
+                                            <TextBlock
+                                                FontWeight="{DynamicResource SemiFontWeightBold}"
+                                                Foreground="{Binding TextBrush}"
+                                                Text="{Binding Name}" />
+                                            <TextBlock
+                                                Margin="0,4,0,0"
+                                                FontSize="{DynamicResource SemiFontSizeSmall}"
+                                                Foreground="{Binding TextBrush}"
+                                                Text="{Binding Hex}" />
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </TabItem>
+                </TabControl>
+                <TextBlock
+                    FontSize="{DynamicResource SemiFontSizeHeader6}"
+                    FontWeight="{DynamicResource SemiFontWeightBold}"
+                    Text="Functional Colors" />
+                <ItemsControl Margin="0,12,0,0" ItemsSource="{Binding FunctionalColors}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,20">
+                                <TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Text="{Binding Name}" />
+                                <ListBox
+                                    Margin="0,8,0,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    ItemsSource="{Binding Colors}"
+                                    SelectionChanged="OnColorSelected">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel />
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border
+                                                Width="154"
+                                                Height="60"
+                                                Margin="0,0,8,8"
+                                                Background="{Binding Brush}"
+                                                CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                                                <StackPanel Margin="8">
+                                                    <TextBlock
+                                                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                                                        Foreground="{Binding TextBrush}"
+                                                        Text="{Binding Name}" />
+                                                    <TextBlock
+                                                        FontSize="{DynamicResource SemiFontSizeSmall}"
+                                                        Foreground="{Binding TextBrush}"
+                                                        Text="{Binding ResourceKey}" />
+                                                </StackPanel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
         </ScrollViewer>
-        <Border Grid.Column="1" Margin="20,0,0,0" Padding="16" Background="{DynamicResource SemiColorBackground1}" BorderBrush="{DynamicResource SemiColorBorder}" BorderThickness="1" CornerRadius="{DynamicResource SemiBorderRadiusMedium}">
-            <StackPanel><TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Text="Color details" /><TextBlock Margin="0,12,0,0" Foreground="{DynamicResource SemiColorText2}" Text="Click a color to inspect its resource." /><Border Height="100" Margin="0,16,0,0" Background="{Binding SelectedColor.Brush}" CornerRadius="{DynamicResource SemiBorderRadiusSmall}" Visibility="{Binding SelectedColorVisibility}" /><TextBlock Margin="0,12,0,0" FontWeight="{DynamicResource SemiFontWeightBold}" Text="{Binding SelectedColor.Name}" Visibility="{Binding SelectedColorVisibility}" /><TextBlock Margin="0,6,0,0" Foreground="{DynamicResource SemiColorText2}" Text="{Binding SelectedColor.ResourceKey}" Visibility="{Binding SelectedColorVisibility}" /><TextBlock Margin="0,6,0,0" Foreground="{DynamicResource SemiColorText2}" Text="{Binding SelectedColor.Hex}" Visibility="{Binding SelectedColorVisibility}" /><Button Margin="0,16,0,0" Padding="12,5" HorizontalAlignment="Left" Click="OnCopyClick" Content="Copy resource" Tag="{Binding SelectedColor.CopyText}" Visibility="{Binding SelectedColorVisibility}" /></StackPanel>
+        <Border
+            Grid.Column="1"
+            Margin="20,0,0,0"
+            Padding="16"
+            Background="{DynamicResource SemiColorBackground1}"
+            BorderBrush="{DynamicResource SemiColorBorder}"
+            BorderThickness="1"
+            CornerRadius="{DynamicResource SemiBorderRadiusMedium}">
+            <StackPanel>
+                <TextBlock
+                    FontSize="{DynamicResource SemiFontSizeHeader6}"
+                    FontWeight="{DynamicResource SemiFontWeightBold}"
+                    Text="Color details" />
+                <TextBlock
+                    Margin="0,12,0,0"
+                    Foreground="{DynamicResource SemiColorText2}"
+                    Text="Click a color to inspect its resource." />
+                <Border
+                    Height="100"
+                    Margin="0,16,0,0"
+                    Background="{Binding SelectedColor.Brush}"
+                    CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
+                    Visibility="{Binding SelectedColorVisibility}" />
+                <TextBlock
+                    Margin="0,12,0,0"
+                    FontWeight="{DynamicResource SemiFontWeightBold}"
+                    Text="{Binding SelectedColor.Name}"
+                    Visibility="{Binding SelectedColorVisibility}" />
+                <TextBlock
+                    Margin="0,6,0,0"
+                    Foreground="{DynamicResource SemiColorText2}"
+                    Text="{Binding SelectedColor.ResourceKey}"
+                    Visibility="{Binding SelectedColorVisibility}" />
+                <TextBlock
+                    Margin="0,6,0,0"
+                    Foreground="{DynamicResource SemiColorText2}"
+                    Text="{Binding SelectedColor.Hex}"
+                    Visibility="{Binding SelectedColorVisibility}" />
+                <Button
+                    Margin="0,16,0,0"
+                    Padding="12,5"
+                    HorizontalAlignment="Left"
+                    Click="OnCopyClick"
+                    Content="Copy resource"
+                    Tag="{Binding SelectedColor.CopyText}"
+                    Visibility="{Binding SelectedColorVisibility}" />
+            </StackPanel>
         </Border>
     </Grid>
 </UserControl>
