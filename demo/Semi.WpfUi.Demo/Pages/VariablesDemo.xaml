@@ -1,11 +1,11 @@
 <UserControl x:Class="Semi.WpfUi.Demo.Pages.VariablesDemo" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid Margin="24">
         <Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="*" /></Grid.RowDefinitions>
-        <TextBox Width="600" Padding="10,7" HorizontalAlignment="Left" TextChanged="OnSearchTextChanged" ToolTip="Input Variable Category/ResourceKey/Type/Value" />
+        <TextBox Width="600" Padding="10,7" HorizontalAlignment="Left" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" ToolTip="Input Variable Category/ResourceKey/Type/Value" />
         <DataGrid Grid.Row="1" Margin="0,12,0,0" AutoGenerateColumns="False" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserSortColumns="True" IsReadOnly="True" ItemsSource="{Binding GridData}">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="160" Binding="{Binding Category}" Header="Category" /><DataGridTextColumn Width="260" Binding="{Binding ResourceKey}" Header="ResourceKey" /><DataGridTextColumn Width="130" Binding="{Binding TypeName}" Header="Type" /><DataGridTextColumn Width="140" Binding="{Binding Value}" Header="Value" /><DataGridTextColumn Width="*" Binding="{Binding Description}" Header="Description" />
-                <DataGridTemplateColumn Width="72" Header="Copy"><DataGridTemplateColumn.CellTemplate><DataTemplate><Button Padding="8,3" Click="OnCopyClick" Content="Copy" Tag="{Binding CopyText}" /></DataTemplate></DataGridTemplateColumn.CellTemplate></DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="72" Header="Copy"><DataGridTemplateColumn.CellTemplate><DataTemplate><Button Padding="8,3" Command="{Binding DataContext.CopyCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding CopyText}" Content="Copy" /></DataTemplate></DataGridTemplateColumn.CellTemplate></DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
