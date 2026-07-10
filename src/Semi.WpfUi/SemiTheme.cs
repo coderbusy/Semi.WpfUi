@@ -45,6 +45,24 @@ public class SemiTheme : ResourceDictionary
     {
         MergedDictionaries.Clear();
 
+
+        MergedDictionaries.Add(new ResourceDictionary
+        {
+            Source = new Uri("pack://application:,,,/Semi.WpfUi;component/Tokens/Variables.xaml", UriKind.Absolute)
+        });
+
+        MergedDictionaries.Add(new ResourceDictionary
+        {
+            Source = _theme == SemiThemeMode.Dark
+            ? new Uri("pack://application:,,,/Semi.WpfUi;component/Tokens/Palette/Dark.xaml", UriKind.Absolute)
+            : new Uri("pack://application:,,,/Semi.WpfUi;component/Tokens/Palette/Light.xaml", UriKind.Absolute)
+        });
+
+        MergedDictionaries.Add(new ResourceDictionary
+        {
+            Source = new Uri("pack://application:,,,/Semi.WpfUi;component/Themes/Shared/_index.xaml", UriKind.Absolute)
+        });
+
         // Apply semantic color tokens for the selected theme
         var semanticColors = new ResourceDictionary
         {
