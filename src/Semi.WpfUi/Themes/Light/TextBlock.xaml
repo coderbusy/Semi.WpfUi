@@ -1,22 +1,25 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <!--<SolidColorBrush x:Key="TextBlockDefaultForeground" Color="{Binding Color, Source={StaticResource SemiColorText0}}" />
-    <SolidColorBrush x:Key="TextBlockSecondaryForeground" Color="{Binding Color, Source={StaticResource SemiColorText1}}" />
-    <SolidColorBrush x:Key="TextBlockTertiaryForeground" Color="{Binding Color, Source={StaticResource SemiColorText2}}" />
-    <SolidColorBrush x:Key="TextBlockQuaternaryForeground" Color="{Binding Color, Source={StaticResource SemiColorText3}}" />
-    <SolidColorBrush x:Key="TextBlockSuccessForeground" Color="{Binding Color, Source={StaticResource SemiColorSuccess}}" />
-    <SolidColorBrush x:Key="TextBlockWarningForeground" Color="{Binding Color, Source={StaticResource SemiColorWarning}}" />
-    <SolidColorBrush x:Key="TextBlockDangerForeground" Color="{Binding Color, Source={StaticResource SemiColorDanger}}" />
-    <SolidColorBrush x:Key="TextBlockDisabledForeground" Color="{Binding Color, Source={StaticResource SemiColorDisabledText}}" />
-    <SolidColorBrush x:Key="TextBlockMarkBackground" Color="{Binding Color, Source={StaticResource SemiColorPrimaryLight}}" />
-    <SolidColorBrush x:Key="TextBlockCodeForeground" Color="{Binding Color, Source={StaticResource SemiColorText2}}" />
-    <SolidColorBrush x:Key="TextBlockCodeBackground" Color="{Binding Color, Source={StaticResource SemiColorFill1}}" />
-    <SolidColorBrush x:Key="TextBlockCodeBorderBrush" Color="{Binding Color, Source={StaticResource SemiColorBorder}}" />
+<ResourceDictionary
+    x:Class="Semi.WpfUi.Themes.Light.TextBlock"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:attached="clr-namespace:Semi.WpfUi.Attached">
+    <!--<StaticResource x:Key="TextBlockDefaultForeground" ResourceKey="SemiColorText0" />
+    <StaticResource x:Key="TextBlockSecondaryForeground" ResourceKey="SemiColorText1" />
+    <StaticResource x:Key="TextBlockTertiaryForeground" ResourceKey="SemiColorText2" />
+    <StaticResource x:Key="TextBlockQuaternaryForeground" ResourceKey="SemiColorText3" />
+    <StaticResource x:Key="TextBlockSuccessForeground" ResourceKey="SemiColorSuccess" />
+    <StaticResource x:Key="TextBlockWarningForeground" ResourceKey="SemiColorWarning" />
+    <StaticResource x:Key="TextBlockDangerForeground" ResourceKey="SemiColorDanger" />
+    <StaticResource x:Key="TextBlockDisabledForeground" ResourceKey="SemiColorDisabledText" />
+    <StaticResource x:Key="TextBlockMarkBackground" ResourceKey="SemiColorPrimaryLight" />
+    <StaticResource x:Key="TextBlockCodeForeground" ResourceKey="SemiColorText2" />
+    <StaticResource x:Key="TextBlockCodeBackground" ResourceKey="SemiColorFill1" />
+    <StaticResource x:Key="TextBlockCodeBorderBrush" ResourceKey="SemiColorBorder" />
     <SolidColorBrush
         x:Key="TextBlockSelectionBackground"
         Opacity="0.8"
         Color="#0041C5" />
-    <SolidColorBrush x:Key="TextBlockSelectionForeground" Color="{Binding Color, Source={StaticResource SemiColorWhite}}" />-->
-    <SolidColorBrush x:Key="TextBlockDefaultForeground" Color="{StaticResource SemiColorText0}" />
-    <SolidColorBrush x:Key="TextBlockDangerForeground" Color="Red" />
+    <StaticResource x:Key="TextBlockSelectionForeground" ResourceKey="SemiColorWhite" />-->
+    <SolidColorBrush x:Key="TextBlockDefaultForeground" attached:ResCopy.From="{DynamicResource SemiColorText0}" />
+    <SolidColorBrush x:Key="TextBlockDangerForeground" attached:ResCopy.From="{DynamicResource SemiColorDanger}" />
 </ResourceDictionary>
