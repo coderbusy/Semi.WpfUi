@@ -5,43 +5,270 @@
     xmlns:att="clr-namespace:Semi.WpfUi.Attached;assembly=Semi.WpfUi">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="24">
-            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader3}" FontWeight="{DynamicResource SemiFontWeightBold}" Text="Button" />
-            <TextBlock Margin="0,8,0,24" Foreground="{DynamicResource SemiColorText1}" Text="Light, Solid, Outline and Borderless themes translated from Semi.Avalonia." />
+            <TextBlock
+                FontSize="{DynamicResource SemiFontSizeHeader3}"
+                FontWeight="{DynamicResource SemiFontWeightBold}"
+                Text="Button" />
+            <TextBlock
+                Margin="0,8,0,24"
+                Foreground="{DynamicResource SemiColorText1}"
+                Text="Light, Solid, Outline and Borderless themes translated from Semi.Avalonia." />
 
             <GroupBox Header="Button Theme">
                 <StackPanel Margin="16">
                     <TextBlock Text="Themes: Light · Solid · Outline · Borderless" />
                     <TextBlock Margin="0,8,0,16" Text="Classes: Primary · Secondary · Tertiary · Success · Warning · Danger" />
                     <WrapPanel>
-                        <Button Margin="0,0,16,16" Content="Default" /><Button Margin="0,0,16,16" att:Classes.Primary="True" Content="Primary" /><Button Margin="0,0,16,16" att:Classes.Secondary="True" Content="Secondary" /><Button Margin="0,0,16,16" att:Classes.Tertiary="True" Content="Tertiary" /><Button Margin="0,0,16,16" att:Classes.Success="True" Content="Success" /><Button Margin="0,0,16,16" att:Classes.Warning="True" Content="Warning" /><Button Margin="0,0,16,16" att:Classes.Danger="True" Content="Danger" />
+                        <Button Margin="0,0,16,16" Content="Default" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Primary="True"
+                            Content="Primary" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Secondary="True"
+                            Content="Secondary" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Tertiary="True"
+                            Content="Tertiary" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Success="True"
+                            Content="Success" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Warning="True"
+                            Content="Warning" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Danger="True"
+                            Content="Danger" />
                     </WrapPanel>
                     <WrapPanel>
-                        <Button Margin="0,0,16,16" Style="{StaticResource SolidButton}" Content="Default" /><Button Margin="0,0,16,16" Style="{StaticResource SolidButton}" att:Classes.Primary="True" Content="Primary" /><Button Margin="0,0,16,16" Style="{StaticResource SolidButton}" att:Classes.Secondary="True" Content="Secondary" /><Button Margin="0,0,16,16" Style="{StaticResource SolidButton}" att:Classes.Tertiary="True" Content="Tertiary" /><Button Margin="0,0,16,16" Style="{StaticResource SolidButton}" att:Classes.Success="True" Content="Success" /><Button Margin="0,0,16,16" Style="{StaticResource SolidButton}" att:Classes.Warning="True" Content="Warning" /><Button Margin="0,0,16,16" Style="{StaticResource SolidButton}" att:Classes.Danger="True" Content="Danger" />
+                        <Button
+                            Margin="0,0,16,16"
+                            Content="Default"
+                            Style="{StaticResource SolidButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Primary="True"
+                            Content="Primary"
+                            Style="{StaticResource SolidButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Secondary="True"
+                            Content="Secondary"
+                            Style="{StaticResource SolidButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Tertiary="True"
+                            Content="Tertiary"
+                            Style="{StaticResource SolidButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Success="True"
+                            Content="Success"
+                            Style="{StaticResource SolidButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Warning="True"
+                            Content="Warning"
+                            Style="{StaticResource SolidButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Danger="True"
+                            Content="Danger"
+                            Style="{StaticResource SolidButton}" />
                     </WrapPanel>
                     <WrapPanel>
-                        <Button Margin="0,0,16,16" Style="{StaticResource OutlineButton}" Content="Default" /><Button Margin="0,0,16,16" Style="{StaticResource OutlineButton}" att:Classes.Primary="True" Content="Primary" /><Button Margin="0,0,16,16" Style="{StaticResource OutlineButton}" att:Classes.Secondary="True" Content="Secondary" /><Button Margin="0,0,16,16" Style="{StaticResource OutlineButton}" att:Classes.Tertiary="True" Content="Tertiary" /><Button Margin="0,0,16,16" Style="{StaticResource OutlineButton}" att:Classes.Success="True" Content="Success" /><Button Margin="0,0,16,16" Style="{StaticResource OutlineButton}" att:Classes.Warning="True" Content="Warning" /><Button Margin="0,0,16,16" Style="{StaticResource OutlineButton}" att:Classes.Danger="True" Content="Danger" />
+                        <Button
+                            Margin="0,0,16,16"
+                            Content="Default"
+                            Style="{StaticResource OutlineButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Primary="True"
+                            Content="Primary"
+                            Style="{StaticResource OutlineButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Secondary="True"
+                            Content="Secondary"
+                            Style="{StaticResource OutlineButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Tertiary="True"
+                            Content="Tertiary"
+                            Style="{StaticResource OutlineButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Success="True"
+                            Content="Success"
+                            Style="{StaticResource OutlineButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Warning="True"
+                            Content="Warning"
+                            Style="{StaticResource OutlineButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Danger="True"
+                            Content="Danger"
+                            Style="{StaticResource OutlineButton}" />
                     </WrapPanel>
                     <WrapPanel>
-                        <Button Margin="0,0,16,0" Style="{StaticResource BorderlessButton}" Content="Default" /><Button Margin="0,0,16,0" Style="{StaticResource BorderlessButton}" att:Classes.Primary="True" Content="Primary" /><Button Margin="0,0,16,0" Style="{StaticResource BorderlessButton}" att:Classes.Secondary="True" Content="Secondary" /><Button Margin="0,0,16,0" Style="{StaticResource BorderlessButton}" att:Classes.Tertiary="True" Content="Tertiary" /><Button Margin="0,0,16,0" Style="{StaticResource BorderlessButton}" att:Classes.Success="True" Content="Success" /><Button Margin="0,0,16,0" Style="{StaticResource BorderlessButton}" att:Classes.Warning="True" Content="Warning" /><Button Style="{StaticResource BorderlessButton}" att:Classes.Danger="True" Content="Danger" />
+                        <Button
+                            Margin="0,0,16,0"
+                            Content="Default"
+                            Style="{StaticResource BorderlessButton}" />
+                        <Button
+                            Margin="0,0,16,0"
+                            att:Classes.Primary="True"
+                            Content="Primary"
+                            Style="{StaticResource BorderlessButton}" />
+                        <Button
+                            Margin="0,0,16,0"
+                            att:Classes.Secondary="True"
+                            Content="Secondary"
+                            Style="{StaticResource BorderlessButton}" />
+                        <Button
+                            Margin="0,0,16,0"
+                            att:Classes.Tertiary="True"
+                            Content="Tertiary"
+                            Style="{StaticResource BorderlessButton}" />
+                        <Button
+                            Margin="0,0,16,0"
+                            att:Classes.Success="True"
+                            Content="Success"
+                            Style="{StaticResource BorderlessButton}" />
+                        <Button
+                            Margin="0,0,16,0"
+                            att:Classes.Warning="True"
+                            Content="Warning"
+                            Style="{StaticResource BorderlessButton}" />
+                        <Button
+                            att:Classes.Danger="True"
+                            Content="Danger"
+                            Style="{StaticResource BorderlessButton}" />
                     </WrapPanel>
                 </StackPanel>
             </GroupBox>
 
             <GroupBox Margin="0,16,0,0" Header="Prohibited Status">
-                <WrapPanel Margin="16"><Button Margin="0,0,16,0" IsEnabled="False" Content="Light" /><Button Margin="0,0,16,0" Style="{StaticResource SolidButton}" IsEnabled="False" Content="Solid" /><Button Margin="0,0,16,0" Style="{StaticResource OutlineButton}" IsEnabled="False" Content="Outline" /><Button Style="{StaticResource BorderlessButton}" IsEnabled="False" Content="Borderless" /></WrapPanel>
+                <WrapPanel Margin="16">
+                    <Button
+                        Margin="0,0,16,0"
+                        Content="Light"
+                        IsEnabled="False" />
+                    <Button
+                        Margin="0,0,16,0"
+                        Content="Solid"
+                        IsEnabled="False"
+                        Style="{StaticResource SolidButton}" />
+                    <Button
+                        Margin="0,0,16,0"
+                        Content="Outline"
+                        IsEnabled="False"
+                        Style="{StaticResource OutlineButton}" />
+                    <Button
+                        Content="Borderless"
+                        IsEnabled="False"
+                        Style="{StaticResource BorderlessButton}" />
+                </WrapPanel>
             </GroupBox>
 
             <GroupBox Margin="0,16,0,0" Header="Size Classes">
-                <WrapPanel Margin="16"><Button Margin="0,0,16,0" att:Classes.Large="True" Content="Large" /><Button Margin="0,0,16,0" Content="Default" /><Button att:Classes.Small="True" Content="Small" /></WrapPanel>
+                <WrapPanel Margin="16">
+                    <Button
+                        Margin="0,0,16,0"
+                        att:Classes.Large="True"
+                        Content="Large" />
+                    <Button Margin="0,0,16,0" Content="Default" />
+                    <Button att:Classes.Small="True" Content="Small" />
+                </WrapPanel>
             </GroupBox>
 
             <GroupBox Margin="0,16,0,0" Header="AI style - Colorful Button">
                 <StackPanel Margin="16">
                     <TextBlock Margin="0,0,0,16" Text="Colorful Primary and Colorful Tertiary" />
-                    <WrapPanel><Button Margin="0,0,16,16" att:Classes.Colorful="True" att:Classes.Primary="True" Content="Primary" /><Button Margin="0,0,16,16" att:Classes.Colorful="True" att:Classes.Tertiary="True" Content="Tertiary" /><Button att:Classes.Colorful="True" att:Classes.Primary="True" IsEnabled="False" Content="Disabled" /></WrapPanel>
-                    <WrapPanel><Button Margin="0,0,16,16" Style="{StaticResource SolidButton}" att:Classes.Colorful="True" att:Classes.Primary="True" Content="Primary" /><Button Margin="0,0,16,16" Style="{StaticResource SolidButton}" att:Classes.Colorful="True" att:Classes.Tertiary="True" Content="Tertiary" /><Button Style="{StaticResource SolidButton}" att:Classes.Colorful="True" att:Classes.Primary="True" IsEnabled="False" Content="Disabled" /></WrapPanel>
-                    <WrapPanel><Button Margin="0,0,16,16" Style="{StaticResource OutlineButton}" att:Classes.Colorful="True" att:Classes.Primary="True" Content="Primary" /><Button Margin="0,0,16,16" Style="{StaticResource OutlineButton}" att:Classes.Colorful="True" att:Classes.Tertiary="True" Content="Tertiary" /><Button Style="{StaticResource OutlineButton}" att:Classes.Colorful="True" att:Classes.Primary="True" IsEnabled="False" Content="Disabled" /></WrapPanel>
-                    <WrapPanel><Button Margin="0,0,16,0" Style="{StaticResource BorderlessButton}" att:Classes.Colorful="True" att:Classes.Primary="True" Content="Primary" /><Button Margin="0,0,16,0" Style="{StaticResource BorderlessButton}" att:Classes.Colorful="True" att:Classes.Tertiary="True" Content="Tertiary" /><Button Style="{StaticResource BorderlessButton}" att:Classes.Colorful="True" att:Classes.Primary="True" IsEnabled="False" Content="Disabled" /></WrapPanel>
+                    <WrapPanel>
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Colorful="True"
+                            att:Classes.Primary="True"
+                            Content="Primary" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Colorful="True"
+                            att:Classes.Tertiary="True"
+                            Content="Tertiary" />
+                        <Button
+                            att:Classes.Colorful="True"
+                            att:Classes.Primary="True"
+                            Content="Disabled"
+                            IsEnabled="False" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Colorful="True"
+                            att:Classes.Primary="True"
+                            Content="Primary"
+                            Style="{StaticResource SolidButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Colorful="True"
+                            att:Classes.Tertiary="True"
+                            Content="Tertiary"
+                            Style="{StaticResource SolidButton}" />
+                        <Button
+                            att:Classes.Colorful="True"
+                            att:Classes.Primary="True"
+                            Content="Disabled"
+                            IsEnabled="False"
+                            Style="{StaticResource SolidButton}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Colorful="True"
+                            att:Classes.Primary="True"
+                            Content="Primary"
+                            Style="{StaticResource OutlineButton}" />
+                        <Button
+                            Margin="0,0,16,16"
+                            att:Classes.Colorful="True"
+                            att:Classes.Tertiary="True"
+                            Content="Tertiary"
+                            Style="{StaticResource OutlineButton}" />
+                        <Button
+                            att:Classes.Colorful="True"
+                            att:Classes.Primary="True"
+                            Content="Disabled"
+                            IsEnabled="False"
+                            Style="{StaticResource OutlineButton}" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Button
+                            Margin="0,0,16,0"
+                            att:Classes.Colorful="True"
+                            att:Classes.Primary="True"
+                            Content="Primary"
+                            Style="{StaticResource BorderlessButton}" />
+                        <Button
+                            Margin="0,0,16,0"
+                            att:Classes.Colorful="True"
+                            att:Classes.Tertiary="True"
+                            Content="Tertiary"
+                            Style="{StaticResource BorderlessButton}" />
+                        <Button
+                            att:Classes.Colorful="True"
+                            att:Classes.Primary="True"
+                            Content="Disabled"
+                            IsEnabled="False"
+                            Style="{StaticResource BorderlessButton}" />
+                    </WrapPanel>
                 </StackPanel>
             </GroupBox>
         </StackPanel>

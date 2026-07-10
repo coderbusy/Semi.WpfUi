@@ -43,22 +43,21 @@ public class SemiTheme : ResourceDictionary
 
     private void UpdateTheme()
     {
-        MergedDictionaries.Clear();
+        var tmp = new ResourceDictionary();
 
-
-        MergedDictionaries.Add(new ResourceDictionary
+        tmp.MergedDictionaries.Add(new ResourceDictionary
         {
             Source = new Uri("pack://application:,,,/Semi.WpfUi;component/Tokens/Variables.xaml", UriKind.Absolute)
         });
 
-        MergedDictionaries.Add(new ResourceDictionary
+        tmp.MergedDictionaries.Add(new ResourceDictionary
         {
             Source = _theme == SemiThemeMode.Dark
             ? new Uri("pack://application:,,,/Semi.WpfUi;component/Tokens/Palette/Dark.xaml", UriKind.Absolute)
             : new Uri("pack://application:,,,/Semi.WpfUi;component/Tokens/Palette/Light.xaml", UriKind.Absolute)
         });
 
-        MergedDictionaries.Add(new ResourceDictionary
+        tmp.MergedDictionaries.Add(new ResourceDictionary
         {
             Source = new Uri("pack://application:,,,/Semi.WpfUi;component/Themes/Shared/_index.xaml", UriKind.Absolute)
         });
@@ -70,21 +69,22 @@ public class SemiTheme : ResourceDictionary
                 ? new Uri("pack://application:,,,/Semi.WpfUi;component/Themes/Dark/_index.xaml", UriKind.Absolute)
                 : new Uri("pack://application:,,,/Semi.WpfUi;component/Themes/Light/_index.xaml", UriKind.Absolute)
         };
-        MergedDictionaries.Add(semanticColors);
+        tmp.MergedDictionaries.Add(semanticColors);
 
         // Apply sizing/spacing/typography tokens
-        MergedDictionaries.Add(new ResourceDictionary
+        tmp.MergedDictionaries.Add(new ResourceDictionary
         {
             Source = new Uri("pack://application:,,,/Semi.WpfUi;component/Tokens/Variables.xaml", UriKind.Absolute)
         });
 
         // Apply control styles
-        MergedDictionaries.Add(new ResourceDictionary
+        tmp.MergedDictionaries.Add(new ResourceDictionary
         {
             Source = new Uri("pack://application:,,,/Semi.WpfUi;component/Controls/_index.xaml", UriKind.Absolute)
         });
-
-        SetRef(this, this);
+        SetRef(tmp, tmp);
+        MergedDictionaries.Clear();
+        MergedDictionaries.Add(tmp);
     }
 
     private void SetRef(ResourceDictionary root, ResourceDictionary rs)

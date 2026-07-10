@@ -9,7 +9,7 @@
             Background="{TemplateBinding Background}"
             BorderBrush="{TemplateBinding BorderBrush}"
             BorderThickness="{TemplateBinding BorderThickness}"
-            CornerRadius="{DynamicResource ButtonCornerRadius}">
+            CornerRadius="{StaticResource ButtonCornerRadius}">
             <ContentPresenter
                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -25,16 +25,16 @@
 
     <!--  Avalonia default Button ControlTheme  -->
     <Style x:Key="{x:Type Button}" TargetType="Button">
-        <Setter Property="Padding" Value="{DynamicResource ButtonDefaultPadding}" />
-        <Setter Property="MinHeight" Value="{DynamicResource ButtonDefaultHeight}" />
+        <Setter Property="Padding" Value="{StaticResource ButtonDefaultPadding}" />
+        <Setter Property="MinHeight" Value="{StaticResource ButtonDefaultHeight}" />
         <Setter Property="Foreground" Value="{DynamicResource ButtonDefaultPrimaryForeground}" />
         <Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{StaticResource ButtonBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="{DynamicResource ButtonDefaultFontSize}" />
-        <Setter Property="FontWeight" Value="{DynamicResource ButtonDefaultFontWeight}" />
+        <Setter Property="FontSize" Value="{StaticResource ButtonDefaultFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource ButtonDefaultFontWeight}" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
         <Style.Triggers>
@@ -73,12 +73,12 @@
                 <Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultDisabledBorderBrush}" />
             </Trigger>
             <Trigger Property="attached:Classes.Large" Value="True">
-                <Setter Property="MinHeight" Value="{DynamicResource ButtonLargeHeight}" />
-                <Setter Property="Padding" Value="{DynamicResource ButtonLargePadding}" />
+                <Setter Property="MinHeight" Value="{StaticResource ButtonLargeHeight}" />
+                <Setter Property="Padding" Value="{StaticResource ButtonLargePadding}" />
             </Trigger>
             <Trigger Property="attached:Classes.Small" Value="True">
-                <Setter Property="MinHeight" Value="{DynamicResource ButtonSmallHeight}" />
-                <Setter Property="Padding" Value="{DynamicResource ButtonSmallPadding}" />
+                <Setter Property="MinHeight" Value="{StaticResource ButtonSmallHeight}" />
+                <Setter Property="Padding" Value="{StaticResource ButtonSmallPadding}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -93,22 +93,27 @@
         <Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidPrimaryBorderBrush}" />
         <Style.Triggers>
             <Trigger Property="attached:Classes.Secondary" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ButtonSolidForeground}" />
                 <Setter Property="Background" Value="{DynamicResource ButtonSolidSecondaryBackground}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidSecondaryBorderBrush}" />
             </Trigger>
             <Trigger Property="attached:Classes.Tertiary" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ButtonSolidForeground}" />
                 <Setter Property="Background" Value="{DynamicResource ButtonSolidTertiaryBackground}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidTertiaryBorderBrush}" />
             </Trigger>
             <Trigger Property="attached:Classes.Success" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ButtonSolidForeground}" />
                 <Setter Property="Background" Value="{DynamicResource ButtonSolidSuccessBackground}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidSuccessBorderBrush}" />
             </Trigger>
             <Trigger Property="attached:Classes.Warning" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ButtonSolidForeground}" />
                 <Setter Property="Background" Value="{DynamicResource ButtonSolidWarningBackground}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidWarningBorderBrush}" />
             </Trigger>
             <Trigger Property="attached:Classes.Danger" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource ButtonSolidForeground}" />
                 <Setter Property="Background" Value="{DynamicResource ButtonSolidDangerBackground}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidDangerBorderBrush}" />
             </Trigger>
@@ -117,6 +122,7 @@
                     <Condition Property="attached:Classes.Colorful" Value="True" />
                     <Condition Property="attached:Classes.Primary" Value="True" />
                 </MultiTrigger.Conditions>
+                <Setter Property="Foreground" Value="{DynamicResource ButtonSolidForeground}" />
                 <Setter Property="Background" Value="{DynamicResource ButtonSolidColorfulPrimaryBackground}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidColorfulPrimaryBackground}" />
             </MultiTrigger>
@@ -314,8 +320,8 @@
     </Style>
 
     <Style x:Key="InnerIconButton" TargetType="Button">
-        <Setter Property="Width" Value="{DynamicResource SemiWidthIconMedium}" />
-        <Setter Property="Height" Value="{DynamicResource SemiWidthIconMedium}" />
+        <Setter Property="Width" Value="{StaticResource SemiWidthIconMedium}" />
+        <Setter Property="Height" Value="{StaticResource SemiWidthIconMedium}" />
         <Setter Property="Foreground" Value="{DynamicResource ButtonInputInnerForeground}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />

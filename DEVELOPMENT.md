@@ -43,7 +43,13 @@ Controls
 应用与 Demo
 ```
 
-`SemiTheme` 必须先加载令牌，再加载 Shared 和当前主题的语义资源，最后加载控件样式。控件样式应使用 `{DynamicResource ...}` 读取会随主题变化的画刷；无需随主题变化的固定样式基类可使用 `{StaticResource ...}`。
+`SemiTheme` 必须先加载令牌，再加载 Shared 和当前主题的语义资源，最后加载控件样式。资源引用遵循以下规则：
+
+- 所有 `Brush` 类型资源使用 `{DynamicResource ...}`，以支持 Light/Dark 运行时切换。
+- 非 `Brush` 设计令牌使用 `{StaticResource ...}`，包括字号、字重、宽高、最小尺寸、Padding、Margin、BorderThickness 和 CornerRadius。
+- 无需运行时替换的样式基类和模板资源使用 `{StaticResource ...}`。
+
+不要因资源来自主题字典就一律使用 `DynamicResource`；是否动态绑定取决于资源类型，而不是其所在目录。
 
 主题资源中应通过 `ResourceAlias` 将控件语义键绑定到全局令牌，例如：
 
