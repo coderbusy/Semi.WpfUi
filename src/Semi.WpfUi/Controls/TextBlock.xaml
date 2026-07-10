@@ -41,25 +41,25 @@
         x:Key="TitleTextBlock"
         BasedOn="{StaticResource {x:Type TextBlock}}"
         TargetType="TextBlock">
-        <Setter Property="FontWeight" Value="{DynamicResource TextBlockTitleFontWeight}" />
+        <Setter Property="FontWeight" Value="{StaticResource TextBlockTitleFontWeight}" />
         <Style.Triggers>
             <Trigger Property="attached:Classes.H1" Value="True">
-                <Setter Property="FontSize" Value="{DynamicResource TextBlockTitleH1FontSize}" />
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH1FontSize}" />
             </Trigger>
             <Trigger Property="attached:Classes.H2" Value="True">
-                <Setter Property="FontSize" Value="{DynamicResource TextBlockTitleH2FontSize}" />
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH2FontSize}" />
             </Trigger>
             <Trigger Property="attached:Classes.H3" Value="True">
-                <Setter Property="FontSize" Value="{DynamicResource TextBlockTitleH3FontSize}" />
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH3FontSize}" />
             </Trigger>
             <Trigger Property="attached:Classes.H4" Value="True">
-                <Setter Property="FontSize" Value="{DynamicResource TextBlockTitleH4FontSize}" />
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH4FontSize}" />
             </Trigger>
             <Trigger Property="attached:Classes.H5" Value="True">
-                <Setter Property="FontSize" Value="{DynamicResource TextBlockTitleH5FontSize}" />
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH5FontSize}" />
             </Trigger>
             <Trigger Property="attached:Classes.H6" Value="True">
-                <Setter Property="FontSize" Value="{DynamicResource TextBlockTitleH6FontSize}" />
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH6FontSize}" />
             </Trigger>
         </Style.Triggers>
     </Style>
