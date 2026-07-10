@@ -106,20 +106,18 @@
                         Text="Semi Design theme showcase" />
                 </StackPanel>
                 <TextBox
-                    x:Name="SearchBox"
                     Grid.Row="1"
                     Padding="10,7"
-                    TextChanged="OnSearchTextChanged"
+                    Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
                     ToolTip="Search demos or sections" />
                 <ListBox
-                    x:Name="NavigationList"
                     Grid.Row="2"
                     Margin="-6,16,-6,12"
                     Background="Transparent"
                     BorderThickness="0"
                     ItemContainerStyle="{StaticResource NavigationItemStyle}"
                     ItemsSource="{Binding NavigationView}"
-                    SelectionChanged="OnNavigationSelectionChanged">
+                    SelectedItem="{Binding SelectedItem}">
                     <ListBox.GroupStyle>
                         <GroupStyle>
                             <GroupStyle.HeaderTemplate>
@@ -135,9 +133,7 @@
                         </GroupStyle>
                     </ListBox.GroupStyle>
                     <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="..." />
-                        </DataTemplate>
+                        <DataTemplate><TextBlock Text="{Binding Title}" /></DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
                 <StackPanel Grid.Row="3">
@@ -149,12 +145,12 @@
                     <StackPanel Margin="0,8,0,0" Orientation="Horizontal">
                         <Button
                             Padding="12,5"
-                            Click="OnLightThemeClick"
+                            Command="{Binding SetLightThemeCommand}"
                             Content="Light" />
                         <Button
                             Margin="8,0,0,0"
                             Padding="12,5"
-                            Click="OnDarkThemeClick"
+                            Command="{Binding SetDarkThemeCommand}"
                             Content="Dark" />
                     </StackPanel>
                 </StackPanel>
