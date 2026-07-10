@@ -74,6 +74,26 @@ In addition to the implicit `Button` style, you can explicitly reference:
 <Button Style="{StaticResource SolidButton}" Content="Save" />
 ```
 
+## Border Styles
+
+Use `CardBorder` for Semi-styled card surfaces. Elevation behavior is controlled through attached classes:
+
+```xml
+<Border
+    xmlns:semi="clr-namespace:Semi.WpfUi.Attached;assembly=Semi.WpfUi"
+    Style="{StaticResource CardBorder}" />
+
+<Border
+    xmlns:semi="clr-namespace:Semi.WpfUi.Attached;assembly=Semi.WpfUi"
+    Style="{StaticResource CardBorder}"
+    semi:Classes.Shadow="True" />
+
+<Border
+    xmlns:semi="clr-namespace:Semi.WpfUi.Attached;assembly=Semi.WpfUi"
+    Style="{StaticResource CardBorder}"
+    semi:Classes.Hover="True" />
+```
+
 ## Semantic Color Keys
 
 | Key                    | Usage              |

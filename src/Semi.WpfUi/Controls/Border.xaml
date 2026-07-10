@@ -1,4 +1,7 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:att="clr-namespace:Semi.WpfUi.Attached;assembly=Semi.WpfUi">
     <Style x:Key="CardBorder" TargetType="Border">
         <Setter Property="Padding" Value="{DynamicResource ThicknessCardPadding}" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderCardBorderBrush}" />
@@ -6,11 +9,35 @@
         <Setter Property="Background" Value="{DynamicResource BorderCardBackground}" />
         <Setter Property="BorderThickness" Value="{DynamicResource ThicknessCardBorderThickness}" />
         <Setter Property="Margin" Value="{DynamicResource ThicknessCardMargin}" />
-        <!--<Style Selector="^.Shadow">
-            <Setter Property="BoxShadow" Value="{DynamicResource BorderCardBoxShadow}" />
-        </Style>
-        <Style Selector="^.Hover:pointerover">
-            <Setter Property="BoxShadow" Value="{DynamicResource BorderCardBoxShadow}" />
-        </Style>-->
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=(att:Classes.Shadow)}" Value="True">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect
+                            BlurRadius="{DynamicResource BorderCardShadowBlurRadius}"
+                            Direction="270"
+                            Opacity="{DynamicResource BorderCardShadowOpacity}"
+                            ShadowDepth="{DynamicResource BorderCardShadowDepth}"
+                            Color="{DynamicResource BorderCardShadowColor}" />
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=(att:Classes.Hover)}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect
+                            BlurRadius="{DynamicResource BorderCardShadowBlurRadius}"
+                            Direction="270"
+                            Opacity="{DynamicResource BorderCardShadowOpacity}"
+                            ShadowDepth="{DynamicResource BorderCardShadowDepth}"
+                            Color="{DynamicResource BorderCardShadowColor}" />
+                    </Setter.Value>
+                </Setter>
+            </MultiDataTrigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

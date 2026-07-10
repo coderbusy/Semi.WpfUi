@@ -146,6 +146,26 @@ public class Classes
         => (bool)element.GetValue(SmallProperty);
 
 
+    public static readonly DependencyProperty ShadowProperty = DependencyProperty.RegisterAttached(
+        "Shadow", typeof(bool), typeof(Classes), new PropertyMetadata(ValueBoxes.FalseBox));
+
+    public static void SetShadow(DependencyObject element, bool value)
+        => element.SetValue(ShadowProperty, ValueBoxes.BooleanBox(value));
+
+    public static bool GetShadow(DependencyObject element)
+        => (bool)element.GetValue(ShadowProperty);
+
+
+    public static readonly DependencyProperty HoverProperty = DependencyProperty.RegisterAttached(
+        "Hover", typeof(bool), typeof(Classes), new PropertyMetadata(ValueBoxes.FalseBox));
+
+    public static void SetHover(DependencyObject element, bool value)
+        => element.SetValue(HoverProperty, ValueBoxes.BooleanBox(value));
+
+    public static bool GetHover(DependencyObject element)
+        => (bool)element.GetValue(HoverProperty);
+
+
     public static readonly DependencyProperty H1Property = DependencyProperty.RegisterAttached(
         "H1", typeof(bool), typeof(Classes), new PropertyMetadata(ValueBoxes.FalseBox));
 
