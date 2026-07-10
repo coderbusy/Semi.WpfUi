@@ -2,6 +2,7 @@
     x:Class="Semi.WpfUi.Demo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:att="clr-namespace:Semi.WpfUi.Attached;assembly=Semi.WpfUi"
     xmlns:semi="clr-namespace:Semi.WpfUi;assembly=Semi.WpfUi"
     Title="Semi.WpfUi Demo"
     Width="900"
@@ -66,7 +67,8 @@
         <!--  Main content  -->
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="24">
-
+                <TextBlock att:Classes.Danger="{Binding ElementName=IsDangerCheckBox, Path=IsChecked}" Text="TestTextBlock" />
+                <CheckBox Name="IsDangerCheckBox">IsDanger</CheckBox>
                 <!--  Buttons  -->
                 <StackPanel Margin="0,0,0,32">
                     <TextBlock

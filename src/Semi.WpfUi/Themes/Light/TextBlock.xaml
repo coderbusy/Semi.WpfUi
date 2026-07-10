@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="TextBlockDefaultForeground" Color="{Binding Color, Source={StaticResource SemiColorText0}}" />
+
+    <!--<SolidColorBrush x:Key="TextBlockDefaultForeground" Color="{Binding Color, Source={StaticResource SemiColorText0}}" />
     <SolidColorBrush x:Key="TextBlockSecondaryForeground" Color="{Binding Color, Source={StaticResource SemiColorText1}}" />
     <SolidColorBrush x:Key="TextBlockTertiaryForeground" Color="{Binding Color, Source={StaticResource SemiColorText2}}" />
     <SolidColorBrush x:Key="TextBlockQuaternaryForeground" Color="{Binding Color, Source={StaticResource SemiColorText3}}" />
@@ -15,5 +16,7 @@
         x:Key="TextBlockSelectionBackground"
         Opacity="0.8"
         Color="#0041C5" />
-    <SolidColorBrush x:Key="TextBlockSelectionForeground" Color="{Binding Color, Source={StaticResource SemiColorWhite}}" />
+    <SolidColorBrush x:Key="TextBlockSelectionForeground" Color="{Binding Color, Source={StaticResource SemiColorWhite}}" />-->
+    <SolidColorBrush x:Key="TextBlockDefaultForeground" Color="{StaticResource SemiColorText0}" />
+    <SolidColorBrush x:Key="TextBlockDangerForeground" Color="Red" />
 </ResourceDictionary>

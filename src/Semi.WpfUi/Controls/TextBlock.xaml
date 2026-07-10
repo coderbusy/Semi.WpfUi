@@ -7,6 +7,9 @@
             <Trigger Property="attached:Classes.Secondary" Value="True">
                 <Setter Property="Foreground" Value="{StaticResource TextBlockSecondaryForeground}" />
             </Trigger>
+            <Trigger Property="attached:Classes.Danger" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource TextBlockDangerForeground}" />
+            </Trigger>
         </Style.Triggers>
     </Style>
 </ResourceDictionary>
