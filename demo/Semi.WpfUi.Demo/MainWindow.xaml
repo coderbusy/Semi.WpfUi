@@ -9,6 +9,7 @@
     MinWidth="900"
     MinHeight="600"
     Background="{DynamicResource SemiColorBackground0}"
+    TextElement.Foreground="{DynamicResource TextBlockDefaultForeground}"
     WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <DataTemplate x:Key="NavigationItemTemplate" DataType="local:NavigationItem">
@@ -133,7 +134,9 @@
                         </GroupStyle>
                     </ListBox.GroupStyle>
                     <ListBox.ItemTemplate>
-                        <DataTemplate><TextBlock Text="{Binding Title}" /></DataTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title}" />
+                        </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
                 <StackPanel Grid.Row="3">

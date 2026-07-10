@@ -124,7 +124,7 @@
     <!--  字重 - 常规  -->
 
     <!--<FontWeight x:Key="SemiFontWeightBold">600</FontWeight>-->
-    <FontWeight x:Key="SemiFontWeightBold">SemiBold</FontWeight>
+    <FontWeight x:Key="SemiFontWeightBold">DemiBold</FontWeight>
     <!--  字重 - 粗  -->
 
     <FontFamily x:Key="SemiFontFamilyRegular">
