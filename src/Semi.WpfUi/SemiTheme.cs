@@ -93,7 +93,7 @@ public class SemiTheme : ResourceDictionary
         {
             SetRef(root, sub);
         }
-        foreach (var key in rs.Keys.Cast<Object>().ToArray())
+        foreach (var key in rs.Keys.Cast<object>().ToArray())
         {
             var value = rs[key];
             if (value is ResourceAlias rf)
