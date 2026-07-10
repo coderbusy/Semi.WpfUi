@@ -23,6 +23,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         [
             new("Overview", "Overview", "⌂", "Get started with Semi WPF", new OverviewPage()),
             new("Foundation", "Typography & Colors", "Aa", "Text styles and semantic tokens", new FoundationPage()),
+            new("Foundation", "TextBlock", "T", "Text styles and semantic classes", new TextBlockDemo()),
+            new("Foundation", "Variables", "#", "Sizing, spacing and radius tokens", new VariablesDemo()),
+            new("Foundation", "Palette", "●", "Semantic color resources", new PaletteDemo()),
             new("Controls", "Buttons & Selection", "✓", "Actions and choice controls", new ControlsPage()),
             new("Controls", "Inputs & Feedback", "◌", "Forms, progress and content", new InputPage()),
         ];
