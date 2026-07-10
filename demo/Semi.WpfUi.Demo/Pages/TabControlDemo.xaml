@@ -1,0 +1,111 @@
+<UserControl
+    x:Class="Semi.WpfUi.Demo.Pages.TabControlDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24">
+            <TextBlock
+                FontSize="{DynamicResource SemiFontSizeHeader3}"
+                FontWeight="{DynamicResource SemiFontWeightBold}"
+                Foreground="{DynamicResource SemiColorText0}"
+                Text="TabControl" />
+            <TextBlock
+                Margin="0,8,0,24"
+                Foreground="{DynamicResource SemiColorText1}"
+                Text="Semi.Avalonia 中的 Line、Card、Button 三种页签风格已同步到 WPF，并支持 Top、Bottom、Left、Right 四个方向。" />
+
+            <GroupBox Header="Placement">
+                <StackPanel Margin="16" Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource SemiColorText1}"
+                        Text="TabStripPlacement" />
+                    <ComboBox
+                        Width="140"
+                        Margin="12,0,0,0"
+                        ItemsSource="{Binding Placements}"
+                        SelectedItem="{Binding SelectedPlacement}" />
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Margin="0,16,0,0" Header="Default / Line">
+                <Border
+                    MinHeight="240"
+                    Margin="16"
+                    Background="Transparent">
+                    <TabControl TabStripPlacement="{Binding SelectedPlacement}">
+                        <TabItem Header="文档">
+                            <StackPanel>
+                                <TextBlock
+                                    FontSize="{DynamicResource SemiFontSizeHeader6}"
+                                    FontWeight="{DynamicResource SemiFontWeightBold}"
+                                    Text="文档" />
+                                <TextBlock
+                                    Margin="0,8,0,0"
+                                    Foreground="{DynamicResource SemiColorText1}"
+                                    Text="默认页签样式在 WPF 中映射为 Semi 的 Line TabControl。" />
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="快速起步">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="安装资源字典后即可直接使用。" />
+                        </TabItem>
+                        <TabItem Header="无效" IsEnabled="False">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Disabled Tab" />
+                        </TabItem>
+                        <TabItem Header="帮助">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="支持横向与纵向布局切换。" />
+                        </TabItem>
+                    </TabControl>
+                </Border>
+            </GroupBox>
+
+            <GroupBox Margin="0,16,0,0" Header="Card">
+                <Border
+                    MinHeight="240"
+                    Margin="16"
+                    Background="Transparent">
+                    <TabControl
+                        Style="{StaticResource CardTabControl}"
+                        TabStripPlacement="{Binding SelectedPlacement}">
+                        <TabItem Header="文档">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Card 风格适合把页签和内容区域组合成更明显的卡片结构。" />
+                        </TabItem>
+                        <TabItem Header="设计规范">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="选中项与内容容器保持更强的视觉关联。" />
+                        </TabItem>
+                        <TabItem Header="无效" IsEnabled="False">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Disabled Tab" />
+                        </TabItem>
+                        <TabItem Header="帮助">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Hover 与 Pressed 状态也沿用了 Semi 的语义色。" />
+                        </TabItem>
+                    </TabControl>
+                </Border>
+            </GroupBox>
+
+            <GroupBox Margin="0,16,0,0" Header="Button">
+                <Border
+                    MinHeight="240"
+                    Margin="16"
+                    Background="Transparent">
+                    <TabControl
+                        Style="{StaticResource ButtonTabControl}"
+                        TabStripPlacement="{Binding SelectedPlacement}">
+                        <TabItem Header="文档">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Button 风格更适合切换视图、筛选区域或弱层级内容分组。" />
+                        </TabItem>
+                        <TabItem Header="组件">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="选中项使用 Primary Light 背景和 Primary 前景。" />
+                        </TabItem>
+                        <TabItem Header="无效" IsEnabled="False">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Disabled Tab" />
+                        </TabItem>
+                        <TabItem Header="帮助">
+                            <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="与 Avalonia Demo 一样保留了按钮式页签的紧凑节奏。" />
+                        </TabItem>
+                    </TabControl>
+                </Border>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

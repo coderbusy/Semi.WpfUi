@@ -2,6 +2,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Controls/Border.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Controls/Button.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Controls/TabControl.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Controls/TextBlock.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Controls/ThemeVariantScope/ThemeVariantScope.xaml" />
     </ResourceDictionary.MergedDictionaries>

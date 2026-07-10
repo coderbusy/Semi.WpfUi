@@ -1,0 +1,24 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <local:ResourceAlias x:Key="TabControlSeparatorBorderBrush" ResourceKey="SemiColorBorder" />
+    <SolidColorBrush x:Key="TabItemLinePipeBackground" Color="Transparent" />
+    <local:ResourceAlias x:Key="TabItemLinePipeSelectedBackground" ResourceKey="SemiColorPrimary" />
+    <local:ResourceAlias x:Key="TabItemLinePipePointeroverBorderBrush" ResourceKey="SemiColorFill1" />
+    <local:ResourceAlias x:Key="TabItemLinePipePressedBorderBrush" ResourceKey="SemiColorFill2" />
+    <local:ResourceAlias x:Key="TabItemLineHeaderForeground" ResourceKey="SemiColorText2" />
+    <local:ResourceAlias x:Key="TabItemLineHeaderPointeroverForeground" ResourceKey="SemiColorText0" />
+    <local:ResourceAlias x:Key="TabItemLineHeaderSelectedForeground" ResourceKey="SemiColorText0" />
+    <local:ResourceAlias x:Key="TabItemLineHeaderSelectedBackground" ResourceKey="SemiColorPrimaryLight" />
+    <local:ResourceAlias x:Key="TabItemLineHeaderPointeroverBackground" ResourceKey="SemiColorFill0" />
+    <local:ResourceAlias x:Key="TabItemLineHeaderPressedBackground" ResourceKey="SemiColorFill1" />
+    <local:ResourceAlias x:Key="TabItemCardHeaderSelectedBackground" ResourceKey="SemiColorBackground0" />
+    <local:ResourceAlias x:Key="TabItemCardHeaderPointeroverBackground" ResourceKey="SemiColorFill0" />
+    <local:ResourceAlias x:Key="TabItemCardHeaderPressedBackground" ResourceKey="SemiColorFill1" />
+    <local:ResourceAlias x:Key="TabItemButtonHeaderSelectedForeground" ResourceKey="SemiColorPrimary" />
+    <local:ResourceAlias x:Key="TabItemButtonHeaderSelectedBackground" ResourceKey="SemiColorPrimaryLight" />
+    <local:ResourceAlias x:Key="TabItemButtonHeaderPointeroverBackground" ResourceKey="SemiColorFill0" />
+    <local:ResourceAlias x:Key="TabItemButtonHeaderPressedBackground" ResourceKey="SemiColorFill1" />
+    <local:ResourceAlias x:Key="TabItemHeaderDisabledForeground" ResourceKey="SemiColorDisabledText" />
+</ResourceDictionary>

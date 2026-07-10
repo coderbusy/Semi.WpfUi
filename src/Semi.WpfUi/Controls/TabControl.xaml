@@ -1,0 +1,394 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTemplate x:Key="BaseTabControlTemplate" TargetType="TabControl">
+        <DockPanel
+            ClipToBounds="True"
+            KeyboardNavigation.DirectionalNavigation="Contained"
+            KeyboardNavigation.TabNavigation="Local"
+            SnapsToDevicePixels="True">
+            <Grid
+                x:Name="HeaderHost"
+                DockPanel.Dock="{TemplateBinding TabStripPlacement}">
+                <TabPanel
+                    x:Name="HeaderPanel"
+                    Margin="0,0,0,8"
+                    Panel.ZIndex="1"
+                    Background="Transparent"
+                    IsItemsHost="True" />
+
+                <Border
+                    x:Name="HeaderSeparator"
+                    Height="1"
+                    VerticalAlignment="Bottom"
+                    Background="{DynamicResource TabControlSeparatorBorderBrush}" />
+            </Grid>
+
+            <Border
+                x:Name="ContentBorder"
+                Padding="{TemplateBinding Padding}"
+                Background="{DynamicResource SemiColorBackground0}"
+                BorderBrush="{DynamicResource SemiColorBorder}"
+                BorderThickness="1"
+                CornerRadius="{StaticResource SemiBorderRadiusMedium}">
+                <ContentPresenter
+                    x:Name="PART_SelectedContentHost"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    ContentSource="SelectedContent"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Border>
+        </DockPanel>
+        <ControlTemplate.Triggers>
+            <Trigger Property="TabStripPlacement" Value="Bottom">
+                <Setter TargetName="HeaderPanel" Property="Margin" Value="0,8,0,0" />
+                <Setter TargetName="HeaderSeparator" Property="VerticalAlignment" Value="Top" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Left">
+                <Setter TargetName="HeaderPanel" Property="Margin" Value="0,0,8,0" />
+                <Setter TargetName="HeaderSeparator" Property="Width" Value="1" />
+                <Setter TargetName="HeaderSeparator" Property="Height" Value="Auto" />
+                <Setter TargetName="HeaderSeparator" Property="HorizontalAlignment" Value="Right" />
+                <Setter TargetName="HeaderSeparator" Property="VerticalAlignment" Value="Stretch" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Right">
+                <Setter TargetName="HeaderPanel" Property="Margin" Value="8,0,0,0" />
+                <Setter TargetName="HeaderSeparator" Property="Width" Value="1" />
+                <Setter TargetName="HeaderSeparator" Property="Height" Value="Auto" />
+                <Setter TargetName="HeaderSeparator" Property="HorizontalAlignment" Value="Left" />
+                <Setter TargetName="HeaderSeparator" Property="VerticalAlignment" Value="Stretch" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="ButtonTabControlTemplate" TargetType="TabControl">
+        <DockPanel
+            ClipToBounds="True"
+            KeyboardNavigation.DirectionalNavigation="Contained"
+            KeyboardNavigation.TabNavigation="Local"
+            SnapsToDevicePixels="True">
+            <TabPanel
+                x:Name="HeaderPanel"
+                DockPanel.Dock="{TemplateBinding TabStripPlacement}"
+                Margin="0,0,0,12"
+                Panel.ZIndex="1"
+                Background="Transparent"
+                IsItemsHost="True" />
+
+            <Border
+                x:Name="ContentBorder"
+                Padding="{TemplateBinding Padding}"
+                Background="{DynamicResource SemiColorBackground0}"
+                BorderBrush="{DynamicResource SemiColorBorder}"
+                BorderThickness="1"
+                CornerRadius="{StaticResource SemiBorderRadiusMedium}">
+                <ContentPresenter
+                    x:Name="PART_SelectedContentHost"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    ContentSource="SelectedContent"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Border>
+        </DockPanel>
+        <ControlTemplate.Triggers>
+            <Trigger Property="TabStripPlacement" Value="Bottom">
+                <Setter TargetName="HeaderPanel" Property="Margin" Value="0,12,0,0" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Left">
+                <Setter TargetName="HeaderPanel" Property="Margin" Value="0,0,12,0" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Right">
+                <Setter TargetName="HeaderPanel" Property="Margin" Value="12,0,0,0" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="LineTabItemTemplate" TargetType="TabItem">
+        <Border
+            x:Name="RootBorder"
+            Padding="{TemplateBinding Padding}"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            SnapsToDevicePixels="True">
+            <ContentPresenter
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Content="{TemplateBinding Header}"
+                ContentStringFormat="{TemplateBinding HeaderStringFormat}"
+                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                RecognizesAccessKey="True"
+                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                TextElement.FontFamily="{TemplateBinding FontFamily}"
+                TextElement.FontSize="{TemplateBinding FontSize}"
+                TextElement.FontWeight="{TemplateBinding FontWeight}"
+                TextElement.Foreground="{TemplateBinding Foreground}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="RoundedTabItemTemplate" TargetType="TabItem">
+        <Border
+            x:Name="RootBorder"
+            Padding="{TemplateBinding Padding}"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{StaticResource SemiBorderRadiusSmall}"
+            SnapsToDevicePixels="True">
+            <ContentPresenter
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Content="{TemplateBinding Header}"
+                ContentStringFormat="{TemplateBinding HeaderStringFormat}"
+                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                RecognizesAccessKey="True"
+                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                TextElement.FontFamily="{TemplateBinding FontFamily}"
+                TextElement.FontSize="{TemplateBinding FontSize}"
+                TextElement.FontWeight="{TemplateBinding FontWeight}"
+                TextElement.Foreground="{TemplateBinding Foreground}" />
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="BaseTabItem" TargetType="TabItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource TabItemLineHeaderForeground}" />
+        <Setter Property="FontSize" Value="{StaticResource SemiFontSizeRegular}" />
+        <Setter Property="FontWeight" Value="{StaticResource SemiFontWeightRegular}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    </Style>
+
+    <Style
+        x:Key="LineTabItem"
+        BasedOn="{StaticResource BaseTabItem}"
+        TargetType="TabItem">
+        <Setter Property="Template" Value="{StaticResource LineTabItemTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource TabItemLineHeaderSelectedForeground}" />
+                <Setter Property="FontWeight" Value="{DynamicResource TabItemSelectedFontWeight}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource TabItemLinePipeSelectedBackground}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="False" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Foreground" Value="{DynamicResource TabItemLineHeaderPointeroverForeground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource TabItemLinePipePointeroverBorderBrush}" />
+            </MultiTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource TabItemHeaderDisabledForeground}" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Top">
+                <Setter Property="Margin" Value="0,0,24,0" />
+                <Setter Property="Padding" Value="4,16,4,14" />
+                <Setter Property="BorderThickness" Value="0,0,0,2" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Bottom">
+                <Setter Property="Margin" Value="0,0,24,0" />
+                <Setter Property="Padding" Value="4,14,4,16" />
+                <Setter Property="BorderThickness" Value="0,2,0,0" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Left">
+                <Setter Property="Margin" Value="0,0,0,8" />
+                <Setter Property="Padding" Value="12" />
+                <Setter Property="BorderThickness" Value="2,0,0,0" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Right">
+                <Setter Property="Margin" Value="0,0,0,8" />
+                <Setter Property="Padding" Value="12" />
+                <Setter Property="BorderThickness" Value="0,0,2,0" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="TabStripPlacement" Value="Left" />
+                    <Condition Property="IsSelected" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource TabItemLineHeaderSelectedBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="TabStripPlacement" Value="Right" />
+                    <Condition Property="IsSelected" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource TabItemLineHeaderSelectedBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="TabStripPlacement" Value="Left" />
+                    <Condition Property="IsSelected" Value="False" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource TabItemLineHeaderPointeroverBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="TabStripPlacement" Value="Right" />
+                    <Condition Property="IsSelected" Value="False" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource TabItemLineHeaderPointeroverBackground}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="CardTabItem"
+        BasedOn="{StaticResource BaseTabItem}"
+        TargetType="TabItem">
+        <Setter Property="Template" Value="{StaticResource RoundedTabItemTemplate}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TabControlSeparatorBorderBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource TabItemCardHeaderSelectedBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource TabItemLineHeaderSelectedForeground}" />
+                <Setter Property="FontWeight" Value="{DynamicResource TabItemSelectedFontWeight}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="False" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource TabItemCardHeaderPointeroverBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource TabItemLineHeaderPointeroverForeground}" />
+            </MultiTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource TabItemHeaderDisabledForeground}" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Top">
+                <Setter Property="Margin" Value="0,0,8,0" />
+                <Setter Property="MinHeight" Value="{DynamicResource TabItemCardDefaultHeight}" />
+                <Setter Property="Padding" Value="12,0" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Bottom">
+                <Setter Property="Margin" Value="0,0,8,0" />
+                <Setter Property="MinHeight" Value="{DynamicResource TabItemCardDefaultHeight}" />
+                <Setter Property="Padding" Value="12,0" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Left">
+                <Setter Property="Margin" Value="0,0,0,8" />
+                <Setter Property="Padding" Value="12,8" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Right">
+                <Setter Property="Margin" Value="0,0,0,8" />
+                <Setter Property="Padding" Value="12,8" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="TabStripPlacement" Value="Top" />
+                    <Condition Property="IsSelected" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderThickness" Value="1,1,1,0" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="TabStripPlacement" Value="Bottom" />
+                    <Condition Property="IsSelected" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderThickness" Value="1,0,1,1" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="TabStripPlacement" Value="Left" />
+                    <Condition Property="IsSelected" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderThickness" Value="1,1,0,1" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="TabStripPlacement" Value="Right" />
+                    <Condition Property="IsSelected" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderThickness" Value="0,1,1,1" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="ButtonTabItem"
+        BasedOn="{StaticResource BaseTabItem}"
+        TargetType="TabItem">
+        <Setter Property="Template" Value="{StaticResource RoundedTabItemTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource TabItemButtonHeaderSelectedBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource TabItemButtonHeaderSelectedForeground}" />
+                <Setter Property="FontWeight" Value="{DynamicResource TabItemSelectedFontWeight}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="False" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource TabItemButtonHeaderPointeroverBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource TabItemLineHeaderPointeroverForeground}" />
+            </MultiTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource TabItemHeaderDisabledForeground}" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Top">
+                <Setter Property="Margin" Value="0,0,8,0" />
+                <Setter Property="MinHeight" Value="{DynamicResource TabItemCardDefaultHeight}" />
+                <Setter Property="Padding" Value="12,0" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Bottom">
+                <Setter Property="Margin" Value="0,0,8,0" />
+                <Setter Property="MinHeight" Value="{DynamicResource TabItemCardDefaultHeight}" />
+                <Setter Property="Padding" Value="12,0" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Left">
+                <Setter Property="Margin" Value="0,0,0,8" />
+                <Setter Property="Padding" Value="12,8" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Right">
+                <Setter Property="Margin" Value="0,0,0,8" />
+                <Setter Property="Padding" Value="12,8" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BaseTabControl" TargetType="TabControl">
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template" Value="{StaticResource BaseTabControlTemplate}" />
+    </Style>
+
+    <Style
+        x:Key="LineTabControl"
+        BasedOn="{StaticResource BaseTabControl}"
+        TargetType="TabControl">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LineTabItem}" />
+    </Style>
+
+    <Style
+        x:Key="CardTabControl"
+        BasedOn="{StaticResource BaseTabControl}"
+        TargetType="TabControl">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CardTabItem}" />
+    </Style>
+
+    <Style
+        x:Key="ButtonTabControl"
+        BasedOn="{StaticResource BaseTabControl}"
+        TargetType="TabControl">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource ButtonTabItem}" />
+        <Setter Property="Template" Value="{StaticResource ButtonTabControlTemplate}" />
+    </Style>
+
+    <Style
+        x:Key="{x:Type TabItem}"
+        BasedOn="{StaticResource LineTabItem}"
+        TargetType="TabItem" />
+    <Style
+        x:Key="{x:Type TabControl}"
+        BasedOn="{StaticResource LineTabControl}"
+        TargetType="TabControl" />
+</ResourceDictionary>

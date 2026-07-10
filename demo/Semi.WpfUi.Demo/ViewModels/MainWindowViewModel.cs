@@ -27,6 +27,7 @@ public partial class MainWindowViewModel : ObservableObject
             new("Foundation", "Palette", "●", "Semantic color resources", new PaletteDemo()),
             new("Controls", "Button", "●", "Light, solid, outline and borderless button themes", new ButtonDemo()),
             new("Controls", "Border", "□", "CardBorder with default, elevated and hover shadow variants", new BorderDemo()),
+            new("Controls", "TabControl", "⊏", "Line, card and button tab themes with placement switching", new TabControlDemo()),
             new("Controls", "Buttons & Selection", "✓", "Actions and choice controls", new ControlsPage()),
             new("Controls", "Inputs & Feedback", "◌", "Forms, progress and content", new InputPage()),
         ];
