@@ -3,7 +3,7 @@
 namespace Semi.WpfUi;
 
 [ContentProperty(nameof(ResourceKey))]
-class ResourceAlias
+sealed class ResourceAlias
 {
     public string? ResourceKey { get; set; }
 }

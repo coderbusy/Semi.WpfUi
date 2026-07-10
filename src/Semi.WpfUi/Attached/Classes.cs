@@ -106,6 +106,16 @@ public class Classes
         => (bool)element.GetValue(DeleteProperty);
 
 
+    public static readonly DependencyProperty DisabledProperty = DependencyProperty.RegisterAttached(
+        "Disabled", typeof(bool), typeof(Classes), new PropertyMetadata(ValueBoxes.FalseBox));
+
+    public static void SetDisabled(DependencyObject element, bool value)
+        => element.SetValue(DisabledProperty, ValueBoxes.BooleanBox(value));
+
+    public static bool GetDisabled(DependencyObject element)
+        => (bool)element.GetValue(DisabledProperty);
+
+
     public static readonly DependencyProperty LargeProperty = DependencyProperty.RegisterAttached(
         "Large", typeof(bool), typeof(Classes), new PropertyMetadata(ValueBoxes.FalseBox));
 

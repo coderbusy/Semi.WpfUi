@@ -6,8 +6,10 @@
 var dir = Path.GetDirectoryName(Util.CurrentScriptPath);
 string[] names =
 [
-	"Primary","Secondary","Tertiary","Quaternary","Success","Warning","Danger","Mark",
-	"Underline","Delete",
+	"Primary","Secondary","Tertiary","Quaternary",
+	"Success","Warning","Danger",
+	"Mark", "Underline","Delete",
+	"Disabled",
 	"Large","Small",
 	"H1","H2","H3","H4","H5","H6"
 ];

@@ -67,7 +67,10 @@
         <!--  Main content  -->
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="24">
-                <TextBlock att:Classes.Danger="{Binding ElementName=IsDangerCheckBox, Path=IsChecked}" Text="TestTextBlock" />
+                <TextBlock
+                    att:Classes.Danger="{Binding ElementName=IsDangerCheckBox, Path=IsChecked}"
+                    Style="{StaticResource TitleTextBlock}"
+                    Text="TestTextBlock" />
                 <CheckBox Name="IsDangerCheckBox">IsDanger</CheckBox>
                 <!--  Buttons  -->
                 <StackPanel Margin="0,0,0,32">

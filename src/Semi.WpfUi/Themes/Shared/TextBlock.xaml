@@ -1,0 +1,17 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <local:ResourceAlias x:Key="TextBlockCodeFontSize" ResourceKey="SemiFontSizeSmall" />
+    <local:ResourceAlias x:Key="TextBlockFontSize" ResourceKey="SemiFontSizeRegular" />
+    <local:ResourceAlias x:Key="TextBlockTitleH1FontSize" ResourceKey="SemiFontSizeHeader1" />
+    <local:ResourceAlias x:Key="TextBlockTitleH2FontSize" ResourceKey="SemiFontSizeHeader2" />
+    <local:ResourceAlias x:Key="TextBlockTitleH3FontSize" ResourceKey="SemiFontSizeHeader3" />
+    <local:ResourceAlias x:Key="TextBlockTitleH4FontSize" ResourceKey="SemiFontSizeHeader4" />
+    <local:ResourceAlias x:Key="TextBlockTitleH5FontSize" ResourceKey="SemiFontSizeHeader5" />
+    <local:ResourceAlias x:Key="TextBlockTitleH6FontSize" ResourceKey="SemiFontSizeHeader6" />
+    <local:ResourceAlias x:Key="TextBlockFontWeight" ResourceKey="SemiFontWeightRegular" />
+    <local:ResourceAlias x:Key="TextBlockTitleFontWeight" ResourceKey="SemiFontWeightBold" />
+    <CornerRadius x:Key="TextBlockCodeCornerRadius">2</CornerRadius>
+    <FontFamily x:Key="CodeFontFamily">Cascadia Code, Consolas, Inconsolata, monospace</FontFamily>
+</ResourceDictionary>

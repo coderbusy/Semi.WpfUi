@@ -1,6 +1,5 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Tokens/Palette/Dark.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Dark/TextBlock.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
