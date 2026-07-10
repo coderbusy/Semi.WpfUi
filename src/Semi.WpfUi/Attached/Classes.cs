@@ -116,6 +116,16 @@ public class Classes
         => (bool)element.GetValue(DisabledProperty);
 
 
+    public static readonly DependencyProperty ColorfulProperty = DependencyProperty.RegisterAttached(
+        "Colorful", typeof(bool), typeof(Classes), new PropertyMetadata(ValueBoxes.FalseBox));
+
+    public static void SetColorful(DependencyObject element, bool value)
+        => element.SetValue(ColorfulProperty, ValueBoxes.BooleanBox(value));
+
+    public static bool GetColorful(DependencyObject element)
+        => (bool)element.GetValue(ColorfulProperty);
+
+
     public static readonly DependencyProperty LargeProperty = DependencyProperty.RegisterAttached(
         "Large", typeof(bool), typeof(Classes), new PropertyMetadata(ValueBoxes.FalseBox));
 

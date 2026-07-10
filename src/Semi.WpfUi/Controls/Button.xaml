@@ -1,0 +1,123 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:attached="clr-namespace:Semi.WpfUi.Attached">
+    <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
+        <Border
+            x:Name="Border"
+            Padding="{TemplateBinding Padding}"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{DynamicResource ButtonCornerRadius}">
+            <ContentPresenter
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Content="{TemplateBinding Content}"
+                ContentTemplate="{TemplateBinding ContentTemplate}"
+                ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                RecognizesAccessKey="True"
+                TextElement.FontSize="{TemplateBinding FontSize}"
+                TextElement.FontWeight="{TemplateBinding FontWeight}"
+                TextElement.Foreground="{TemplateBinding Foreground}" />
+        </Border>
+    </ControlTemplate>
+
+    <!--  Avalonia default Button ControlTheme  -->
+    <Style x:Key="{x:Type Button}" TargetType="Button">
+        <Setter Property="Padding" Value="{DynamicResource ButtonDefaultPadding}" />
+        <Setter Property="MinHeight" Value="{DynamicResource ButtonDefaultHeight}" />
+        <Setter Property="Foreground" Value="{DynamicResource ButtonDefaultPrimaryForeground}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonDefaultBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="{DynamicResource ButtonDefaultFontSize}" />
+        <Setter Property="FontWeight" Value="{DynamicResource ButtonDefaultFontWeight}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="attached:Classes.Secondary" Value="True"><Setter Property="Foreground" Value="{DynamicResource ButtonDefaultSecondaryForeground}" /></Trigger>
+            <Trigger Property="attached:Classes.Tertiary" Value="True"><Setter Property="Foreground" Value="{DynamicResource ButtonDefaultTertiaryForeground}" /></Trigger>
+            <Trigger Property="attached:Classes.Success" Value="True"><Setter Property="Foreground" Value="{DynamicResource ButtonDefaultSuccessForeground}" /></Trigger>
+            <Trigger Property="attached:Classes.Warning" Value="True"><Setter Property="Foreground" Value="{DynamicResource ButtonDefaultWarningForeground}" /></Trigger>
+            <Trigger Property="attached:Classes.Danger" Value="True"><Setter Property="Foreground" Value="{DynamicResource ButtonDefaultDangerForeground}" /></Trigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Colorful" Value="True" /><Condition Property="attached:Classes.Primary" Value="True" /></MultiTrigger.Conditions><Setter Property="Foreground" Value="{DynamicResource ButtonDefaultColorfulPrimaryForeground}" /></MultiTrigger>
+            <Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonDefaultPointeroverBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultPointeroverBorderBrush}" /></Trigger>
+            <Trigger Property="IsPressed" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonDefaultPressedBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultPressedBorderBrush}" /></Trigger>
+            <Trigger Property="IsEnabled" Value="False"><Setter Property="Foreground" Value="{DynamicResource ButtonDefaultDisabledForeground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultDisabledBorderBrush}" /></Trigger>
+            <Trigger Property="attached:Classes.Large" Value="True"><Setter Property="MinHeight" Value="{DynamicResource ButtonLargeHeight}" /><Setter Property="Padding" Value="{DynamicResource ButtonLargePadding}" /></Trigger>
+            <Trigger Property="attached:Classes.Small" Value="True"><Setter Property="MinHeight" Value="{DynamicResource ButtonSmallHeight}" /><Setter Property="Padding" Value="{DynamicResource ButtonSmallPadding}" /></Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  Avalonia SolidButton ControlTheme  -->
+    <Style x:Key="SolidButton" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+        <Setter Property="Foreground" Value="{DynamicResource ButtonSolidForeground}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonSolidPrimaryBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidPrimaryBorderBrush}" />
+        <Style.Triggers>
+            <Trigger Property="attached:Classes.Secondary" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonSolidSecondaryBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidSecondaryBorderBrush}" /></Trigger>
+            <Trigger Property="attached:Classes.Tertiary" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonSolidTertiaryBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidTertiaryBorderBrush}" /></Trigger>
+            <Trigger Property="attached:Classes.Success" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonSolidSuccessBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidSuccessBorderBrush}" /></Trigger>
+            <Trigger Property="attached:Classes.Warning" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonSolidWarningBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidWarningBorderBrush}" /></Trigger>
+            <Trigger Property="attached:Classes.Danger" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonSolidDangerBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidDangerBorderBrush}" /></Trigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Colorful" Value="True" /><Condition Property="attached:Classes.Primary" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidColorfulPrimaryBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidColorfulPrimaryBackground}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Colorful" Value="True" /><Condition Property="attached:Classes.Tertiary" Value="True" /></MultiTrigger.Conditions><Setter Property="Foreground" Value="{DynamicResource ButtonSolidColorfulTertiaryForeground}" /><Setter Property="Background" Value="{DynamicResource ButtonSolidColorfulTertiaryBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidColorfulTertiaryBackground}" /></MultiTrigger>
+            <Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonSolidPrimaryPointeroverBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidPrimaryPointeroverBorderBrush}" /></Trigger>
+            <Trigger Property="IsPressed" Value="True"><Setter Property="Foreground" Value="{DynamicResource ButtonSolidPrimaryPressedForeground}" /><Setter Property="Background" Value="{DynamicResource ButtonSolidPrimaryPressedBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidPrimaryPressedBorderBrush}" /></Trigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Secondary" Value="True" /><Condition Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidSecondaryPointeroverBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidSecondaryPointeroverBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Tertiary" Value="True" /><Condition Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidTertiaryPointeroverBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidTertiaryPointeroverBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Success" Value="True" /><Condition Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidSuccessPointeroverBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidSuccessPointeroverBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Warning" Value="True" /><Condition Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidWarningPointeroverBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidWarningPointeroverBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Danger" Value="True" /><Condition Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidDangerPointeroverBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidDangerPointeroverBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Colorful" Value="True" /><Condition Property="attached:Classes.Primary" Value="True" /><Condition Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidColorfulPrimaryPointeroverBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidColorfulPrimaryPointeroverBackground}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Colorful" Value="True" /><Condition Property="attached:Classes.Tertiary" Value="True" /><Condition Property="IsMouseOver" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidColorfulTertiaryPointeroverBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidColorfulTertiaryPointeroverBackground}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Secondary" Value="True" /><Condition Property="IsPressed" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidSecondaryPressedBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidSecondaryPressedBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Tertiary" Value="True" /><Condition Property="IsPressed" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidTertiaryPressedBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidTertiaryPressedBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Success" Value="True" /><Condition Property="IsPressed" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidSuccessPressedBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidSuccessPressedBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Warning" Value="True" /><Condition Property="IsPressed" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidWarningPressedBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidWarningPressedBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Danger" Value="True" /><Condition Property="IsPressed" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidDangerPressedBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidDangerPressedBorderBrush}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Colorful" Value="True" /><Condition Property="attached:Classes.Primary" Value="True" /><Condition Property="IsPressed" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidColorfulPrimaryPressedBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidColorfulPrimaryPressedBackground}" /></MultiTrigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Colorful" Value="True" /><Condition Property="attached:Classes.Tertiary" Value="True" /><Condition Property="IsPressed" Value="True" /></MultiTrigger.Conditions><Setter Property="Background" Value="{DynamicResource ButtonSolidColorfulTertiaryPressedBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidColorfulTertiaryPressedBackground}" /></MultiTrigger>
+            <Trigger Property="IsEnabled" Value="False"><Setter Property="Foreground" Value="{DynamicResource ButtonSolidDisabledForeground}" /><Setter Property="Background" Value="{DynamicResource ButtonSolidDisabledBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonSolidDisabledBorderBrush}" /></Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="OutlineButton" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ButtonOutlineBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonOutlineBorderBrush}" />
+        <Style.Triggers>
+            <Trigger Property="attached:Classes.Success" Value="True"><Setter Property="BorderBrush" Value="{DynamicResource ButtonOutlineSuccessBorderBrush}" /></Trigger>
+            <Trigger Property="attached:Classes.Warning" Value="True"><Setter Property="BorderBrush" Value="{DynamicResource ButtonOutlineWarningBorderBrush}" /></Trigger>
+            <Trigger Property="attached:Classes.Danger" Value="True"><Setter Property="BorderBrush" Value="{DynamicResource ButtonOutlineDangerBorderBrush}" /></Trigger>
+            <MultiTrigger><MultiTrigger.Conditions><Condition Property="attached:Classes.Colorful" Value="True" /><Condition Property="attached:Classes.Primary" Value="True" /></MultiTrigger.Conditions><Setter Property="Foreground" Value="{DynamicResource ButtonOutlineColorfulPrimaryForeground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonOutlineColorfulPrimaryBorderBrush}" /></MultiTrigger>
+            <Trigger Property="IsMouseOver" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonOutlinePointeroverBackground}" /></Trigger>
+            <Trigger Property="IsPressed" Value="True"><Setter Property="Background" Value="{DynamicResource ButtonOutlinePressedBackground}" /></Trigger>
+            <Trigger Property="IsEnabled" Value="False"><Setter Property="Foreground" Value="{DynamicResource ButtonDefaultDisabledForeground}" /><Setter Property="Background" Value="{DynamicResource ButtonOutlineBackground}" /><Setter Property="BorderBrush" Value="{DynamicResource ButtonOutlineBorderBrush}" /></Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BorderlessButton" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource ButtonBorderlessBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderlessBorderBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False"><Setter Property="Foreground" Value="{DynamicResource ButtonDefaultDisabledForeground}" /></Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="InnerIconButton" TargetType="Button">
+        <Setter Property="Width" Value="{DynamicResource SemiWidthIconMedium}" />
+        <Setter Property="Height" Value="{DynamicResource SemiWidthIconMedium}" />
+        <Setter Property="Foreground" Value="{DynamicResource ButtonInputInnerForeground}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Path Data="{TemplateBinding Content}" Fill="{TemplateBinding Foreground}" Stretch="Uniform" /></ControlTemplate></Setter.Value></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True"><Setter Property="Foreground" Value="{DynamicResource ButtonInputInnerPointeroverForeground}" /></Trigger>
+            <Trigger Property="IsPressed" Value="True"><Setter Property="Foreground" Value="{DynamicResource ButtonInputInnerPressedForeground}" /></Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

@@ -25,6 +25,7 @@ public partial class MainWindowViewModel : ObservableObject
             new("Foundation", "TextBlock", "T", "Text styles and semantic classes", new TextBlockDemo()),
             new("Foundation", "Variables", "#", "Sizing, spacing and radius tokens", new VariablesDemo()),
             new("Foundation", "Palette", "●", "Semantic color resources", new PaletteDemo()),
+            new("Controls", "Button", "●", "Light, solid, outline and borderless button themes", new ButtonDemo()),
             new("Controls", "Buttons & Selection", "✓", "Actions and choice controls", new ControlsPage()),
             new("Controls", "Inputs & Feedback", "◌", "Forms, progress and content", new InputPage()),
         ];

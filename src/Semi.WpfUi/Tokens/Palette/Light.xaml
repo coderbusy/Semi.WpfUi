@@ -466,6 +466,15 @@
     <!--<BoxShadows x:Key="SemiColorShadow">0 0 #0A000000</BoxShadows>
     <BoxShadows x:Key="SemiShadowElevated">0 0 1 #4A000000, 0 4 14 #1A000000</BoxShadows>-->
 
+    <!--  AI General (required by Colorful Button)  -->
+    <LinearGradientBrush x:Key="SemiAIGeneral0" StartPoint="0.99,0.93" EndPoint="0.01,0.07"><GradientStop Offset="0" Color="#FFF2FF" /><GradientStop Offset="0.3" Color="#F8EDFF" /><GradientStop Offset="0.6" Color="#F4F4FF" /><GradientStop Offset="1" Color="#EFF7FF" /></LinearGradientBrush>
+    <LinearGradientBrush x:Key="SemiAIGeneral1" StartPoint="0.99,0.93" EndPoint="0.01,0.07"><GradientStop Offset="0" Color="#FFDAFE" /><GradientStop Offset="0.3" Color="#F2DAFF" /><GradientStop Offset="0.6" Color="#DFE0FF" /><GradientStop Offset="1" Color="#D5EBFF" /></LinearGradientBrush>
+    <LinearGradientBrush x:Key="SemiAIGeneral2" StartPoint="0.99,0.93" EndPoint="0.01,0.07"><GradientStop Offset="0" Color="#FEB5FF" /><GradientStop Offset="0.3" Color="#E3B5FF" /><GradientStop Offset="0.6" Color="#C1C0FF" /><GradientStop Offset="1" Color="#ABD5FF" /></LinearGradientBrush>
+    <LinearGradientBrush x:Key="SemiColorAIGeneral" StartPoint="0.99,0.93" EndPoint="0.01,0.07"><GradientStop Offset="0" Color="#E945FF" /><GradientStop Offset="0.3" Color="#A647FF" /><GradientStop Offset="0.6" Color="#6B61FF" /><GradientStop Offset="1" Color="#2E8CFF" /></LinearGradientBrush>
+    <LinearGradientBrush x:Key="SemiColorAIGeneralPointerover" StartPoint="0.99,0.93" EndPoint="0.01,0.07"><GradientStop Offset="0" Color="#C235DB" /><GradientStop Offset="0.3" Color="#8636DB" /><GradientStop Offset="0.6" Color="#584DDB" /><GradientStop Offset="1" Color="#2172DB" /></LinearGradientBrush>
+    <LinearGradientBrush x:Key="SemiColorAIGeneralActive" StartPoint="0.99,0.93" EndPoint="0.01,0.07"><GradientStop Offset="0" Color="#9D27B8" /><GradientStop Offset="0.3" Color="#6928B8" /><GradientStop Offset="0.6" Color="#473BB8" /><GradientStop Offset="1" Color="#1659B8" /></LinearGradientBrush>
+    <SolidColorBrush x:Key="SemiColorAIPurple" Color="#A647FF" />
+
     <!--  Obsolete  -->
     <StaticResource x:Key="SemiColorPrimaryPressed" ResourceKey="SemiColorPrimaryActive" />
     <StaticResource x:Key="SemiColorSecondaryPressed" ResourceKey="SemiColorSecondaryActive" />

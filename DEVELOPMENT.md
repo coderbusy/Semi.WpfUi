@@ -71,7 +71,7 @@ Avalonia 中以下带键资源转发写法不能直接照搬到 WPF：
 
 | Avalonia 概念 | WPF 实现 |
 | --- | --- |
-| `ControlTheme` | `Style`，隐式样式键使用 `{x:Type ControlType}` |
+| `ControlTheme` | `Style`；默认 `ControlTheme` 翻译为隐式样式，键使用 `{x:Type ControlType}`；具名 `ControlTheme` 翻译为同名具名样式 |
 | `BasedOn` 控件主题 | `Style BasedOn` |
 | `.Secondary` 等 class selector | `Classes` 附加布尔属性和 `Trigger` |
 | `:disabled` | `Trigger Property="IsEnabled" Value="False"` |
@@ -79,7 +79,23 @@ Avalonia 中以下带键资源转发写法不能直接照搬到 WPF：
 | `ResourceInclude` | `ResourceDictionary Source` |
 | ThemeDictionaries | `SemiTheme.Theme` 重新合并 Light/Dark 字典 |
 
-`Classes` 仅用于表达 Semi 的视觉变体，如 `Secondary`、`Danger`、`H1`。它不是 WPF 控件状态的替代品：禁用、悬停、焦点、选中、按下等状态必须优先使用原生 WPF 属性和触发器。
+`Classes` 仅用于表达 Semi 的视觉变体，如 `Secondary`、`Danger`、`H1`。新增或删除 class 时，必须同时修改 `Attached/Classes.linq` 中的 `names` 列表，并重新生成、提交 `Attached/Classes.cs`；`Classes.linq` 是附加属性列表的源文件。它不是 WPF 控件状态的替代品：禁用、悬停、焦点、选中、按下等状态必须优先使用原生 WPF 属性和触发器。
+
+### XAML 值语法转换
+
+迁移时保留 Avalonia 的资源键、颜色和视觉语义，但必须转换 WPF 不支持的值语法。例如 Avalonia 渐变画刷的百分比坐标：
+
+```xml
+StartPoint="99%,93%" EndPoint="1%,7%"
+```
+
+在 WPF 中必须写为等价的小数坐标：
+
+```xml
+StartPoint="0.99,0.93" EndPoint="0.01,0.07"
+```
+
+仅执行 `dotnet build` 不足以验证所有延迟加载的资源值。涉及资源字典、画刷、转换器或主题切换的迁移，必须启动 Demo 并至少加载受影响的主题和控件，确保不会在 `SemiTheme.SetRef` 解析资源时发生 `XamlParseException`。
 
 ## 标准控件迁移流程
 

@@ -6,7 +6,7 @@ A WPF control theme library implementing [Semi Design](https://semi.design/), in
 
 - **Semi Design** color system — full palette with semantic tokens
 - **Light and Dark themes** — easy runtime switching
-- **Styled WPF controls**: Button, TextBox, CheckBox, RadioButton, ComboBox, ListBox, ProgressBar, Slider, TabControl, ToggleButton
+- **Styled WPF controls**: Button and TextBlock
 - **Design tokens** — spacing, typography, border-radius values matching the Semi Design spec
 
 ## Project Structure
@@ -59,19 +59,19 @@ if (semiTheme is not null)
     semiTheme.Theme = SemiThemeMode.Dark;
 ```
 
-## Named Button Styles
+## Button Styles
 
 In addition to the implicit `Button` style, you can explicitly reference:
 
 | Style Key              | Appearance         |
 |------------------------|--------------------|
-| `SemiButton`           | Default (outlined) |
-| `SemiButtonPrimary`    | Blue filled        |
-| `SemiButtonDanger`     | Red filled         |
-| `SemiButtonLight`      | Blue tinted        |
+| `{x:Type Button}`      | Default Light      |
+| `SolidButton`          | Solid              |
+| `OutlineButton`        | Outline            |
+| `BorderlessButton`     | Borderless         |
 
 ```xml
-<Button Style="{StaticResource SemiButtonPrimary}" Content="Save" />
+<Button Style="{StaticResource SolidButton}" Content="Save" />
 ```
 
 ## Semantic Color Keys

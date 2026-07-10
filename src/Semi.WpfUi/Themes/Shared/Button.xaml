@@ -1,0 +1,15 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <local:ResourceAlias x:Key="ButtonDefaultFontSize" ResourceKey="SemiFontSizeRegular" />
+    <local:ResourceAlias x:Key="ButtonDefaultFontWeight" ResourceKey="SemiFontWeightBold" />
+    <Thickness x:Key="ButtonDefaultPadding">12,0</Thickness>
+    <Thickness x:Key="ButtonLargePadding">16,0</Thickness>
+    <Thickness x:Key="ButtonSmallPadding">6,0</Thickness>
+    <local:ResourceAlias x:Key="ButtonDefaultHeight" ResourceKey="SemiHeightControlDefault" />
+    <local:ResourceAlias x:Key="ButtonSmallHeight" ResourceKey="SemiHeightControlSmall" />
+    <local:ResourceAlias x:Key="ButtonLargeHeight" ResourceKey="SemiHeightControlLarge" />
+    <local:ResourceAlias x:Key="ButtonBorderThickness" ResourceKey="SemiBorderThicknessControl" />
+    <local:ResourceAlias x:Key="ButtonCornerRadius" ResourceKey="SemiBorderRadiusSmall" />
+</ResourceDictionary>

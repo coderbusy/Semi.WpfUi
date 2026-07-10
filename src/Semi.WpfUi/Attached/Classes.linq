@@ -10,6 +10,7 @@ string[] names =
 	"Success","Warning","Danger",
 	"Mark", "Underline","Delete",
 	"Disabled",
+	"Colorful",
 	"Large","Small",
 	"H1","H2","H3","H4","H5","H6"
 ];
