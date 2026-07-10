@@ -1,0 +1,189 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="SemiButtonFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" StrokeDashArray="1 2"
+                               Stroke="{DynamicResource SemiColorFocus}"
+                               SnapsToDevicePixels="true" StrokeThickness="1" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Default Button -->
+    <Style x:Key="SemiButton" TargetType="Button">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource SemiButtonFocusVisual}" />
+        <Setter Property="Background" Value="{DynamicResource SemiColorBg0}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SemiColorBorder}" />
+        <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="16,0" />
+        <Setter Property="Height" Value="{DynamicResource SemiHeightControlDefault}" />
+        <Setter Property="FontSize" Value="{DynamicResource SemiFontSizeRegular}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
+                            SnapsToDevicePixels="true">
+                        <ContentPresenter x:Name="ContentPresenter"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorBorderHover}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorFill0}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorFill1}" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorBorderFocus}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorDisabledBg}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorBorderDisabled}" />
+                            <Setter Property="Foreground" Value="{DynamicResource SemiColorDisabledText}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Primary Button -->
+    <Style x:Key="SemiButtonPrimary" TargetType="Button" BasedOn="{StaticResource SemiButton}">
+        <Setter Property="Background" Value="{DynamicResource SemiColorPrimary}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SemiColorPrimary}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
+                            SnapsToDevicePixels="true">
+                        <ContentPresenter x:Name="ContentPresenter"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorPrimaryHover}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorPrimaryHover}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorPrimaryActive}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorPrimaryActive}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorPrimaryDisabled}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorPrimaryDisabled}" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Danger Button -->
+    <Style x:Key="SemiButtonDanger" TargetType="Button" BasedOn="{StaticResource SemiButton}">
+        <Setter Property="Background" Value="{DynamicResource SemiColorDanger}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SemiColorDanger}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
+                            SnapsToDevicePixels="true">
+                        <ContentPresenter Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorDangerHover}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorDangerHover}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorDangerActive}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorDangerActive}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorDangerDisabled}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorDangerDisabled}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Light Button -->
+    <Style x:Key="SemiButtonLight" TargetType="Button" BasedOn="{StaticResource SemiButton}">
+        <Setter Property="Background" Value="{DynamicResource SemiColorPrimaryLight}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SemiColorPrimaryLight}" />
+        <Setter Property="Foreground" Value="{DynamicResource SemiColorPrimary}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}"
+                            SnapsToDevicePixels="true">
+                        <ContentPresenter Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorPrimaryLightHover}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorPrimaryLightHover}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorPrimaryLightActive}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorPrimaryLightActive}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorDisabledBg}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorDisabledBg}" />
+                            <Setter Property="Foreground" Value="{DynamicResource SemiColorDisabledText}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Apply default button style -->
+    <Style TargetType="Button" BasedOn="{StaticResource SemiButton}" />
+</ResourceDictionary>

@@ -1,0 +1,65 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Sizing -->
+    <sys:Double x:Key="SemiHeightControlSmall" xmlns:sys="clr-namespace:System;assembly=mscorlib">24</sys:Double>
+    <sys:Double x:Key="SemiHeightControlDefault" xmlns:sys="clr-namespace:System;assembly=mscorlib">32</sys:Double>
+    <sys:Double x:Key="SemiHeightControlLarge" xmlns:sys="clr-namespace:System;assembly=mscorlib">40</sys:Double>
+    <sys:Double x:Key="SemiWidthIconExtraSmall" xmlns:sys="clr-namespace:System;assembly=mscorlib">8</sys:Double>
+    <sys:Double x:Key="SemiWidthIconSmall" xmlns:sys="clr-namespace:System;assembly=mscorlib">12</sys:Double>
+    <sys:Double x:Key="SemiWidthIconMedium" xmlns:sys="clr-namespace:System;assembly=mscorlib">16</sys:Double>
+    <sys:Double x:Key="SemiWidthIconLarge" xmlns:sys="clr-namespace:System;assembly=mscorlib">20</sys:Double>
+    <sys:Double x:Key="SemiWidthIconExtraLarge" xmlns:sys="clr-namespace:System;assembly=mscorlib">24</sys:Double>
+
+    <!-- Border -->
+    <Thickness x:Key="SemiBorderThickness">0</Thickness>
+    <Thickness x:Key="SemiBorderThicknessControl">1</Thickness>
+    <CornerRadius x:Key="SemiBorderRadiusExtraSmall">3</CornerRadius>
+    <CornerRadius x:Key="SemiBorderRadiusSmall">3</CornerRadius>
+    <CornerRadius x:Key="SemiBorderRadiusMedium">6</CornerRadius>
+    <CornerRadius x:Key="SemiBorderRadiusLarge">12</CornerRadius>
+    <CornerRadius x:Key="SemiBorderRadiusFull">9999</CornerRadius>
+    <sys:Double x:Key="SemiBorderRadiusSpacingExtraSmall" xmlns:sys="clr-namespace:System;assembly=mscorlib">3</sys:Double>
+    <sys:Double x:Key="SemiBorderRadiusSpacingSmall" xmlns:sys="clr-namespace:System;assembly=mscorlib">3</sys:Double>
+    <sys:Double x:Key="SemiBorderRadiusSpacingMedium" xmlns:sys="clr-namespace:System;assembly=mscorlib">6</sys:Double>
+    <sys:Double x:Key="SemiBorderRadiusSpacingLarge" xmlns:sys="clr-namespace:System;assembly=mscorlib">12</sys:Double>
+    <sys:Double x:Key="SemiBorderRadiusSpacingFull" xmlns:sys="clr-namespace:System;assembly=mscorlib">9999</sys:Double>
+
+    <!-- Spacing -->
+    <sys:Double x:Key="SemiSpacingNone" xmlns:sys="clr-namespace:System;assembly=mscorlib">0</sys:Double>
+    <sys:Double x:Key="SemiSpacingSuperTight" xmlns:sys="clr-namespace:System;assembly=mscorlib">2</sys:Double>
+    <sys:Double x:Key="SemiSpacingExtraTight" xmlns:sys="clr-namespace:System;assembly=mscorlib">4</sys:Double>
+    <sys:Double x:Key="SemiSpacingTight" xmlns:sys="clr-namespace:System;assembly=mscorlib">8</sys:Double>
+    <sys:Double x:Key="SemiSpacingBaseTight" xmlns:sys="clr-namespace:System;assembly=mscorlib">12</sys:Double>
+    <sys:Double x:Key="SemiSpacingBase" xmlns:sys="clr-namespace:System;assembly=mscorlib">16</sys:Double>
+    <sys:Double x:Key="SemiSpacingBaseLoose" xmlns:sys="clr-namespace:System;assembly=mscorlib">20</sys:Double>
+    <sys:Double x:Key="SemiSpacingLoose" xmlns:sys="clr-namespace:System;assembly=mscorlib">24</sys:Double>
+    <sys:Double x:Key="SemiSpacingExtraLoose" xmlns:sys="clr-namespace:System;assembly=mscorlib">32</sys:Double>
+    <sys:Double x:Key="SemiSpacingSuperLoose" xmlns:sys="clr-namespace:System;assembly=mscorlib">40</sys:Double>
+
+    <!-- Thickness Shorthand -->
+    <Thickness x:Key="SemiThicknessNone">0</Thickness>
+    <Thickness x:Key="SemiThicknessSuperTight">2</Thickness>
+    <Thickness x:Key="SemiThicknessExtraTight">4</Thickness>
+    <Thickness x:Key="SemiThicknessTight">8</Thickness>
+    <Thickness x:Key="SemiThicknessBaseTight">12</Thickness>
+    <Thickness x:Key="SemiThicknessBase">16</Thickness>
+    <Thickness x:Key="SemiThicknessBaseLoose">20</Thickness>
+    <Thickness x:Key="SemiThicknessLoose">24</Thickness>
+    <Thickness x:Key="SemiThicknessExtraLoose">32</Thickness>
+    <Thickness x:Key="SemiThicknessSuperLoose">40</Thickness>
+
+    <!-- Font Size -->
+    <sys:Double x:Key="SemiFontSizeSmall" xmlns:sys="clr-namespace:System;assembly=mscorlib">12</sys:Double>
+    <sys:Double x:Key="SemiFontSizeRegular" xmlns:sys="clr-namespace:System;assembly=mscorlib">14</sys:Double>
+    <sys:Double x:Key="SemiFontSizeHeader6" xmlns:sys="clr-namespace:System;assembly=mscorlib">16</sys:Double>
+    <sys:Double x:Key="SemiFontSizeHeader5" xmlns:sys="clr-namespace:System;assembly=mscorlib">18</sys:Double>
+    <sys:Double x:Key="SemiFontSizeHeader4" xmlns:sys="clr-namespace:System;assembly=mscorlib">20</sys:Double>
+    <sys:Double x:Key="SemiFontSizeHeader3" xmlns:sys="clr-namespace:System;assembly=mscorlib">24</sys:Double>
+    <sys:Double x:Key="SemiFontSizeHeader2" xmlns:sys="clr-namespace:System;assembly=mscorlib">28</sys:Double>
+    <sys:Double x:Key="SemiFontSizeHeader1" xmlns:sys="clr-namespace:System;assembly=mscorlib">32</sys:Double>
+
+    <!-- Font Weight -->
+    <FontWeight x:Key="SemiFontWeightLight">Light</FontWeight>
+    <FontWeight x:Key="SemiFontWeightRegular">Normal</FontWeight>
+    <FontWeight x:Key="SemiFontWeightBold">SemiBold</FontWeight>
+</ResourceDictionary>
