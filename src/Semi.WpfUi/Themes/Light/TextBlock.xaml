@@ -2,24 +2,22 @@
     x:Class="Semi.WpfUi.Themes.Light.TextBlock"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:attached="clr-namespace:Semi.WpfUi.Attached">
-    <!--<StaticResource x:Key="TextBlockDefaultForeground" ResourceKey="SemiColorText0" />
-    <StaticResource x:Key="TextBlockSecondaryForeground" ResourceKey="SemiColorText1" />
-    <StaticResource x:Key="TextBlockTertiaryForeground" ResourceKey="SemiColorText2" />
-    <StaticResource x:Key="TextBlockQuaternaryForeground" ResourceKey="SemiColorText3" />
-    <StaticResource x:Key="TextBlockSuccessForeground" ResourceKey="SemiColorSuccess" />
-    <StaticResource x:Key="TextBlockWarningForeground" ResourceKey="SemiColorWarning" />
-    <StaticResource x:Key="TextBlockDangerForeground" ResourceKey="SemiColorDanger" />
-    <StaticResource x:Key="TextBlockDisabledForeground" ResourceKey="SemiColorDisabledText" />
-    <StaticResource x:Key="TextBlockMarkBackground" ResourceKey="SemiColorPrimaryLight" />
-    <StaticResource x:Key="TextBlockCodeForeground" ResourceKey="SemiColorText2" />
-    <StaticResource x:Key="TextBlockCodeBackground" ResourceKey="SemiColorFill1" />
-    <StaticResource x:Key="TextBlockCodeBorderBrush" ResourceKey="SemiColorBorder" />
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <local:ResourceAlias x:Key="TextBlockDefaultForeground" ResourceKey="SemiColorText0" />
+    <local:ResourceAlias x:Key="TextBlockSecondaryForeground" ResourceKey="SemiColorText1" />
+    <local:ResourceAlias x:Key="TextBlockTertiaryForeground" ResourceKey="SemiColorText2" />
+    <local:ResourceAlias x:Key="TextBlockQuaternaryForeground" ResourceKey="SemiColorText3" />
+    <local:ResourceAlias x:Key="TextBlockSuccessForeground" ResourceKey="SemiColorSuccess" />
+    <local:ResourceAlias x:Key="TextBlockWarningForeground" ResourceKey="SemiColorWarning" />
+    <local:ResourceAlias x:Key="TextBlockDangerForeground" ResourceKey="SemiColorDanger" />
+    <local:ResourceAlias x:Key="TextBlockDisabledForeground" ResourceKey="SemiColorDisabledText" />
+    <local:ResourceAlias x:Key="TextBlockMarkBackground" ResourceKey="SemiColorPrimaryLight" />
+    <local:ResourceAlias x:Key="TextBlockCodeForeground" ResourceKey="SemiColorText2" />
+    <local:ResourceAlias x:Key="TextBlockCodeBackground" ResourceKey="SemiColorFill1" />
+    <local:ResourceAlias x:Key="TextBlockCodeBorderBrush" ResourceKey="SemiColorBorder" />
     <SolidColorBrush
         x:Key="TextBlockSelectionBackground"
         Opacity="0.8"
         Color="#0041C5" />
-    <StaticResource x:Key="TextBlockSelectionForeground" ResourceKey="SemiColorWhite" />-->
-    <SolidColorBrush x:Key="TextBlockDefaultForeground" attached:ResCopy.From="{DynamicResource SemiColorText0}" />
-    <SolidColorBrush x:Key="TextBlockDangerForeground" attached:ResCopy.From="{DynamicResource SemiColorDanger}" />
+    <local:ResourceAlias x:Key="TextBlockSelectionForeground" ResourceKey="SemiColorWhite" />
 </ResourceDictionary>

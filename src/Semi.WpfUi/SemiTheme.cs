@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Windows;
 
 namespace Semi.WpfUi;
@@ -64,6 +65,24 @@ public class SemiTheme : ResourceDictionary
         {
             Source = new Uri("pack://application:,,,/Semi.WpfUi;component/Controls/_index.xaml", UriKind.Absolute)
         });
+
+        SetRef(this, this);
+    }
+
+    private void SetRef(ResourceDictionary root, ResourceDictionary rs)
+    {
+        foreach (var sub in rs.MergedDictionaries)
+        {
+            SetRef(root, sub);
+        }
+        foreach (var key in rs.Keys.Cast<Object>().ToArray())
+        {
+            var value = rs[key];
+            if (value is ResourceAlias rf)
+            {
+                rs[key] = root[rf.ResourceKey];
+            }
+        }
     }
 }
 
