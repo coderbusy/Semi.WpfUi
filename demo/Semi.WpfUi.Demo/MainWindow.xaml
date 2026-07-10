@@ -2,6 +2,7 @@
     x:Class="Semi.WpfUi.Demo.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi.Demo"
     Title="Semi.WpfUi Demo"
     Width="1180"
     Height="760"
@@ -10,6 +11,42 @@
     Background="{DynamicResource SemiColorBackground0}"
     WindowStartupLocation="CenterScreen">
     <Window.Resources>
+        <DataTemplate x:Key="NavigationItemTemplate" DataType="local:NavigationItem">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="28" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Border
+                    Width="22"
+                    Height="22"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource SemiColorFill0}"
+                    CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="{DynamicResource SemiFontSizeSmall}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText1}"
+                        Text="{Binding Icon}" />
+                </Border>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Title}" />
+                    <TextBlock
+                        Margin="0,2,0,0"
+                        FontSize="{DynamicResource SemiFontSizeSmall}"
+                        Foreground="{DynamicResource SemiColorText2}"
+                        Text="{Binding Description}" />
+                </StackPanel>
+                <TextBlock
+                    Grid.Column="2"
+                    VerticalAlignment="Center"
+                    Foreground="{DynamicResource SemiColorText2}"
+                    Text="›" />
+            </Grid>
+        </DataTemplate>
         <Style x:Key="NavigationItemStyle" TargetType="ListBoxItem">
             <Setter Property="Margin" Value="6,1" />
             <Setter Property="Padding" Value="12,8" />
@@ -18,8 +55,11 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
-                        <Border x:Name="ItemBorder" Background="Transparent" CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
-                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        <Border
+                            x:Name="ItemBorder"
+                            Background="Transparent"
+                            CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                            <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{StaticResource NavigationItemTemplate}" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="True">
@@ -43,7 +83,10 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Border Background="{DynamicResource SemiColorBackground1}" BorderBrush="{DynamicResource SemiColorBorder}" BorderThickness="0,0,1,0">
+        <Border
+            Background="{DynamicResource SemiColorBackground1}"
+            BorderBrush="{DynamicResource SemiColorBorder}"
+            BorderThickness="0,0,1,0">
             <Grid Margin="16">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -52,32 +95,67 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <StackPanel>
-                    <TextBlock FontSize="{DynamicResource SemiFontSizeHeader5}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Semi WPF" />
-                    <TextBlock Margin="0,4,0,16" Foreground="{DynamicResource SemiColorText2}" Text="Semi Design theme showcase" />
+                    <TextBlock
+                        FontSize="{DynamicResource SemiFontSizeHeader5}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="Semi WPF" />
+                    <TextBlock
+                        Margin="0,4,0,16"
+                        Foreground="{DynamicResource SemiColorText2}"
+                        Text="Semi Design theme showcase" />
                 </StackPanel>
-                <TextBox x:Name="SearchBox" Grid.Row="1" Padding="10,7" TextChanged="OnSearchTextChanged" ToolTip="Search demos or sections" />
-                <ListBox x:Name="NavigationList" Grid.Row="2" Margin="-6,16,-6,12" ItemsSource="{Binding NavigationView}" SelectionChanged="OnNavigationSelectionChanged" ItemContainerStyle="{StaticResource NavigationItemStyle}" BorderThickness="0" Background="Transparent">
+                <TextBox
+                    x:Name="SearchBox"
+                    Grid.Row="1"
+                    Padding="10,7"
+                    TextChanged="OnSearchTextChanged"
+                    ToolTip="Search demos or sections" />
+                <ListBox
+                    x:Name="NavigationList"
+                    Grid.Row="2"
+                    Margin="-6,16,-6,12"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    ItemContainerStyle="{StaticResource NavigationItemStyle}"
+                    ItemsSource="{Binding NavigationView}"
+                    SelectionChanged="OnNavigationSelectionChanged">
                     <ListBox.GroupStyle>
                         <GroupStyle>
                             <GroupStyle.HeaderTemplate>
                                 <DataTemplate>
-                                    <TextBlock Margin="12,12,12,4" FontSize="{DynamicResource SemiFontSizeSmall}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText2}" Text="{Binding Name}" />
+                                    <TextBlock
+                                        Margin="12,12,12,4"
+                                        FontSize="{DynamicResource SemiFontSizeSmall}"
+                                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                                        Foreground="{DynamicResource SemiColorText2}"
+                                        Text="{Binding Name}" />
                                 </DataTemplate>
                             </GroupStyle.HeaderTemplate>
                         </GroupStyle>
                     </ListBox.GroupStyle>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Title}" />
+                            <TextBlock Text="..." />
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
                 <StackPanel Grid.Row="3">
                     <Separator Margin="0,0,0,12" />
-                    <TextBlock Foreground="{DynamicResource SemiColorText2}" FontSize="{DynamicResource SemiFontSizeSmall}" Text="Appearance" />
+                    <TextBlock
+                        FontSize="{DynamicResource SemiFontSizeSmall}"
+                        Foreground="{DynamicResource SemiColorText2}"
+                        Text="Appearance" />
                     <StackPanel Margin="0,8,0,0" Orientation="Horizontal">
-                        <Button Padding="12,5" Click="OnLightThemeClick" Content="Light" />
-                        <Button Margin="8,0,0,0" Padding="12,5" Click="OnDarkThemeClick" Content="Dark" />
+                        <Button
+                            Padding="12,5"
+                            Click="OnLightThemeClick"
+                            Content="Light" />
+                        <Button
+                            Margin="8,0,0,0"
+                            Padding="12,5"
+                            Click="OnDarkThemeClick"
+                            Content="Dark" />
                     </StackPanel>
                 </StackPanel>
             </Grid>
@@ -88,11 +166,26 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Border Padding="32,20" Background="{DynamicResource SemiColorBackground0}" BorderBrush="{DynamicResource SemiColorBorder}" BorderThickness="0,0,0,1">
+            <Border
+                Padding="32,20"
+                Background="{DynamicResource SemiColorBackground0}"
+                BorderBrush="{DynamicResource SemiColorBorder}"
+                BorderThickness="0,0,0,1">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="{DynamicResource SemiFontSizeHeader5}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Semi.WpfUi" />
-                    <TextBlock Margin="10,0" VerticalAlignment="Center" Foreground="{DynamicResource SemiColorText2}" Text="/" />
-                    <TextBlock VerticalAlignment="Center" Foreground="{DynamicResource SemiColorText1}" Text="{Binding SelectedPageTitle}" />
+                    <TextBlock
+                        FontSize="{DynamicResource SemiFontSizeHeader5}"
+                        FontWeight="{DynamicResource SemiFontWeightBold}"
+                        Foreground="{DynamicResource SemiColorText0}"
+                        Text="Semi.WpfUi" />
+                    <TextBlock
+                        Margin="10,0"
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource SemiColorText2}"
+                        Text="/" />
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource SemiColorText1}"
+                        Text="{Binding SelectedPageTitle}" />
                 </StackPanel>
             </Border>
             <ContentControl Grid.Row="1" Content="{Binding SelectedPage}" />

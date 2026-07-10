@@ -21,10 +21,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         NavigationItems =
         [
-            new("Overview", "Overview", new OverviewPage()),
-            new("Foundation", "Typography & Colors", new FoundationPage()),
-            new("Controls", "Buttons & Selection", new ControlsPage()),
-            new("Controls", "Inputs & Feedback", new InputPage()),
+            new("Overview", "Overview", "⌂", "Get started with Semi WPF", new OverviewPage()),
+            new("Foundation", "Typography & Colors", "Aa", "Text styles and semantic tokens", new FoundationPage()),
+            new("Controls", "Buttons & Selection", "✓", "Actions and choice controls", new ControlsPage()),
+            new("Controls", "Inputs & Feedback", "◌", "Forms, progress and content", new InputPage()),
         ];
         NavigationView = CollectionViewSource.GetDefaultView(NavigationItems);
         NavigationView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(NavigationItem.Section)));
@@ -68,4 +68,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     }
 }
 
-public sealed record NavigationItem(string Section, string Title, UserControl Page);
+public sealed record NavigationItem(
+    string Section,
+    string Title,
+    string Icon,
+    string Description,
+    UserControl Page);
