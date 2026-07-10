@@ -69,6 +69,7 @@
             <StackPanel Margin="24">
                 <TextBlock
                     att:Classes.Danger="{Binding ElementName=IsDangerCheckBox, Path=IsChecked}"
+                    att:Classes.H1="True"
                     Style="{StaticResource TitleTextBlock}"
                     Text="TestTextBlock" />
                 <CheckBox Name="IsDangerCheckBox">IsDanger</CheckBox>
