@@ -83,6 +83,7 @@ public class SemiTheme : ResourceDictionary
             Source = new Uri("pack://application:,,,/Semi.WpfUi;component/Controls/_index.xaml", UriKind.Absolute)
         });
         SetRef(tmp, tmp);
+
         MergedDictionaries.Clear();
         MergedDictionaries.Add(tmp);
     }

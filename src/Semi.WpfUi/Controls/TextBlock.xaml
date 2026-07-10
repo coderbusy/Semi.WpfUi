@@ -4,16 +4,6 @@
     xmlns:attached="clr-namespace:Semi.WpfUi.Attached">
     <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
         <Style.Triggers>
-            <!--
-                A Button with string content creates a TextBlock internally. Do not assign a
-                local style value to that TextBlock, so its text can inherit Button.Foreground.
-            -->
-            <DataTrigger Value="{x:Null}">
-                <DataTrigger.Binding>
-                    <Binding RelativeSource="{RelativeSource AncestorType={x:Type Button}}" />
-                </DataTrigger.Binding>
-                <Setter Property="Foreground" Value="{DynamicResource TextBlockDefaultForeground}" />
-            </DataTrigger>
             <Trigger Property="attached:Classes.Secondary" Value="True">
                 <Setter Property="Foreground" Value="{DynamicResource TextBlockSecondaryForeground}" />
             </Trigger>
