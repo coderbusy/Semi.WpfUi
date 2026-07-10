@@ -93,7 +93,7 @@ Avalonia 中以下带键资源转发写法不能直接照搬到 WPF：
 
 ## TextBlock 范式
 
-TextBlock 是首个完整迁移样例：
+TextBlock 是首个完整迁移样例。其实现不是重新设计 WPF 文本样式，而是将 Semi.Avalonia 中 `Controls/TextBlock.axaml` 及对应 Shared、Light、Dark 主题资源逐项翻译为 WPF 的资源字典、样式和触发器：保留原有资源键、变体语义和视觉结果，仅替换 Avalonia 平台专属的 XAML 和状态表达方式。
 
 - `Controls/TextBlock.xaml` 提供隐式 `TextBlock` 样式，以及基于它的 `TitleTextBlock`。
 - `Secondary`、`Tertiary`、`Quaternary`、`Success`、`Warning`、`Danger`、`Mark`、`Underline`、`Delete` 使用 `Classes` 附加属性触发。
