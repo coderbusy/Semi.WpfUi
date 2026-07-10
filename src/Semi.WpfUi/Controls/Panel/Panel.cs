@@ -9,7 +9,7 @@ namespace Semi.WpfUi.Controls;
 /// <remarks>
 ///     当不需要Grid的行、列分隔等功能时建议用此轻量级类代替
 /// </remarks>
-public sealed class Panel : System.Windows.Controls.Panel
+public class Panel : System.Windows.Controls.Panel
 {
     protected override Size MeasureOverride(Size constraint)
     {
