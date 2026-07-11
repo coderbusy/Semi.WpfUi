@@ -29,6 +29,7 @@ public partial class MainWindowViewModel : ObservableObject
             new("Controls", "HyperlinkButton", "↗", "URI navigation, visited state, and commands", new HyperlinkButtonDemo()),
             new("Controls", "CheckBox", "✓", "Checked, indeterminate, disabled, and focus states", new CheckBoxDemo()),
             new("Controls", "ProgressBar", "◒", "Progress, semantic colors, and indeterminate state", new ProgressBarDemo()),
+            new("Controls", "ScrollBar", "↕", "Horizontal, vertical, and overflowing content", new ScrollBarDemo()),
             new("Controls", "TextBox", "T", "Custom Semi text input with placeholders and inner content", new TextBoxDemo()),
             new("Controls", "GroupBox", "▣", "Card-style grouped content with headers and separators", new GroupBoxDemo()),
             new("Controls", "Border", "□", "CardBorder with default, elevated and hover shadow variants", new BorderDemo()),

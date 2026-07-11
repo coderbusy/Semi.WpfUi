@@ -1,0 +1,168 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTemplate x:Key="SemiScrollBarButtonTemplate" TargetType="RepeatButton">
+        <Border Background="Transparent">
+            <Path
+                x:Name="Glyph"
+                Width="6"
+                Height="4"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Data="M 0 4 L 3 0 L 6 4 Z"
+                Fill="{DynamicResource ScrollBarButtonBrush}"
+                Stretch="Fill" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Glyph" Property="Fill" Value="{DynamicResource ScrollBarButtonHoverBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Glyph" Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform CenterX="3" CenterY="2" ScaleX="0.92" ScaleY="0.92" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="SemiScrollBarPageButtonTemplate" TargetType="RepeatButton">
+        <Border Background="Transparent" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="SemiScrollBarThumbTemplate" TargetType="Thumb">
+        <Border
+            x:Name="ThumbBorder"
+            Background="{DynamicResource ScrollBarThumbBrush}"
+            CornerRadius="{DynamicResource ScrollBarThumbCornerRadius}" />
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ThumbBorder" Property="Background" Value="{DynamicResource ScrollBarThumbHoverBrush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="SemiScrollBarLineButton" TargetType="RepeatButton">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template" Value="{StaticResource SemiScrollBarButtonTemplate}" />
+    </Style>
+    <Style x:Key="SemiScrollBarPageButton" TargetType="RepeatButton">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template" Value="{StaticResource SemiScrollBarPageButtonTemplate}" />
+    </Style>
+    <Style x:Key="SemiScrollBarThumb" TargetType="Thumb">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template" Value="{StaticResource SemiScrollBarThumbTemplate}" />
+    </Style>
+    <Style x:Key="SemiVerticalScrollBarThumb" BasedOn="{StaticResource SemiScrollBarThumb}" TargetType="Thumb">
+        <Setter Property="Margin" Value="6,0,0,0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="2,0,0,0" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="SemiHorizontalScrollBarThumb" BasedOn="{StaticResource SemiScrollBarThumb}" TargetType="Thumb">
+        <Setter Property="Margin" Value="0,6,0,0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Margin" Value="0,2,0,0" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <ControlTemplate x:Key="SemiVerticalScrollBarTemplate" TargetType="ScrollBar">
+        <Grid Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <RepeatButton
+                Height="{DynamicResource ScrollBarButtonLength}"
+                Command="ScrollBar.LineUpCommand"
+                Style="{StaticResource SemiScrollBarLineButton}" />
+            <Track
+                x:Name="PART_Track"
+                Grid.Row="1"
+                IsDirectionReversed="True"
+                Orientation="Vertical">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Command="ScrollBar.PageUpCommand" Style="{StaticResource SemiScrollBarPageButton}" />
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb
+                        MinHeight="{DynamicResource ScrollBarMinLength}"
+                        Style="{StaticResource SemiVerticalScrollBarThumb}" />
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Command="ScrollBar.PageDownCommand" Style="{StaticResource SemiScrollBarPageButton}" />
+                </Track.IncreaseRepeatButton>
+            </Track>
+            <RepeatButton
+                Grid.Row="2"
+                Height="{DynamicResource ScrollBarButtonLength}"
+                Command="ScrollBar.LineDownCommand"
+                RenderTransformOrigin="0.5,0.5"
+                Style="{StaticResource SemiScrollBarLineButton}">
+                <RepeatButton.RenderTransform>
+                    <RotateTransform Angle="180" />
+                </RepeatButton.RenderTransform>
+            </RepeatButton>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="SemiHorizontalScrollBarTemplate" TargetType="ScrollBar">
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <RepeatButton
+                Width="{DynamicResource ScrollBarButtonLength}"
+                Command="ScrollBar.LineLeftCommand"
+                RenderTransformOrigin="0.5,0.5"
+                Style="{StaticResource SemiScrollBarLineButton}">
+                <RepeatButton.RenderTransform>
+                    <RotateTransform Angle="-90" />
+                </RepeatButton.RenderTransform>
+            </RepeatButton>
+            <Track
+                x:Name="PART_Track"
+                Grid.Column="1"
+                Orientation="Horizontal">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Command="ScrollBar.PageLeftCommand" Style="{StaticResource SemiScrollBarPageButton}" />
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb
+                        MinWidth="{DynamicResource ScrollBarMinLength}"
+                        Style="{StaticResource SemiHorizontalScrollBarThumb}" />
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Command="ScrollBar.PageRightCommand" Style="{StaticResource SemiScrollBarPageButton}" />
+                </Track.IncreaseRepeatButton>
+            </Track>
+            <RepeatButton
+                Grid.Column="2"
+                Width="{DynamicResource ScrollBarButtonLength}"
+                Command="ScrollBar.LineRightCommand"
+                RenderTransformOrigin="0.5,0.5"
+                Style="{StaticResource SemiScrollBarLineButton}">
+                <RepeatButton.RenderTransform>
+                    <RotateTransform Angle="90" />
+                </RepeatButton.RenderTransform>
+            </RepeatButton>
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="{x:Type ScrollBar}" TargetType="ScrollBar">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Width" Value="{DynamicResource ScrollBarThickness}" />
+        <Setter Property="Template" Value="{StaticResource SemiVerticalScrollBarTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="Width" Value="Auto" />
+                <Setter Property="Height" Value="{DynamicResource ScrollBarThickness}" />
+                <Setter Property="Template" Value="{StaticResource SemiHorizontalScrollBarTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

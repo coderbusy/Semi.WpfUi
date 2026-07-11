@@ -7,6 +7,7 @@
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/HyperlinkButton.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/ListBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/ProgressBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/ScrollBar.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/TabControl.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/TextBlock.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/Window.xaml" />
