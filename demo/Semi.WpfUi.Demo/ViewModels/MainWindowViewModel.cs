@@ -33,6 +33,7 @@ public partial class MainWindowViewModel : ObservableObject
             new("Controls", "GroupBox", "▣", "Card-style grouped content with headers and separators", new GroupBoxDemo()),
             new("Controls", "Border", "□", "CardBorder with default, elevated and hover shadow variants", new BorderDemo()),
             new("Controls", "TabControl", "⊏", "Line, card and button tab themes with placement switching", new TabControlDemo()),
+            new("Controls", "ListBox", "☷", "Single, multiple, disabled, and custom-content list items", new ListBoxDemo()),
             new("Controls", "Buttons & Selection", "✓", "Actions and choice controls", new ControlsPage()),
             new("Controls", "Inputs & Feedback", "◌", "Forms, progress and content", new InputPage()),
         ];

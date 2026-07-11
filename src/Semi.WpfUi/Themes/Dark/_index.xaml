@@ -5,6 +5,7 @@
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Dark/CheckBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Dark/GroupBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Dark/HyperlinkButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Dark/ListBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Dark/ProgressBar.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Dark/TabControl.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Dark/TextBlock.xaml" />

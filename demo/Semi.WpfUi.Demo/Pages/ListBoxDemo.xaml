@@ -1,0 +1,10 @@
+<UserControl x:Class="Semi.WpfUi.Demo.Pages.ListBoxDemo" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:semi="clr-namespace:Semi.WpfUi.Controls;assembly=Semi.WpfUi">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <semi:StackPanel Margin="24" MaxWidth="860" Spacing="16">
+            <semi:StackPanel Spacing="8"><TextBlock FontSize="{DynamicResource SemiFontSizeHeader3}" FontWeight="{DynamicResource SemiFontWeightBold}" Text="ListBox" /><TextBlock Foreground="{DynamicResource SemiColorText1}" Text="用于展示并选择一组项目，支持单选、多选、禁用与自定义内容。" /></semi:StackPanel>
+            <GroupBox Header="Single selection" Padding="16"><ListBox Width="360" HorizontalAlignment="Left" SelectedIndex="1"><ListBoxItem Content="设计规范" /><ListBoxItem Content="组件开发" /><ListBoxItem Content="主题与令牌" /><ListBoxItem Content="已禁用的项目" IsEnabled="False" /></ListBox></GroupBox>
+            <GroupBox Header="Multiple selection" Padding="16"><ListBox Width="360" Height="190" HorizontalAlignment="Left" SelectionMode="Multiple"><ListBoxItem IsSelected="True" Content="北京" /><ListBoxItem Content="上海" /><ListBoxItem IsSelected="True" Content="深圳" /><ListBoxItem Content="杭州" /></ListBox></GroupBox>
+            <GroupBox Header="Custom content" Padding="16"><ListBox Width="420" HorizontalAlignment="Left" SelectedIndex="0"><ListBoxItem><semi:StackPanel Spacing="3"><TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Text="Semi.WpfUi" /><TextBlock FontSize="{DynamicResource SemiFontSizeSmall}" Foreground="{DynamicResource SemiColorText2}" Text="WPF theme inspired by Semi Design" /></semi:StackPanel></ListBoxItem><ListBoxItem><semi:StackPanel Spacing="3"><TextBlock FontWeight="{DynamicResource SemiFontWeightBold}" Text="Demo application" /><TextBlock FontSize="{DynamicResource SemiFontSizeSmall}" Foreground="{DynamicResource SemiColorText2}" Text="Explore controls in Light and Dark themes" /></semi:StackPanel></ListBoxItem></ListBox></GroupBox>
+        </semi:StackPanel>
+    </ScrollViewer>
+</UserControl>
