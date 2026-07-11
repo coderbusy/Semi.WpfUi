@@ -1,0 +1,4 @@
+interface:
+  display_name: "Semi WPF Layouts"
+  short_description: "Use Semi layout controls for WPF demo pages"
+  default_prompt: "Use $semi-wpfui-layouts to build a Semi.WpfUi demo page."
