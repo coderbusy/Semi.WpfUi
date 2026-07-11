@@ -6,7 +6,7 @@ A WPF control theme library implementing [Semi Design](https://semi.design/), in
 
 - **Semi Design** color system — full palette with semantic tokens
 - **Light and Dark themes** — easy runtime switching
-- **Styled WPF controls**: Button and TextBlock
+- **Styled WPF controls**: Button, HyperlinkButton, TextBlock, and more
 - **Design tokens** — spacing, typography, border-radius values matching the Semi Design spec
 
 ## Project Structure
@@ -72,6 +72,21 @@ In addition to the implicit `Button` style, you can explicitly reference:
 
 ```xml
 <Button Style="{StaticResource SolidButton}" Content="Save" />
+```
+
+## HyperlinkButton
+
+`HyperlinkButton` derives from `Button`, so it supports `Content`, `Command`, and
+`CommandParameter`. Set `NavigateUri` to open a URI with the system default
+application; `IsVisited` becomes `true` after the URI is launched.
+
+```xml
+<Window
+    xmlns:semi="https://coderbusy.com/semi">
+    <semi:HyperlinkButton
+        Content="Semi.WpfUi on GitHub"
+        NavigateUri="https://github.com/coderbusy/Semi.WpfUi" />
+</Window>
 ```
 
 ## Border Styles

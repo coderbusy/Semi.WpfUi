@@ -1,0 +1,10 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <local:ResourceAlias x:Key="HyperlinkButtonForeground" ResourceKey="SemiColorLink" />
+    <local:ResourceAlias x:Key="HyperlinkButtonPointeroverForeground" ResourceKey="SemiColorLinkPointerover" />
+    <local:ResourceAlias x:Key="HyperlinkButtonPressedForeground" ResourceKey="SemiColorLinkActive" />
+    <local:ResourceAlias x:Key="HyperlinkButtonDisabledForeground" ResourceKey="SemiColorDisabledText" />
+    <local:ResourceAlias x:Key="HyperlinkButtonVisitedForeground" ResourceKey="SemiColorLinkVisited" />
+</ResourceDictionary>

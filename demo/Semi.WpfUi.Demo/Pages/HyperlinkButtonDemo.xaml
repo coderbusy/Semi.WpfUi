@@ -1,0 +1,61 @@
+<UserControl
+    x:Class="Semi.WpfUi.Demo.Pages.HyperlinkButtonDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi.Demo.Pages"
+    xmlns:semi="https://coderbusy.com/semi">
+    <UserControl.CommandBindings>
+        <CommandBinding Command="{x:Static local:HyperlinkButtonDemo.MarkCommand}" Executed="MarkCommand_Executed" />
+    </UserControl.CommandBindings>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24">
+            <TextBlock
+                FontSize="{DynamicResource SemiFontSizeHeader3}"
+                FontWeight="{DynamicResource SemiFontWeightBold}"
+                Text="HyperlinkButton" />
+            <TextBlock
+                Margin="0,8,0,24"
+                Foreground="{DynamicResource SemiColorText1}"
+                Text="A Button-derived control for opening links while retaining normal WPF command support." />
+
+            <GroupBox Header="NavigateUri and IsVisited">
+                <StackPanel Margin="16">
+                    <TextBlock Text="Clicking this link opens the URI with the system default application and marks it as visited." />
+                    <semi:HyperlinkButton
+                        Margin="0,12,0,0"
+                        Content="Semi.WpfUi on GitHub"
+                        NavigateUri="https://github.com/coderbusy/Semi.WpfUi" />
+                    <semi:HyperlinkButton
+                        Margin="0,12,0,0"
+                        Content="Visited link appearance"
+                        IsVisited="True" />
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Margin="0,16,0,0" Header="Command">
+                <StackPanel Margin="16">
+                    <TextBlock Text="NavigateUri is optional; inherited Command and CommandParameter work as they do on Button." />
+                    <semi:HyperlinkButton
+                        Margin="0,12,0,0"
+                        Command="{x:Static local:HyperlinkButtonDemo.MarkCommand}"
+                        CommandParameter="Command executed"
+                        Content="Execute command" />
+                    <TextBlock
+                        x:Name="CommandStatusText"
+                        Margin="0,8,0,0"
+                        Foreground="{DynamicResource SemiColorText1}"
+                        Text="Command has not run." />
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Margin="0,16,0,0" Header="Disabled">
+                <StackPanel Margin="16">
+                    <semi:HyperlinkButton
+                        Content="Disabled hyperlink"
+                        IsEnabled="False"
+                        NavigateUri="https://github.com/coderbusy/Semi.WpfUi" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

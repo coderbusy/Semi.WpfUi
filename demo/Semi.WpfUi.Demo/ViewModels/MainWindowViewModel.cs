@@ -26,6 +26,7 @@ public partial class MainWindowViewModel : ObservableObject
             new("Foundation", "Variables", "#", "Sizing, spacing and radius tokens", new VariablesDemo()),
             new("Foundation", "Palette", "●", "Semantic color resources", new PaletteDemo()),
             new("Controls", "Button", "●", "Light, solid, outline and borderless button themes", new ButtonDemo()),
+            new("Controls", "HyperlinkButton", "↗", "URI navigation, visited state, and commands", new HyperlinkButtonDemo()),
             new("Controls", "CheckBox", "✓", "Checked, indeterminate, disabled, and focus states", new CheckBoxDemo()),
             new("Controls", "GroupBox", "▣", "Card-style grouped content with headers and separators", new GroupBoxDemo()),
             new("Controls", "Border", "□", "CardBorder with default, elevated and hover shadow variants", new BorderDemo()),
