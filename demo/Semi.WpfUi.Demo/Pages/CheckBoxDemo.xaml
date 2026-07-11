@@ -1,0 +1,43 @@
+<UserControl
+    x:Class="Semi.WpfUi.Demo.Pages.CheckBoxDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24">
+            <TextBlock
+                FontSize="{DynamicResource SemiFontSizeHeader3}"
+                FontWeight="{DynamicResource SemiFontWeightBold}"
+                Text="CheckBox" />
+            <TextBlock
+                Margin="0,8,0,24"
+                Foreground="{DynamicResource SemiColorText1}"
+                Text="A Semi-styled checkbox with checked, indeterminate, disabled, and keyboard focus states." />
+
+            <GroupBox Header="States">
+                <WrapPanel Margin="16">
+                    <CheckBox Margin="0,0,24,12" Content="Unchecked" />
+                    <CheckBox Margin="0,0,24,12" Content="Checked" IsChecked="True" />
+                    <CheckBox Margin="0,0,24,12" Content="Indeterminate" IsChecked="{x:Null}" IsThreeState="True" />
+                    <CheckBox Margin="0,0,24,12" Content="Disabled" IsEnabled="False" />
+                    <CheckBox Content="Disabled checked" IsChecked="True" IsEnabled="False" />
+                </WrapPanel>
+            </GroupBox>
+
+            <GroupBox Margin="0,16,0,0" Header="Selection">
+                <StackPanel Margin="16">
+                    <CheckBox Content="Receive product updates" IsChecked="True" />
+                    <CheckBox Margin="0,12,0,0" Content="Send usage analytics" />
+                    <CheckBox Margin="0,12,0,0" Content="Use compact navigation" />
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Margin="0,16,0,0" Header="Wrapped Content">
+                <CheckBox
+                    Width="310"
+                    Margin="16"
+                    VerticalContentAlignment="Top"
+                    Content="I have read and agree to the service terms and privacy policy for this workspace." />
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

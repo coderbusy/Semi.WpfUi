@@ -2,6 +2,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/Border.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/Button.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/CheckBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/TabControl.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/TextBlock.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Semi.WpfUi;component/Themes/Light/Window.xaml" />
