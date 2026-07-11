@@ -225,4 +225,95 @@ public class Classes
     public static bool GetH6(DependencyObject element)
         => (bool)element.GetValue(H6Property);
 
+    public static readonly DependencyProperty GradientProperty = Register("Gradient");
+    public static void SetGradient(DependencyObject element, bool value) => element.SetValue(GradientProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetGradient(DependencyObject element) => (bool)element.GetValue(GradientProperty);
+
+    public static readonly DependencyProperty CircleProperty = Register("Circle");
+    public static void SetCircle(DependencyObject element, bool value) => element.SetValue(CircleProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetCircle(DependencyObject element) => (bool)element.GetValue(CircleProperty);
+
+    public static readonly DependencyProperty GhostProperty = Register("Ghost");
+    public static void SetGhost(DependencyObject element, bool value) => element.SetValue(GhostProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetGhost(DependencyObject element) => (bool)element.GetValue(GhostProperty);
+
+    public static readonly DependencyProperty SolidProperty = Register("Solid");
+    public static void SetSolid(DependencyObject element, bool value) => element.SetValue(SolidProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetSolid(DependencyObject element) => (bool)element.GetValue(SolidProperty);
+
+    public static readonly DependencyProperty CodeProperty = Register("Code");
+    public static void SetCode(DependencyObject element, bool value) => element.SetValue(CodeProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetCode(DependencyObject element) => (bool)element.GetValue(CodeProperty);
+
+    public static readonly DependencyProperty RedProperty = Register("Red");
+    public static void SetRed(DependencyObject element, bool value) => element.SetValue(RedProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetRed(DependencyObject element) => (bool)element.GetValue(RedProperty);
+
+    public static readonly DependencyProperty PinkProperty = Register("Pink");
+    public static void SetPink(DependencyObject element, bool value) => element.SetValue(PinkProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetPink(DependencyObject element) => (bool)element.GetValue(PinkProperty);
+
+    public static readonly DependencyProperty PurpleProperty = Register("Purple");
+    public static void SetPurple(DependencyObject element, bool value) => element.SetValue(PurpleProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetPurple(DependencyObject element) => (bool)element.GetValue(PurpleProperty);
+
+    public static readonly DependencyProperty VioletProperty = Register("Violet");
+    public static void SetViolet(DependencyObject element, bool value) => element.SetValue(VioletProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetViolet(DependencyObject element) => (bool)element.GetValue(VioletProperty);
+
+    public static readonly DependencyProperty IndigoProperty = Register("Indigo");
+    public static void SetIndigo(DependencyObject element, bool value) => element.SetValue(IndigoProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetIndigo(DependencyObject element) => (bool)element.GetValue(IndigoProperty);
+
+    public static readonly DependencyProperty BlueProperty = Register("Blue");
+    public static void SetBlue(DependencyObject element, bool value) => element.SetValue(BlueProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetBlue(DependencyObject element) => (bool)element.GetValue(BlueProperty);
+
+    public static readonly DependencyProperty LightBlueProperty = Register("LightBlue");
+    public static void SetLightBlue(DependencyObject element, bool value) => element.SetValue(LightBlueProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetLightBlue(DependencyObject element) => (bool)element.GetValue(LightBlueProperty);
+
+    public static readonly DependencyProperty CyanProperty = Register("Cyan");
+    public static void SetCyan(DependencyObject element, bool value) => element.SetValue(CyanProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetCyan(DependencyObject element) => (bool)element.GetValue(CyanProperty);
+
+    public static readonly DependencyProperty TealProperty = Register("Teal");
+    public static void SetTeal(DependencyObject element, bool value) => element.SetValue(TealProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetTeal(DependencyObject element) => (bool)element.GetValue(TealProperty);
+
+    public static readonly DependencyProperty GreenProperty = Register("Green");
+    public static void SetGreen(DependencyObject element, bool value) => element.SetValue(GreenProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetGreen(DependencyObject element) => (bool)element.GetValue(GreenProperty);
+
+    public static readonly DependencyProperty LightGreenProperty = Register("LightGreen");
+    public static void SetLightGreen(DependencyObject element, bool value) => element.SetValue(LightGreenProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetLightGreen(DependencyObject element) => (bool)element.GetValue(LightGreenProperty);
+
+    public static readonly DependencyProperty LimeProperty = Register("Lime");
+    public static void SetLime(DependencyObject element, bool value) => element.SetValue(LimeProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetLime(DependencyObject element) => (bool)element.GetValue(LimeProperty);
+
+    public static readonly DependencyProperty YellowProperty = Register("Yellow");
+    public static void SetYellow(DependencyObject element, bool value) => element.SetValue(YellowProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetYellow(DependencyObject element) => (bool)element.GetValue(YellowProperty);
+
+    public static readonly DependencyProperty AmberProperty = Register("Amber");
+    public static void SetAmber(DependencyObject element, bool value) => element.SetValue(AmberProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetAmber(DependencyObject element) => (bool)element.GetValue(AmberProperty);
+
+    public static readonly DependencyProperty OrangeProperty = Register("Orange");
+    public static void SetOrange(DependencyObject element, bool value) => element.SetValue(OrangeProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetOrange(DependencyObject element) => (bool)element.GetValue(OrangeProperty);
+
+    public static readonly DependencyProperty GreyProperty = Register("Grey");
+    public static void SetGrey(DependencyObject element, bool value) => element.SetValue(GreyProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetGrey(DependencyObject element) => (bool)element.GetValue(GreyProperty);
+
+    public static readonly DependencyProperty WhiteProperty = Register("White");
+    public static void SetWhite(DependencyObject element, bool value) => element.SetValue(WhiteProperty, ValueBoxes.BooleanBox(value));
+    public static bool GetWhite(DependencyObject element) => (bool)element.GetValue(WhiteProperty);
+
+    private static DependencyProperty Register(string name)
+        => DependencyProperty.RegisterAttached(name, typeof(bool), typeof(Classes), new PropertyMetadata(ValueBoxes.FalseBox));
+
 }

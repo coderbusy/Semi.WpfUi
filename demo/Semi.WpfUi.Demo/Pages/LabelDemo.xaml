@@ -1,0 +1,236 @@
+<UserControl
+    x:Class="Semi.WpfUi.Demo.Pages.LabelDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:att="clr-namespace:Semi.WpfUi.Attached;assembly=Semi.WpfUi"
+    xmlns:semi="clr-namespace:Semi.WpfUi.Controls;assembly=Semi.WpfUi">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <semi:StackPanel
+            MaxWidth="900"
+            Margin="40,32"
+            HorizontalAlignment="Left"
+            Spacing="24">
+            <semi:StackPanel Spacing="8">
+                <TextBlock
+                    FontSize="{DynamicResource SemiFontSizeHeader3}"
+                    FontWeight="{DynamicResource SemiFontWeightBold}"
+                    Text="Label" />
+                <TextBlock att:Classes.Secondary="True" Text="Text labels, access keys, headings, and compact status tags." />
+            </semi:StackPanel>
+
+            <GroupBox Padding="16" Header="Default and semantic labels">
+                <semi:Grid ColumnSpacing="32" RowSpacing="12">
+                    <semi:Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="240" />
+                    </semi:Grid.ColumnDefinitions>
+                    <semi:Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </semi:Grid.RowDefinitions>
+                    <Label Content="_Project name" Target="{Binding ElementName=ProjectNameTextBox}" />
+                    <TextBox
+                        x:Name="ProjectNameTextBox"
+                        Grid.Column="1"
+                        Text="Semi.WpfUi" />
+                    <Label
+                        Grid.Row="1"
+                        att:Classes.Secondary="True"
+                        Content="Secondary" />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        att:Classes.Success="True"
+                        Content="Success" />
+                    <Label
+                        Grid.Row="2"
+                        att:Classes.Warning="True"
+                        Content="Warning" />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        att:Classes.Danger="True"
+                        Content="Danger" />
+                    <Label
+                        Grid.Row="3"
+                        att:Classes.Mark="True"
+                        Content="Marked label" />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        att:Classes.Code="True"
+                        Content="dotnet build" />
+                </semi:Grid>
+            </GroupBox>
+
+            <GroupBox Padding="16" Header="TitleLabel">
+                <semi:StackPanel Spacing="8">
+                    <Label
+                        att:Classes.H3="True"
+                        Content="Header 3"
+                        Style="{StaticResource TitleLabel}" />
+                    <Label
+                        att:Classes.H4="True"
+                        Content="Header 4"
+                        Style="{StaticResource TitleLabel}" />
+                    <Label
+                        att:Classes.H5="True"
+                        Content="Header 5"
+                        Style="{StaticResource TitleLabel}" />
+                    <Label
+                        att:Classes.H6="True"
+                        Content="Header 6"
+                        Style="{StaticResource TitleLabel}" />
+                </semi:StackPanel>
+            </GroupBox>
+
+            <GroupBox Padding="16" Header="TagLabel shapes and sizes">
+                <semi:StackPanel Spacing="12">
+                    <semi:StackPanel Orientation="Horizontal" Spacing="8">
+                        <Label Content="Label" Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Large="True"
+                            Content="Large label"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Circle="True"
+                            Content="Circle"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Circle="True"
+                            att:Classes.Large="True"
+                            Content="Large circle"
+                            Style="{StaticResource TagLabel}" />
+                    </semi:StackPanel>
+                    <semi:StackPanel Orientation="Horizontal" Spacing="8">
+                        <Label
+                            att:Classes.Blue="True"
+                            Content="Light"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Blue="True"
+                            att:Classes.Ghost="True"
+                            Content="Ghost"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Blue="True"
+                            att:Classes.Solid="True"
+                            Content="Solid"
+                            Style="{StaticResource TagLabel}" />
+                    </semi:StackPanel>
+                </semi:StackPanel>
+            </GroupBox>
+
+            <GroupBox Padding="16" Header="TagLabel colors">
+                <semi:StackPanel Spacing="10">
+                    <semi:StackPanel Orientation="Horizontal" Spacing="8">
+                        <Label
+                            att:Classes.Red="True"
+                            Content="Red"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Pink="True"
+                            Content="Pink"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Purple="True"
+                            Content="Purple"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Violet="True"
+                            Content="Violet"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Indigo="True"
+                            Content="Indigo"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Blue="True"
+                            Content="Blue"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.LightBlue="True"
+                            Content="LightBlue"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Cyan="True"
+                            Content="Cyan"
+                            Style="{StaticResource TagLabel}" />
+                    </semi:StackPanel>
+                    <semi:StackPanel Orientation="Horizontal" Spacing="8">
+                        <Label
+                            att:Classes.Teal="True"
+                            Content="Teal"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Green="True"
+                            Content="Green"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.LightGreen="True"
+                            Content="LightGreen"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Lime="True"
+                            Content="Lime"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Yellow="True"
+                            Content="Yellow"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Amber="True"
+                            Content="Amber"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Orange="True"
+                            Content="Orange"
+                            Style="{StaticResource TagLabel}" />
+                    </semi:StackPanel>
+                </semi:StackPanel>
+            </GroupBox>
+
+            <GroupBox Padding="16" Header="Colorful tags">
+                <semi:StackPanel Spacing="10">
+                    <semi:StackPanel Orientation="Horizontal" Spacing="8">
+                        <Label
+                            att:Classes.Colorful="True"
+                            Content="AI"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Colorful="True"
+                            att:Classes.Ghost="True"
+                            Content="AI Ghost"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Colorful="True"
+                            att:Classes.Solid="True"
+                            Content="AI Solid"
+                            Style="{StaticResource TagLabel}" />
+                    </semi:StackPanel>
+                    <semi:StackPanel Orientation="Horizontal" Spacing="8">
+                        <Label
+                            att:Classes.Colorful="True"
+                            att:Classes.Gradient="True"
+                            Content="Gradient"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Colorful="True"
+                            att:Classes.Ghost="True"
+                            att:Classes.Gradient="True"
+                            Content="Gradient Ghost"
+                            Style="{StaticResource TagLabel}" />
+                        <Label
+                            att:Classes.Colorful="True"
+                            att:Classes.Gradient="True"
+                            att:Classes.Solid="True"
+                            Content="Gradient Solid"
+                            Style="{StaticResource TagLabel}" />
+                    </semi:StackPanel>
+                </semi:StackPanel>
+            </GroupBox>
+        </semi:StackPanel>
+    </ScrollViewer>
+</UserControl>

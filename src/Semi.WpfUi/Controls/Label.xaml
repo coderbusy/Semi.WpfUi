@@ -1,0 +1,543 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:attached="clr-namespace:Semi.WpfUi.Attached">
+    <ControlTemplate x:Key="LabelTemplate" TargetType="Label">
+        <Border
+            Padding="{TemplateBinding Padding}"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Content="{TemplateBinding Content}"
+                ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                ContentTemplate="{TemplateBinding ContentTemplate}"
+                RecognizesAccessKey="True"
+                TextElement.FontFamily="{TemplateBinding FontFamily}"
+                TextElement.FontSize="{TemplateBinding FontSize}"
+                TextElement.FontWeight="{TemplateBinding FontWeight}"
+                TextElement.Foreground="{TemplateBinding Foreground}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="CodeLabelTemplate" TargetType="Label">
+        <Border
+            Padding="{TemplateBinding Padding}"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{StaticResource TextBlockCodeCornerRadius}">
+            <ContentPresenter
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Content="{TemplateBinding Content}"
+                ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                ContentTemplate="{TemplateBinding ContentTemplate}"
+                RecognizesAccessKey="True"
+                TextElement.FontFamily="{TemplateBinding FontFamily}"
+                TextElement.FontSize="{TemplateBinding FontSize}"
+                TextElement.FontWeight="{TemplateBinding FontWeight}"
+                TextElement.Foreground="{TemplateBinding Foreground}" />
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="{x:Type Label}" TargetType="Label">
+        <Setter Property="Foreground" Value="{DynamicResource TextBlockDefaultForeground}" />
+        <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template" Value="{StaticResource LabelTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="attached:Classes.Secondary" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource TextBlockSecondaryForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Tertiary" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource TextBlockTertiaryForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Quaternary" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource TextBlockQuaternaryForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Success" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource TextBlockSuccessForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Warning" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource TextBlockWarningForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Danger" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource TextBlockDangerForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Mark" Value="True">
+                <Setter Property="Background" Value="{DynamicResource TextBlockMarkBackground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Code" Value="True">
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="Background" Value="{DynamicResource TextBlockCodeBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource TextBlockCodeForeground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource TextBlockCodeBorderBrush}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="FontFamily" Value="{StaticResource CodeFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource TextBlockCodeFontSize}" />
+                <Setter Property="Template" Value="{StaticResource CodeLabelTemplate}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource TextBlockDisabledForeground}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="TitleLabel"
+        BasedOn="{StaticResource {x:Type Label}}"
+        TargetType="Label">
+        <Setter Property="FontWeight" Value="{StaticResource TextBlockTitleFontWeight}" />
+        <Style.Triggers>
+            <Trigger Property="attached:Classes.H1" Value="True">
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH1FontSize}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.H2" Value="True">
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH2FontSize}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.H3" Value="True">
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH3FontSize}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.H4" Value="True">
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH4FontSize}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.H5" Value="True">
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH5FontSize}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.H6" Value="True">
+                <Setter Property="FontSize" Value="{StaticResource TextBlockTitleH6FontSize}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <ControlTemplate x:Key="TagLabelTemplate" TargetType="Label">
+        <Border
+            Padding="{TemplateBinding Padding}"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{StaticResource LabelTagSquareCornerRadius}"
+            SnapsToDevicePixels="True">
+            <ContentPresenter
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Content="{TemplateBinding Content}"
+                ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                ContentTemplate="{TemplateBinding ContentTemplate}"
+                RecognizesAccessKey="True"
+                TextElement.FontSize="{TemplateBinding FontSize}"
+                TextElement.FontWeight="{TemplateBinding FontWeight}"
+                TextElement.Foreground="{TemplateBinding Foreground}" />
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="CircleTagLabelTemplate" TargetType="Label">
+        <Border
+            Padding="{TemplateBinding Padding}"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{StaticResource LabelTagCircleCornerRadius}"
+            SnapsToDevicePixels="True">
+            <ContentPresenter
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Content="{TemplateBinding Content}"
+                ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                ContentTemplate="{TemplateBinding ContentTemplate}"
+                RecognizesAccessKey="True"
+                TextElement.FontSize="{TemplateBinding FontSize}"
+                TextElement.FontWeight="{TemplateBinding FontWeight}"
+                TextElement.Foreground="{TemplateBinding Foreground}" />
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="TagLabel" TargetType="Label">
+        <Setter Property="MinHeight" Value="{StaticResource LabelTagSmallHeight}" />
+        <Setter Property="Padding" Value="{StaticResource LabelTagSmallPadding}" />
+        <Setter Property="BorderThickness" Value="{StaticResource LabelTagBorderThickness}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="{DynamicResource LabelTagLightGreyBackground}" />
+        <Setter Property="Foreground" Value="{DynamicResource LabelTagLightGreyForeground}" />
+        <Setter Property="FontSize" Value="{StaticResource LabelTagFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource LabelTagFontWeight}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template" Value="{StaticResource TagLabelTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="attached:Classes.Large" Value="True">
+                <Setter Property="MinHeight" Value="{StaticResource LabelTagLargeHeight}" />
+                <Setter Property="Padding" Value="{StaticResource LabelTagLargePadding}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Circle" Value="True">
+                <Setter Property="Template" Value="{StaticResource CircleTagLabelTemplate}" />
+            </Trigger>
+
+            <Trigger Property="attached:Classes.Red" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightRedBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightRedForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Pink" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightPinkBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightPinkForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Purple" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightPurpleBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightPurpleForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Violet" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightVioletBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightVioletForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Indigo" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightIndigoBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightIndigoForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Blue" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightBlueBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightBlueForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.LightBlue" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightLightBlueBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightLightBlueForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Cyan" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightCyanBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightCyanForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Teal" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightTealBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightTealForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Green" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightGreenBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightGreenForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.LightGreen" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightLightGreenBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightLightGreenForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Lime" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightLimeBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightLimeForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Yellow" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightYellowBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightYellowForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Amber" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightAmberBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightAmberForeground}" />
+            </Trigger>
+            <Trigger Property="attached:Classes.Orange" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagLightOrangeBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightOrangeForeground}" />
+            </Trigger>
+
+            <Trigger Property="attached:Classes.Ghost" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagLightGreyBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagLightGreyForeground}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Red" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostRedBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostRedForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Pink" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostPinkBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostPinkForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Purple" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostPurpleBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostPurpleForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Violet" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostVioletBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostVioletForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Indigo" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostIndigoBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostIndigoForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Blue" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostBlueBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostBlueForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.LightBlue" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostLightBlueBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostLightBlueForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Cyan" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostCyanBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostCyanForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Teal" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostTealBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostTealForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Green" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostGreenBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostGreenForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.LightGreen" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostLightGreenBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostLightGreenForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Lime" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostLimeBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostLimeForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Yellow" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostYellowBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostYellowForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Amber" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostAmberBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostAmberForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                    <Condition Property="attached:Classes.Orange" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagGhostOrangeBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagGhostOrangeForeground}" />
+            </MultiTrigger>
+
+            <Trigger Property="attached:Classes.Solid" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidGreyBackground}" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagSolidForeground}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Red" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidRedBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Pink" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidPinkBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Purple" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidPurpleBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Violet" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidVioletBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Indigo" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidIndigoBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Blue" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidBlueBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.LightBlue" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidLightBlueBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Cyan" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidCyanBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Teal" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidTealBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Green" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidGreenBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.LightGreen" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidLightGreenBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Lime" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidLimeBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Yellow" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidYellowBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Amber" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidAmberBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.Orange" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidOrangeBackground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                    <Condition Property="attached:Classes.White" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagSolidWhiteBackground}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagSolidWhiteBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagSolidWhiteForeground}" />
+            </MultiTrigger>
+
+            <Trigger Property="attached:Classes.Colorful" Value="True">
+                <Setter Property="Background" Value="{DynamicResource LabelTagColorfulLightBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagColorfulLightForeground}" />
+                <Setter Property="FontWeight" Value="{StaticResource LabelTagColorfulFontWeight}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Colorful" Value="True" />
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagColorfulGhostBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagColorfulGhostForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Colorful" Value="True" />
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagColorfulSolidBackground}" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagColorfulSolidForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Colorful" Value="True" />
+                    <Condition Property="attached:Classes.Gradient" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagColorfulGradientLightBackground}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagColorfulGradientLightForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Colorful" Value="True" />
+                    <Condition Property="attached:Classes.Gradient" Value="True" />
+                    <Condition Property="attached:Classes.Ghost" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderBrush" Value="{DynamicResource LabelTagColorfulGradientGhostBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagColorfulGradientGhostForeground}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="attached:Classes.Colorful" Value="True" />
+                    <Condition Property="attached:Classes.Gradient" Value="True" />
+                    <Condition Property="attached:Classes.Solid" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LabelTagColorfulGradientSolidBackground}" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+                <Setter Property="Foreground" Value="{DynamicResource LabelTagColorfulGradientSolidForeground}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

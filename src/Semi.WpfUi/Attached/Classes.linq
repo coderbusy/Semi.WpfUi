@@ -10,8 +10,11 @@ string[] names =
 	"Success","Warning","Danger",
 	"Mark", "Underline","Delete",
 	"Disabled",
-	"Colorful",
-	"Large","Small",
+	"Colorful", "Gradient",
+	"Large","Small", "Circle", "Shadow", "Hover",
+	"Ghost", "Solid", "Code",
+	"Red", "Pink", "Purple", "Violet", "Indigo", "Blue", "LightBlue", "Cyan", "Teal",
+	"Green", "LightGreen", "Lime", "Yellow", "Amber", "Orange", "Grey", "White",
 	"H1","H2","H3","H4","H5","H6"
 ];
 var cs = new CSharpStringBuilder();

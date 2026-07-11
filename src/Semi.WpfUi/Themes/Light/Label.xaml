@@ -1,0 +1,155 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <local:ResourceAlias x:Key="LabelTagLightRedForeground" ResourceKey="SemiRed8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightRedBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiRed5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightPinkForeground" ResourceKey="SemiPink8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightPinkBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiPink5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightPurpleForeground" ResourceKey="SemiPurple8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightPurpleBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiPurple5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightVioletForeground" ResourceKey="SemiViolet8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightVioletBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiViolet5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightIndigoForeground" ResourceKey="SemiIndigo8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightIndigoBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiIndigo5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightBlueForeground" ResourceKey="SemiBlue8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightBlueBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiBlue5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightLightBlueForeground" ResourceKey="SemiLightBlue8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightLightBlueBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiLightBlue5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightCyanForeground" ResourceKey="SemiCyan8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightCyanBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiCyan5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightTealForeground" ResourceKey="SemiTeal8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightTealBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiTeal5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightGreenForeground" ResourceKey="SemiGreen8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightGreenBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiGreen5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightLightGreenForeground" ResourceKey="SemiLightGreen8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightLightGreenBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiLightGreen5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightLimeForeground" ResourceKey="SemiLime8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightLimeBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiLime5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightYellowForeground" ResourceKey="SemiYellow8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightYellowBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiYellow5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightAmberForeground" ResourceKey="SemiAmber8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightAmberBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiAmber5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightOrangeForeground" ResourceKey="SemiOrange8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightOrangeBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiOrange5Color}" />
+    <local:ResourceAlias x:Key="LabelTagLightGreyForeground" ResourceKey="SemiGrey8" />
+    <SolidColorBrush
+        x:Key="LabelTagLightGreyBackground"
+        Opacity="0.15"
+        Color="{DynamicResource SemiGrey5Color}" />
+
+    <local:ResourceAlias x:Key="LabelTagGhostRedBorderBrush" ResourceKey="SemiRed4" />
+    <local:ResourceAlias x:Key="LabelTagGhostRedForeground" ResourceKey="SemiRed5" />
+    <local:ResourceAlias x:Key="LabelTagGhostPinkBorderBrush" ResourceKey="SemiPink4" />
+    <local:ResourceAlias x:Key="LabelTagGhostPinkForeground" ResourceKey="SemiPink5" />
+    <local:ResourceAlias x:Key="LabelTagGhostPurpleBorderBrush" ResourceKey="SemiPurple4" />
+    <local:ResourceAlias x:Key="LabelTagGhostPurpleForeground" ResourceKey="SemiPurple5" />
+    <local:ResourceAlias x:Key="LabelTagGhostVioletBorderBrush" ResourceKey="SemiViolet4" />
+    <local:ResourceAlias x:Key="LabelTagGhostVioletForeground" ResourceKey="SemiViolet5" />
+    <local:ResourceAlias x:Key="LabelTagGhostIndigoBorderBrush" ResourceKey="SemiIndigo4" />
+    <local:ResourceAlias x:Key="LabelTagGhostIndigoForeground" ResourceKey="SemiIndigo5" />
+    <local:ResourceAlias x:Key="LabelTagGhostBlueBorderBrush" ResourceKey="SemiBlue4" />
+    <local:ResourceAlias x:Key="LabelTagGhostBlueForeground" ResourceKey="SemiBlue5" />
+    <local:ResourceAlias x:Key="LabelTagGhostLightBlueBorderBrush" ResourceKey="SemiLightBlue4" />
+    <local:ResourceAlias x:Key="LabelTagGhostLightBlueForeground" ResourceKey="SemiLightBlue5" />
+    <local:ResourceAlias x:Key="LabelTagGhostCyanBorderBrush" ResourceKey="SemiCyan4" />
+    <local:ResourceAlias x:Key="LabelTagGhostCyanForeground" ResourceKey="SemiCyan5" />
+    <local:ResourceAlias x:Key="LabelTagGhostTealBorderBrush" ResourceKey="SemiTeal4" />
+    <local:ResourceAlias x:Key="LabelTagGhostTealForeground" ResourceKey="SemiTeal5" />
+    <local:ResourceAlias x:Key="LabelTagGhostGreenBorderBrush" ResourceKey="SemiGreen4" />
+    <local:ResourceAlias x:Key="LabelTagGhostGreenForeground" ResourceKey="SemiGreen5" />
+    <local:ResourceAlias x:Key="LabelTagGhostLightGreenBorderBrush" ResourceKey="SemiLightGreen4" />
+    <local:ResourceAlias x:Key="LabelTagGhostLightGreenForeground" ResourceKey="SemiLightGreen5" />
+    <local:ResourceAlias x:Key="LabelTagGhostLimeBorderBrush" ResourceKey="SemiLime4" />
+    <local:ResourceAlias x:Key="LabelTagGhostLimeForeground" ResourceKey="SemiLime5" />
+    <local:ResourceAlias x:Key="LabelTagGhostYellowBorderBrush" ResourceKey="SemiYellow4" />
+    <local:ResourceAlias x:Key="LabelTagGhostYellowForeground" ResourceKey="SemiYellow5" />
+    <local:ResourceAlias x:Key="LabelTagGhostAmberBorderBrush" ResourceKey="SemiAmber4" />
+    <local:ResourceAlias x:Key="LabelTagGhostAmberForeground" ResourceKey="SemiAmber5" />
+    <local:ResourceAlias x:Key="LabelTagGhostOrangeBorderBrush" ResourceKey="SemiOrange4" />
+    <local:ResourceAlias x:Key="LabelTagGhostOrangeForeground" ResourceKey="SemiOrange5" />
+    <local:ResourceAlias x:Key="LabelTagGhostGreyBorderBrush" ResourceKey="SemiGrey4" />
+    <local:ResourceAlias x:Key="LabelTagGhostGreyForeground" ResourceKey="SemiGrey5" />
+
+    <local:ResourceAlias x:Key="LabelTagSolidForeground" ResourceKey="SemiWhite" />
+    <local:ResourceAlias x:Key="LabelTagSolidRedBackground" ResourceKey="SemiRed5" />
+    <local:ResourceAlias x:Key="LabelTagSolidPinkBackground" ResourceKey="SemiPink5" />
+    <local:ResourceAlias x:Key="LabelTagSolidPurpleBackground" ResourceKey="SemiPurple5" />
+    <local:ResourceAlias x:Key="LabelTagSolidVioletBackground" ResourceKey="SemiViolet5" />
+    <local:ResourceAlias x:Key="LabelTagSolidIndigoBackground" ResourceKey="SemiIndigo5" />
+    <local:ResourceAlias x:Key="LabelTagSolidBlueBackground" ResourceKey="SemiBlue5" />
+    <local:ResourceAlias x:Key="LabelTagSolidLightBlueBackground" ResourceKey="SemiLightBlue5" />
+    <local:ResourceAlias x:Key="LabelTagSolidCyanBackground" ResourceKey="SemiCyan5" />
+    <local:ResourceAlias x:Key="LabelTagSolidTealBackground" ResourceKey="SemiTeal5" />
+    <local:ResourceAlias x:Key="LabelTagSolidGreenBackground" ResourceKey="SemiGreen5" />
+    <local:ResourceAlias x:Key="LabelTagSolidLightGreenBackground" ResourceKey="SemiLightGreen5" />
+    <local:ResourceAlias x:Key="LabelTagSolidLimeBackground" ResourceKey="SemiLime5" />
+    <local:ResourceAlias x:Key="LabelTagSolidYellowBackground" ResourceKey="SemiYellow5" />
+    <local:ResourceAlias x:Key="LabelTagSolidAmberBackground" ResourceKey="SemiAmber5" />
+    <local:ResourceAlias x:Key="LabelTagSolidOrangeBackground" ResourceKey="SemiOrange5" />
+    <local:ResourceAlias x:Key="LabelTagSolidGreyBackground" ResourceKey="SemiGrey5" />
+    <local:ResourceAlias x:Key="LabelTagSolidWhiteForeground" ResourceKey="SemiColorText0" />
+    <local:ResourceAlias x:Key="LabelTagSolidWhiteBackground" ResourceKey="SemiColorBackground4" />
+    <SolidColorBrush
+        x:Key="LabelTagSolidWhiteBorderBrush"
+        Opacity="0.7"
+        Color="{DynamicResource SemiGrey2Color}" />
+
+    <local:ResourceAlias x:Key="LabelTagColorfulLightForeground" ResourceKey="SemiColorAIPurple" />
+    <SolidColorBrush x:Key="LabelTagColorfulLightBackground" Color="#F4E7FF" />
+    <local:ResourceAlias x:Key="LabelTagColorfulGhostForeground" ResourceKey="SemiColorAIPurple" />
+    <local:ResourceAlias x:Key="LabelTagColorfulGhostBorderBrush" ResourceKey="SemiColorAIPurple" />
+    <local:ResourceAlias x:Key="LabelTagColorfulSolidForeground" ResourceKey="SemiColorWhite" />
+    <local:ResourceAlias x:Key="LabelTagColorfulSolidBackground" ResourceKey="SemiColorAIPurple" />
+    <local:ResourceAlias x:Key="LabelTagColorfulGradientLightForeground" ResourceKey="SemiColorAIGeneral" />
+    <local:ResourceAlias x:Key="LabelTagColorfulGradientLightBackground" ResourceKey="SemiAIGeneral0" />
+    <local:ResourceAlias x:Key="LabelTagColorfulGradientGhostForeground" ResourceKey="SemiColorAIGeneral" />
+    <local:ResourceAlias x:Key="LabelTagColorfulGradientGhostBorderBrush" ResourceKey="SemiColorAIGeneral" />
+    <local:ResourceAlias x:Key="LabelTagColorfulGradientSolidForeground" ResourceKey="SemiColorWhite" />
+    <local:ResourceAlias x:Key="LabelTagColorfulGradientSolidBackground" ResourceKey="SemiColorAIGeneral" />
+</ResourceDictionary>

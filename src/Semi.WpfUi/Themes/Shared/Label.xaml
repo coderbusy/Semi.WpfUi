@@ -1,0 +1,16 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <local:ResourceAlias x:Key="LabelTagBorderThickness" ResourceKey="SemiBorderThicknessControl" />
+    <Thickness x:Key="LabelTagSmallPadding">8,0</Thickness>
+    <Thickness x:Key="LabelTagLargePadding">8,0</Thickness>
+    <sys:Double x:Key="LabelTagSmallHeight">20</sys:Double>
+    <sys:Double x:Key="LabelTagLargeHeight">24</sys:Double>
+    <local:ResourceAlias x:Key="LabelTagFontSize" ResourceKey="SemiFontSizeSmall" />
+    <local:ResourceAlias x:Key="LabelTagFontWeight" ResourceKey="SemiFontWeightRegular" />
+    <local:ResourceAlias x:Key="LabelTagSquareCornerRadius" ResourceKey="SemiBorderRadiusSmall" />
+    <local:ResourceAlias x:Key="LabelTagCircleCornerRadius" ResourceKey="SemiBorderRadiusFull" />
+    <local:ResourceAlias x:Key="LabelTagColorfulFontWeight" ResourceKey="SemiFontWeightBold" />
+</ResourceDictionary>

@@ -23,6 +23,7 @@ public partial class MainWindowViewModel : ObservableObject
             new("Overview", "Overview", "⌂", "Get started with Semi WPF", new OverviewPage()),
             new("Foundation", "Typography & Colors", "Aa", "Text styles and semantic tokens", new FoundationPage()),
             new("Foundation", "TextBlock", "T", "Text styles and semantic classes", new TextBlockDemo()),
+            new("Foundation", "Label", "L", "Labels, headings, access keys, and colorful tags", new LabelDemo()),
             new("Foundation", "Variables", "#", "Sizing, spacing and radius tokens", new VariablesDemo()),
             new("Foundation", "Palette", "●", "Semantic color resources", new PaletteDemo()),
             new("Controls", "Button", "●", "Light, solid, outline and borderless button themes", new ButtonDemo()),
