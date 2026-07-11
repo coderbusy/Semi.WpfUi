@@ -1,0 +1,69 @@
+<UserControl
+    x:Class="Semi.WpfUi.Demo.Pages.GroupBoxDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel MaxWidth="920" Margin="24">
+            <TextBlock
+                FontSize="{DynamicResource SemiFontSizeHeader3}"
+                FontWeight="{DynamicResource SemiFontWeightBold}"
+                Text="GroupBox" />
+            <TextBlock
+                Margin="0,8,0,24"
+                Foreground="{DynamicResource SemiColorText1}"
+                Text="GroupBox uses a Semi card container with a bold header, separator, and consistent content spacing." />
+
+            <WrapPanel>
+                <GroupBox Width="400" Margin="0,0,16,16" Header="Account settings">
+                    <StackPanel>
+                        <TextBlock
+                            FontSize="{DynamicResource SemiFontSizeHeader6}"
+                            FontWeight="{DynamicResource SemiFontWeightBold}"
+                            Text="Personal profile" />
+                        <TextBlock
+                            Margin="0,8,0,16"
+                            Foreground="{DynamicResource SemiColorText1}"
+                            Text="Manage your basic information and notification preferences." />
+                        <CheckBox Content="Receive product updates" IsChecked="True" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Width="400" Margin="0,0,0,16">
+                    <GroupBox.Header>
+                        <DockPanel LastChildFill="False">
+                            <TextBlock
+                                DockPanel.Dock="Left"
+                                FontWeight="{DynamicResource SemiFontWeightBold}"
+                                Text="Team access" />
+                            <Button
+                                DockPanel.Dock="Right"
+                                Padding="8,3"
+                                Content="Manage" />
+                        </DockPanel>
+                    </GroupBox.Header>
+                    <StackPanel>
+                        <TextBlock
+                            Foreground="{DynamicResource SemiColorText1}"
+                            Text="Invite collaborators and control their workspace permissions." />
+                        <Button
+                            Width="104"
+                            Margin="0,16,0,0"
+                            HorizontalAlignment="Left"
+                            Content="Add member" />
+                    </StackPanel>
+                </GroupBox>
+            </WrapPanel>
+
+            <TextBlock
+                Margin="0,8,0,8"
+                FontSize="{DynamicResource SemiFontSizeHeader6}"
+                FontWeight="{DynamicResource SemiFontWeightBold}"
+                Text="Content-only group" />
+            <GroupBox>
+                <TextBlock
+                    Foreground="{DynamicResource SemiColorText1}"
+                    Text="The content remains padded when no Header is supplied, which is useful for compact grouped content." />
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

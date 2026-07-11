@@ -1,0 +1,85 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTemplate x:Key="SemiGroupBoxTemplate" TargetType="GroupBox">
+        <Border
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{DynamicResource GroupBoxCornerRadius}"
+            SnapsToDevicePixels="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border
+                    x:Name="HeaderBorder"
+                    Padding="{DynamicResource GroupBoxHeaderPadding}">
+                    <ContentPresenter
+                        Content="{TemplateBinding Header}"
+                        ContentStringFormat="{TemplateBinding HeaderStringFormat}"
+                        ContentTemplate="{TemplateBinding HeaderTemplate}"
+                        ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                        RecognizesAccessKey="True"
+                        TextElement.FontFamily="{TemplateBinding FontFamily}"
+                        TextElement.FontSize="{TemplateBinding FontSize}"
+                        TextElement.FontWeight="{DynamicResource GroupBoxHeaderFontWeight}"
+                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                </Border>
+
+                <Border
+                    x:Name="Separator"
+                    Grid.Row="1"
+                    Height="1"
+                    Background="{TemplateBinding BorderBrush}" />
+
+                <Border
+                    x:Name="ContentBorder"
+                    Grid.Row="2"
+                    Padding="{DynamicResource GroupBoxContentPadding}">
+                    <ContentPresenter
+                        Content="{TemplateBinding Content}"
+                        ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                        RecognizesAccessKey="True"
+                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                        TextElement.FontFamily="{TemplateBinding FontFamily}"
+                        TextElement.FontSize="{TemplateBinding FontSize}"
+                        TextElement.FontWeight="{TemplateBinding FontWeight}"
+                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                </Border>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Header" Value="{x:Null}">
+                <Setter TargetName="HeaderBorder" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="Separator" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="Content" Value="{x:Null}">
+                <Setter TargetName="ContentBorder" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource GroupBoxDisabledForeground}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="BaseGroupBox" TargetType="GroupBox">
+        <Setter Property="Background" Value="{DynamicResource GroupBoxBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource GroupBoxBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource GroupBoxBorderThickness}" />
+        <Setter Property="Foreground" Value="{DynamicResource GroupBoxForeground}" />
+        <Setter Property="FontSize" Value="{DynamicResource GroupBoxFontSize}" />
+        <Setter Property="FontWeight" Value="{DynamicResource GroupBoxFontWeight}" />
+        <Setter Property="Template" Value="{StaticResource SemiGroupBoxTemplate}" />
+    </Style>
+
+    <Style
+        x:Key="{x:Type GroupBox}"
+        BasedOn="{StaticResource BaseGroupBox}"
+        TargetType="GroupBox" />
+</ResourceDictionary>

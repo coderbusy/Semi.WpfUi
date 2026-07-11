@@ -1,0 +1,12 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <local:ResourceAlias x:Key="GroupBoxCornerRadius" ResourceKey="SemiBorderRadiusMedium" />
+    <local:ResourceAlias x:Key="GroupBoxBorderThickness" ResourceKey="SemiBorderThicknessControl" />
+    <local:ResourceAlias x:Key="GroupBoxHeaderPadding" ResourceKey="SemiThicknessBaseLoose" />
+    <local:ResourceAlias x:Key="GroupBoxContentPadding" ResourceKey="SemiThicknessBaseLoose" />
+    <local:ResourceAlias x:Key="GroupBoxHeaderFontWeight" ResourceKey="SemiFontWeightBold" />
+    <local:ResourceAlias x:Key="GroupBoxFontWeight" ResourceKey="SemiFontWeightRegular" />
+    <local:ResourceAlias x:Key="GroupBoxFontSize" ResourceKey="SemiFontSizeRegular" />
+</ResourceDictionary>
