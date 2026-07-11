@@ -28,6 +28,7 @@ public partial class MainWindowViewModel : ObservableObject
             new("Controls", "Button", "●", "Light, solid, outline and borderless button themes", new ButtonDemo()),
             new("Controls", "HyperlinkButton", "↗", "URI navigation, visited state, and commands", new HyperlinkButtonDemo()),
             new("Controls", "CheckBox", "✓", "Checked, indeterminate, disabled, and focus states", new CheckBoxDemo()),
+            new("Controls", "TextBox", "T", "Custom Semi text input with placeholders and inner content", new TextBoxDemo()),
             new("Controls", "GroupBox", "▣", "Card-style grouped content with headers and separators", new GroupBoxDemo()),
             new("Controls", "Border", "□", "CardBorder with default, elevated and hover shadow variants", new BorderDemo()),
             new("Controls", "TabControl", "⊏", "Line, card and button tab themes with placement switching", new TabControlDemo()),

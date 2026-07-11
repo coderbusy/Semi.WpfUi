@@ -1,0 +1,47 @@
+<UserControl
+    x:Class="Semi.WpfUi.Demo.Pages.TextBoxDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:semi="clr-namespace:Semi.WpfUi.Controls;assembly=Semi.WpfUi">
+    <ScrollViewer Padding="40,32" VerticalScrollBarVisibility="Auto">
+        <semi:StackPanel MaxWidth="860" Spacing="24">
+            <semi:StackPanel Spacing="8">
+                <TextBlock FontSize="{DynamicResource SemiFontSizeHeader3}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="TextBox" />
+                <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Semi.WpfUi.Controls.TextBox supports placeholders and content embedded at either end of the input." />
+            </semi:StackPanel>
+
+            <GroupBox Padding="16" Header="Basic">
+                <semi:StackPanel Spacing="12">
+                    <semi:TextBox Width="300" PlaceholderText="Enter text" />
+                    <semi:TextBox Width="300" Text="TextBox with value" />
+                    <semi:TextBox Width="300" IsReadOnly="True" Text="Read-only TextBox" />
+                </semi:StackPanel>
+            </GroupBox>
+
+            <GroupBox Padding="16" Header="Inner Content">
+                <semi:StackPanel Spacing="12">
+                    <semi:TextBox Width="300" InnerLeftContent="https://" InnerRightContent=".com" PlaceholderText="website" />
+                    <semi:TextBox Width="300" InnerLeftContent="@" PlaceholderText="Email address" />
+                    <semi:TextBox Width="300" InnerRightContent="kg" Text="68" />
+                </semi:StackPanel>
+            </GroupBox>
+
+            <GroupBox Padding="16" Header="States">
+                <semi:StackPanel Orientation="Horizontal" Spacing="16">
+                    <semi:StackPanel Spacing="6">
+                        <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Default" />
+                        <semi:TextBox Width="180" PlaceholderText="Default" />
+                    </semi:StackPanel>
+                    <semi:StackPanel Spacing="6">
+                        <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Disabled" />
+                        <semi:TextBox Width="180" IsEnabled="False" PlaceholderText="Disabled" />
+                    </semi:StackPanel>
+                    <semi:StackPanel Spacing="6">
+                        <TextBlock Foreground="{DynamicResource SemiColorText1}" Text="Multiline" />
+                        <semi:TextBox Width="300" Height="88" AcceptsReturn="True" TextWrapping="Wrap" VerticalContentAlignment="Top" PlaceholderText="Enter multiple lines" />
+                    </semi:StackPanel>
+                </semi:StackPanel>
+            </GroupBox>
+        </semi:StackPanel>
+    </ScrollViewer>
+</UserControl>

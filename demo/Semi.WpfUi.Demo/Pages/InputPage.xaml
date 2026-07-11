@@ -3,8 +3,8 @@
         <StackPanel Margin="40,32" MaxWidth="860">
             <TextBlock FontSize="{DynamicResource SemiFontSizeHeader3}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Inputs &amp; Feedback" />
             <TextBlock Margin="0,8,0,28" Foreground="{DynamicResource SemiColorText1}" Text="Input controls, progress indicators, and content selection." />
-            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="TextBox &amp; ComboBox" />
-            <WrapPanel Margin="0,16,0,32"><TextBox Width="220" Margin="0,0,12,8" Text="Default text" /><TextBox Width="220" Margin="0,0,12,8" IsReadOnly="True" Text="Read only" /><ComboBox Width="180" SelectedIndex="0"><ComboBoxItem Content="Option 1" /><ComboBoxItem Content="Option 2" /><ComboBoxItem Content="Option 3" /></ComboBox></WrapPanel>
+            <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="ComboBox" />
+            <WrapPanel Margin="0,16,0,32"><ComboBox Width="180" SelectedIndex="0"><ComboBoxItem Content="Option 1" /><ComboBoxItem Content="Option 2" /><ComboBoxItem Content="Option 3" /></ComboBox></WrapPanel>
             <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="Progress &amp; Slider" />
             <StackPanel Width="420" Margin="0,16,0,32"><ProgressBar Height="10" Maximum="100" Value="35" /><ProgressBar Height="10" Margin="0,12,0,0" Maximum="100" Value="70" /><Slider Margin="0,20,0,0" Maximum="100" Value="60" /></StackPanel>
             <TextBlock FontSize="{DynamicResource SemiFontSizeHeader6}" FontWeight="{DynamicResource SemiFontWeightBold}" Foreground="{DynamicResource SemiColorText0}" Text="List &amp; Tabs" />
