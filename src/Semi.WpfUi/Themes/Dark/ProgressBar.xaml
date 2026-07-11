@@ -1,0 +1,12 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <local:ResourceAlias x:Key="ProgressBarTrackBrush" ResourceKey="SemiColorFill0" />
+    <local:ResourceAlias x:Key="ProgressBarIndicatorBrush" ResourceKey="SemiColorPrimary" />
+    <local:ResourceAlias x:Key="ProgressBarSuccessIndicatorBrush" ResourceKey="SemiColorSuccess" />
+    <local:ResourceAlias x:Key="ProgressBarWarningIndicatorBrush" ResourceKey="SemiColorWarning" />
+    <local:ResourceAlias x:Key="ProgressBarDangerIndicatorBrush" ResourceKey="SemiColorDanger" />
+    <local:ResourceAlias x:Key="ProgressBarDisabledTrackBrush" ResourceKey="SemiColorDisabledFill" />
+    <local:ResourceAlias x:Key="ProgressBarDisabledIndicatorBrush" ResourceKey="SemiColorPrimaryDisabled" />
+</ResourceDictionary>

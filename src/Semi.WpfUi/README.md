@@ -89,6 +89,21 @@ application; `IsVisited` becomes `true` after the URI is launched.
 </Window>
 ```
 
+## ProgressBar
+
+`ProgressBar` has a Semi-styled track and indicator. Use the existing semantic
+attached classes to communicate success, warning, and danger states.
+
+```xml
+<ProgressBar Maximum="100" Value="60" />
+<ProgressBar
+    xmlns:semi="clr-namespace:Semi.WpfUi.Attached;assembly=Semi.WpfUi"
+    semi:Classes.Success="True"
+    Maximum="100"
+    Value="100" />
+<ProgressBar IsIndeterminate="True" />
+```
+
 ## Border Styles
 
 Use `CardBorder` for Semi-styled card surfaces. Elevation behavior is controlled through attached classes:

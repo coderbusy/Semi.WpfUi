@@ -1,0 +1,7 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Semi.WpfUi">
+    <sys:Double x:Key="ProgressBarHeight" xmlns:sys="clr-namespace:System;assembly=mscorlib">4</sys:Double>
+    <local:ResourceAlias x:Key="ProgressBarCornerRadius" ResourceKey="SemiBorderRadiusSmall" />
+</ResourceDictionary>
