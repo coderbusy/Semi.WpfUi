@@ -14,7 +14,7 @@
     </ControlTemplate>
 
     <Style x:Key="TextBoxInnerContent" TargetType="ContentControl">
-        <Setter Property="Foreground" Value="{DynamicResource SemiColorText2}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBoxInnerForeground}" />
         <Setter Property="Template" Value="{StaticResource TextBoxInnerContentTemplate}" />
         <Setter Property="Visibility" Value="Collapsed" />
         <Style.Triggers>
@@ -25,17 +25,18 @@
     </Style>
 
     <Style x:Key="{x:Type local:TextBox}" TargetType="local:TextBox">
-        <Setter Property="Height" Value="{DynamicResource SemiHeightControlDefault}" />
-        <Setter Property="Padding" Value="12,0" />
-        <Setter Property="FontSize" Value="{DynamicResource SemiFontSizeRegular}" />
-        <Setter Property="FontFamily" Value="{DynamicResource SemiFontFamilyRegular}" />
-        <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}" />
-        <Setter Property="PlaceholderForeground" Value="{DynamicResource SemiColorText2}" />
-        <Setter Property="Background" Value="{DynamicResource SemiColorFill0}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource SemiColorBorder}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource SemiBorderThicknessControl}" />
-        <Setter Property="SelectionBrush" Value="{DynamicResource TextBlockSelectionBackground}" />
-        <Setter Property="SelectionTextBrush" Value="{DynamicResource TextBlockSelectionForeground}" />
+        <Setter Property="Height" Value="{DynamicResource TextBoxDefaultHeight}" />
+        <Setter Property="Padding" Value="{DynamicResource TextBoxContentPadding}" />
+        <Setter Property="FontSize" Value="{DynamicResource TextBoxFontSize}" />
+        <Setter Property="FontFamily" Value="{DynamicResource TextBoxFontFamily}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBoxForeground}" />
+        <Setter Property="PlaceholderForeground" Value="{DynamicResource TextBoxPlaceholderForeground}" />
+        <Setter Property="Background" Value="{DynamicResource TextBoxDefaultBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxDefaultBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
+        <Setter Property="SelectionBrush" Value="{DynamicResource TextBoxSelectionBackground}" />
+        <Setter Property="SelectionTextBrush" Value="{DynamicResource TextBoxSelectionForeground}" />
+        <Setter Property="CaretBrush" Value="{DynamicResource TextBoxTextCaretBrush}" />
         <Setter Property="SelectionOpacity" Value="1" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
@@ -46,14 +47,17 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{DynamicResource SemiBorderRadiusSmall}">
+                        CornerRadius="{DynamicResource TextBoxDefaultCornerRadius}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <ContentControl x:Name="LeftContent" Content="{TemplateBinding InnerLeftContent}" />
+                            <ContentControl
+                                x:Name="LeftContent"
+                                Padding="{DynamicResource TextBoxInnerLeftContentPadding}"
+                                Content="{TemplateBinding InnerLeftContent}" />
                             <Grid Grid.Column="1">
                                 <ScrollViewer
                                     x:Name="PART_ContentHost"
@@ -74,6 +78,7 @@
                             <ContentControl
                                 x:Name="RightContent"
                                 Grid.Column="2"
+                                Padding="{DynamicResource TextBoxInnerRightContentPadding}"
                                 Content="{TemplateBinding InnerRightContent}" />
                         </Grid>
                     </Border>
@@ -85,16 +90,17 @@
                             <Setter TargetName="Placeholder" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorFill1}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource TextBoxPointeroverBackground}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource TextBoxPointeroverBorderBrush}" />
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorBackground0}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource SemiColorPrimary}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource TextBoxFocusBackground}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource TextBoxFocusBorderBrush}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground" Value="{DynamicResource SemiColorDisabledText}" />
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SemiColorDisabledBackground}" />
-                            <Setter TargetName="Border" Property="BorderBrush" Value="Transparent" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextBoxDisabledForeground}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource TextBoxDisabledBackground}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource TextBoxDisabledBorderBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
