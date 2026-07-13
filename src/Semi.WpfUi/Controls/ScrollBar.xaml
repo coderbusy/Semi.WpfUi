@@ -28,14 +28,44 @@
     <ControlTemplate x:Key="SemiScrollBarPageButtonTemplate" TargetType="RepeatButton">
         <Border Background="Transparent" />
     </ControlTemplate>
-    <ControlTemplate x:Key="SemiScrollBarThumbTemplate" TargetType="Thumb">
-        <Border
-            x:Name="ThumbBorder"
-            Background="{DynamicResource ScrollBarThumbBrush}"
-            CornerRadius="{DynamicResource ScrollBarThumbCornerRadius}" />
+    <ControlTemplate x:Key="SemiVerticalScrollBarThumbTemplate" TargetType="Thumb">
+        <Grid Background="Transparent">
+            <Border
+                x:Name="ThumbBorder"
+                Width="2"
+                HorizontalAlignment="Right"
+                Background="{DynamicResource ScrollBarThumbBrush}"
+                CornerRadius="{DynamicResource ScrollBarThumbCornerRadius}" />
+        </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter TargetName="ThumbBorder" Property="Background" Value="{DynamicResource ScrollBarThumbHoverBrush}" />
+                <Setter TargetName="ThumbBorder" Property="Width" Value="6" />
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+                <Setter TargetName="ThumbBorder" Property="Background" Value="{DynamicResource ScrollBarThumbHoverBrush}" />
+                <Setter TargetName="ThumbBorder" Property="Width" Value="6" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="SemiHorizontalScrollBarThumbTemplate" TargetType="Thumb">
+        <Grid Background="Transparent">
+            <Border
+                x:Name="ThumbBorder"
+                Height="2"
+                VerticalAlignment="Bottom"
+                Background="{DynamicResource ScrollBarThumbBrush}"
+                CornerRadius="{DynamicResource ScrollBarThumbCornerRadius}" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ThumbBorder" Property="Background" Value="{DynamicResource ScrollBarThumbHoverBrush}" />
+                <Setter TargetName="ThumbBorder" Property="Height" Value="6" />
+            </Trigger>
+            <Trigger Property="IsDragging" Value="True">
+                <Setter TargetName="ThumbBorder" Property="Background" Value="{DynamicResource ScrollBarThumbHoverBrush}" />
+                <Setter TargetName="ThumbBorder" Property="Height" Value="6" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -50,23 +80,22 @@
     </Style>
     <Style x:Key="SemiScrollBarThumb" TargetType="Thumb">
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Template" Value="{StaticResource SemiScrollBarThumbTemplate}" />
     </Style>
-    <Style x:Key="SemiVerticalScrollBarThumb" BasedOn="{StaticResource SemiScrollBarThumb}" TargetType="Thumb">
-        <Setter Property="Margin" Value="6,0,0,0" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Margin" Value="2,0,0,0" />
-            </Trigger>
-        </Style.Triggers>
+    <Style
+        x:Key="SemiVerticalScrollBarThumb"
+        BasedOn="{StaticResource SemiScrollBarThumb}"
+        TargetType="Thumb">
+        <Setter Property="Width" Value="{DynamicResource ScrollBarThickness}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template" Value="{StaticResource SemiVerticalScrollBarThumbTemplate}" />
     </Style>
-    <Style x:Key="SemiHorizontalScrollBarThumb" BasedOn="{StaticResource SemiScrollBarThumb}" TargetType="Thumb">
-        <Setter Property="Margin" Value="0,6,0,0" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Margin" Value="0,2,0,0" />
-            </Trigger>
-        </Style.Triggers>
+    <Style
+        x:Key="SemiHorizontalScrollBarThumb"
+        BasedOn="{StaticResource SemiScrollBarThumb}"
+        TargetType="Thumb">
+        <Setter Property="Height" Value="{DynamicResource ScrollBarThickness}" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Template" Value="{StaticResource SemiHorizontalScrollBarThumbTemplate}" />
     </Style>
 
     <ControlTemplate x:Key="SemiVerticalScrollBarTemplate" TargetType="ScrollBar">
@@ -84,18 +113,12 @@
                 x:Name="PART_Track"
                 Grid.Row="1"
                 IsDirectionReversed="True"
-                Maximum="{TemplateBinding Maximum}"
-                Minimum="{TemplateBinding Minimum}"
-                Orientation="Vertical"
-                Value="{TemplateBinding Value}"
-                ViewportSize="{TemplateBinding ViewportSize}">
+                Orientation="Vertical">
                 <Track.DecreaseRepeatButton>
                     <RepeatButton Command="ScrollBar.PageUpCommand" Style="{StaticResource SemiScrollBarPageButton}" />
                 </Track.DecreaseRepeatButton>
                 <Track.Thumb>
-                    <Thumb
-                        MinHeight="{DynamicResource ScrollBarMinLength}"
-                        Style="{StaticResource SemiVerticalScrollBarThumb}" />
+                    <Thumb MinHeight="{DynamicResource ScrollBarMinLength}" Style="{StaticResource SemiVerticalScrollBarThumb}" />
                 </Track.Thumb>
                 <Track.IncreaseRepeatButton>
                     <RepeatButton Command="ScrollBar.PageDownCommand" Style="{StaticResource SemiScrollBarPageButton}" />
@@ -132,18 +155,12 @@
             <Track
                 x:Name="PART_Track"
                 Grid.Column="1"
-                Maximum="{TemplateBinding Maximum}"
-                Minimum="{TemplateBinding Minimum}"
-                Orientation="Horizontal"
-                Value="{TemplateBinding Value}"
-                ViewportSize="{TemplateBinding ViewportSize}">
+                Orientation="Horizontal">
                 <Track.DecreaseRepeatButton>
                     <RepeatButton Command="ScrollBar.PageLeftCommand" Style="{StaticResource SemiScrollBarPageButton}" />
                 </Track.DecreaseRepeatButton>
                 <Track.Thumb>
-                    <Thumb
-                        MinWidth="{DynamicResource ScrollBarMinLength}"
-                        Style="{StaticResource SemiHorizontalScrollBarThumb}" />
+                    <Thumb MinWidth="{DynamicResource ScrollBarMinLength}" Style="{StaticResource SemiHorizontalScrollBarThumb}" />
                 </Track.Thumb>
                 <Track.IncreaseRepeatButton>
                     <RepeatButton Command="ScrollBar.PageRightCommand" Style="{StaticResource SemiScrollBarPageButton}" />
