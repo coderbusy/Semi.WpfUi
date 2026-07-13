@@ -3,64 +3,63 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:attached="clr-namespace:Semi.WpfUi.Attached">
     <ControlTemplate x:Key="SemiProgressBarTemplate" TargetType="ProgressBar">
+        <ControlTemplate.Resources>
+            <Storyboard x:Key="IndeterminateStoryboard" RepeatBehavior="Forever">
+                <PointAnimation
+                    Storyboard.TargetName="IndeterminateIndicator"
+                    Storyboard.TargetProperty="RenderTransformOrigin"
+                    From="-0.5,0.5"
+                    To="1.5,0.5"
+                    Duration="0:0:1.2" />
+            </Storyboard>
+        </ControlTemplate.Resources>
         <Border
-            x:Name="TrackBorder"
-            Height="{TemplateBinding Height}"
+            x:Name="TemplateRoot"
             Background="{TemplateBinding Background}"
             CornerRadius="{DynamicResource ProgressBarCornerRadius}"
             SnapsToDevicePixels="True">
-            <Track
-                x:Name="PART_Track"
-                IsDirectionReversed="False"
-                Maximum="{TemplateBinding Maximum}"
-                Minimum="{TemplateBinding Minimum}"
-                Orientation="{TemplateBinding Orientation}"
-                Value="{TemplateBinding Value}">
-                <Track.DecreaseRepeatButton>
-                    <RepeatButton
-                        Background="Transparent"
-                        BorderThickness="0"
-                        IsHitTestVisible="False"
-                        Focusable="False"
-                        Template="{StaticResource ProgressBarTrackButtonTemplate}" />
-                </Track.DecreaseRepeatButton>
-                <Track.Thumb>
-                    <Thumb
-                        x:Name="PART_Indicator"
-                        Background="{TemplateBinding Foreground}"
-                        Focusable="False"
-                        Template="{StaticResource ProgressBarIndicatorTemplate}" />
-                </Track.Thumb>
-                <Track.IncreaseRepeatButton>
-                    <RepeatButton
-                        Background="Transparent"
-                        BorderThickness="0"
-                        IsHitTestVisible="False"
-                        Focusable="False"
-                        Template="{StaticResource ProgressBarTrackButtonTemplate}" />
-                </Track.IncreaseRepeatButton>
-            </Track>
+            <Grid x:Name="PART_Track" ClipToBounds="True">
+                <Border
+                    x:Name="PART_Indicator"
+                    HorizontalAlignment="Left"
+                    Background="{TemplateBinding Foreground}"
+                    CornerRadius="{DynamicResource ProgressBarCornerRadius}" />
+                <Border
+                    x:Name="IndeterminateIndicator"
+                    HorizontalAlignment="Stretch"
+                    Background="{TemplateBinding Foreground}"
+                    CornerRadius="{DynamicResource ProgressBarCornerRadius}"
+                    RenderTransformOrigin="-0.5,0.5"
+                    Visibility="Collapsed">
+                    <Border.RenderTransform>
+                        <ScaleTransform ScaleX="0.25" />
+                    </Border.RenderTransform>
+                </Border>
+            </Grid>
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsIndeterminate" Value="True">
-                <Setter TargetName="PART_Indicator" Property="Width" Value="96" />
-                <Setter TargetName="PART_Indicator" Property="HorizontalAlignment" Value="Left" />
+                <Setter TargetName="PART_Indicator" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="IndeterminateIndicator" Property="Visibility" Value="Visible" />
+                <Trigger.EnterActions>
+                    <BeginStoryboard x:Name="IndeterminateAnimation" Storyboard="{StaticResource IndeterminateStoryboard}" />
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <StopStoryboard BeginStoryboardName="IndeterminateAnimation" />
+                </Trigger.ExitActions>
+            </Trigger>
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter TargetName="TemplateRoot" Property="LayoutTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="-90" />
+                    </Setter.Value>
+                </Setter>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{DynamicResource ProgressBarDisabledIndicatorBrush}" />
                 <Setter Property="Background" Value="{DynamicResource ProgressBarDisabledTrackBrush}" />
             </Trigger>
         </ControlTemplate.Triggers>
-    </ControlTemplate>
-
-    <ControlTemplate x:Key="ProgressBarTrackButtonTemplate" TargetType="RepeatButton">
-        <Border Background="{TemplateBinding Background}" />
-    </ControlTemplate>
-
-    <ControlTemplate x:Key="ProgressBarIndicatorTemplate" TargetType="Thumb">
-        <Border
-            Background="{TemplateBinding Background}"
-            CornerRadius="{DynamicResource ProgressBarCornerRadius}" />
     </ControlTemplate>
 
     <Style x:Key="{x:Type ProgressBar}" TargetType="ProgressBar">

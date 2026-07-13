@@ -39,7 +39,7 @@
                 <Border
                     x:Name="ContentBorder"
                     Grid.Row="2"
-                    Padding="{DynamicResource GroupBoxContentPadding}">
+                    Padding="{TemplateBinding Padding}">
                     <ContentPresenter
                         Content="{TemplateBinding Content}"
                         ContentStringFormat="{TemplateBinding ContentStringFormat}"
@@ -75,6 +75,7 @@
         <Setter Property="Foreground" Value="{DynamicResource GroupBoxForeground}" />
         <Setter Property="FontSize" Value="{DynamicResource GroupBoxFontSize}" />
         <Setter Property="FontWeight" Value="{DynamicResource GroupBoxFontWeight}" />
+        <Setter Property="Padding" Value="{DynamicResource GroupBoxContentPadding}" />
         <Setter Property="Template" Value="{StaticResource SemiGroupBoxTemplate}" />
     </Style>
 

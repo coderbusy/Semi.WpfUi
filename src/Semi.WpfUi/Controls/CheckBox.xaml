@@ -68,6 +68,9 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{DynamicResource CheckBoxPointeroverBorderBrush}" />
             </Trigger>
+            <Trigger Property="Content" Value="{x:Null}">
+                <Setter TargetName="CheckBoxBorder" Property="Margin" Value="0" />
+            </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{DynamicResource CheckBoxPressedBorderBrush}" />
             </Trigger>

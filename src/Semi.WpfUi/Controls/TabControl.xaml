@@ -25,9 +25,9 @@
             <Border
                 x:Name="ContentBorder"
                 Padding="{TemplateBinding Padding}"
-                Background="{DynamicResource SemiColorBackground0}"
-                BorderBrush="{DynamicResource SemiColorBorder}"
-                BorderThickness="1"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{StaticResource SemiBorderRadiusMedium}">
                 <ContentPresenter
                     x:Name="PART_SelectedContentHost"
@@ -76,9 +76,9 @@
             <Border
                 x:Name="ContentBorder"
                 Padding="{TemplateBinding Padding}"
-                Background="{DynamicResource SemiColorBackground0}"
-                BorderBrush="{DynamicResource SemiColorBorder}"
-                BorderThickness="1"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{StaticResource SemiBorderRadiusMedium}">
                 <ContentPresenter
                     x:Name="PART_SelectedContentHost"
@@ -354,8 +354,9 @@
 
     <Style x:Key="BaseTabControl" TargetType="TabControl">
         <Setter Property="Padding" Value="16" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="{DynamicResource SemiColorBackground0}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SemiColorBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Template" Value="{StaticResource BaseTabControlTemplate}" />
